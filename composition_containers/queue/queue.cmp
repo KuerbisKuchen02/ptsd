@@ -1,0 +1,228 @@
+{10.5.0.3374}
+
+
+{Load required atoms}
+
+StoreActiveAtom;
+LoadAtomFromFile([Queue], pDir([Atoms\BASIC MODELING\Queue.atm]));
+LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
+RestoreActiveAtom;
+
+
+{Atom: Composition Container1}
+
+sets;
+AtomByName([Composition Container], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Composition Container1], 1, false);
+SetAtt([openatscale], 17);
+SetAtt([displaycontents], 1);
+SetAtt([nrvariables], 0);
+SetAtt([CheckContentInView], 2);
+SetAtt([xCenter2D], 16);
+SetAtt([yCenter2D], 25.5);
+SetAtt([xRadius2D], 10);
+SetAtt([yRadius2D], 2.5);
+SetAtt([xCenter3D], 2);
+SetAtt([yCenter3D], 14.5);
+SetAtt([zCenter3D], 0);
+SetAtt([Radius3D], 10.3077640640442);
+SetAtt([ShowName], 0);
+SetAtomSettings([], 8421504, 24626);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
+Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\queue\queue.atm.>cmpname:C:\temp\ptsd\composition_containers\queue\queue.cmp.]);
+SetChannels(1, 0);
+SetChannelRanges(1, 255, 0, 0);
+SetLoadAtomID(1);
+SetLoc(14, 11, 0);
+SetSize(10, 4, 10);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(1, 2);
+CreateTableColumn(0, 64, [``
+1
+]);
+CreateTableColumn(1, 64, [`VariableName`
+]);
+CreateTableColumn(2, 64, [`Expression`
+]);
+Set(OnCreation, [4DS[
+             do(
+              if(
+               not(comparetext(name(c),[])),
+               if(fileexists([C:\temp\ptsd\composition_containers\queue\queue.cmp]),
+                execfile([C:\temp\ptsd\composition_containers\queue\queue.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\queue\queue.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               )
+              ),
+              set(oncreation(c),concat(sbo,[nothing],sbc))
+             )
+            ]4DS]);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: NormalQueue}
+
+sets;
+AtomByName([Queue], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [NormalQueue], 1, false);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([Capacity], 10);
+SetExprAtt([EntryTrigger], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out).}content(c)]);
+SetAtt([DrawLoc], 1);
+SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([ShowContents], 1);
+SetAtt([FittingContentCount], 0);
+SetAtt([NameLength3D], 11);
+SetAtomSettings([], 12615680, 4272);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Queue.ico]));
+Set(DdbRec, [>updateversion:10.5.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(2);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(0, 15, 0);
+SetSize(5, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: FastTrack}
+
+sets;
+AtomByName([Queue], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [FastTrack], 1, false);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([Capacity], 10);
+SetExprAtt([EntryTrigger], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out).}content(c)]);
+SetAtt([DrawLoc], 1);
+SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([ShowContents], 1);
+SetAtt([FittingContentCount], 0);
+SetAtt([NameLength3D], 9);
+SetAtomSettings([], 12615680, 4272);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Queue.ico]));
+Set(DdbRec, [>updateversion:10.5.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(3);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(0, 12, 0);
+SetSize(5, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Input}
+
+sets;
+AtomByName([Queue], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Input], 1, false);
+SetExprAtt([SendTo], [4DS[{.~1|~If(Label([hasFastPass],first(c)) = 1, 1, 2)~.}If(Label([hasFastPass],first(c)) = 1, 1, 2)]4DS]);
+SetAtt([Capacity], 10);
+SetExprAtt([EntryTrigger], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out).}content(c)]);
+SetAtt([DrawLoc], 1);
+SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([ShowContents], 1);
+SetAtt([FittingContentCount], 0);
+SetAtt([NameLength3D], 5);
+SetAtomSettings([], 12615680, 4272);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Queue.ico]));
+Set(DdbRec, [>updateversion:10.5.]);
+SetChannels(1, 2);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(4);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetLoc(-8, 13, 0);
+SetSize(5, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Output}
+
+sets;
+AtomByName([Queue], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Output], 1, false);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([Capacity], 10);
+SetExprAtt([EntryTrigger], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out).}content(c)]);
+SetAtt([DrawLoc], 1);
+SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([ShowContents], 1);
+SetAtt([FittingContentCount], 0);
+SetAtt([NameLength3D], 6);
+SetAtomSettings([], 12615680, 4272);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Queue.ico]));
+Set(DdbRec, [>updateversion:10.5.]);
+SetChannels(2, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(5);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, true, 0, 0, [], []);
+SetLoc(7, 13, 0);
+SetSize(5, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+Up;
+ConnectLoadAtoms(1, 2, 2, 5, 0);
+ConnectLoadAtoms(1, 4, 1, 2, 0);
+ConnectLoadAtoms(1, 3, 1, 5, 0);
+ConnectLoadAtoms(2, 4, 1, 3, 0);
+ExecOnCreationOnLoad;
