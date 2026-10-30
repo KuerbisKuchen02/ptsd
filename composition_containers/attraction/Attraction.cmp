@@ -1,0 +1,653 @@
+{10.5.0.3374}
+
+
+{Load required atoms}
+
+StoreActiveAtom;
+LoadAtomFromFile([Availability Control], pDir([Atoms\AVAILABILITY\Availability Control.atm]));
+LoadAtomFromFile([Mtbf Mttr Availability], pDir([Atoms\AVAILABILITY\Mtbf Mttr Availability.atm]));
+LoadAtomFromFile([Container], pDir([Atoms\BASIC MODELING\Container.atm]));
+LoadAtomFromFile([Queue], pDir([Atoms\BASIC MODELING\Queue.atm]));
+LoadAtomFromFile([Source], pDir([Atoms\BASIC MODELING\Source.atm]));
+LoadAtomFromFile([Assembler], pDir([Atoms\PROCESSES\Assembler.atm]));
+LoadAtomFromFile([MultiService], pDir([Atoms\PROCESSES\MultiService.atm]));
+LoadAtomFromFile([Unpack], pDir([Atoms\PROCESSES\Unpack.atm]));
+LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
+LoadAtomFromFile([Fast Non Accumulating Conveyor], pDir([Atoms\TRANSPORT\CONVEYORS\NONACCUMULATING\Fast Non Accumulating Conveyor.atm]));
+RestoreActiveAtom;
+
+
+{Atom: Attraction}
+
+sets;
+AtomByName([Composition Container], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Attraction], 1, false);
+SetAtt([openatscale], 17);
+SetAtt([displaycontents], 1);
+SetAtt([nrvariables], 5);
+SetAtt([CheckContentInView], 2);
+SetAtt([xCenter2D], 17);
+SetAtt([yCenter2D], -2.5);
+SetAtt([xRadius2D], 8);
+SetAtt([yRadius2D], 3.5);
+SetAtt([xCenter3D], 8);
+SetAtt([yCenter3D], 3.5);
+SetAtt([zCenter3D], 1);
+SetAtt([Radius3D], 8.78919791562347);
+SetAtt([ShowName], 0);
+SetAtomSettings([], 8421504, 25650);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
+Set(DdbRec, [>atmname:C:\Temp\ptsd\composition_containers\attraction\Attraction.atm.>cmpname:C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp.]);
+SetChannels(1, 0);
+SetChannelRanges(1, 255, 0, 0);
+SetLoadAtomID(1);
+SetLoc(9, -6, 0);
+SetSize(16, 7, 10);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(5, 2);
+CreateTableColumn(0, 25, [``
+1
+2
+3
+4
+5
+]);
+CreateTableColumn(1, 100, [`VariableName`
+`trainCapacity`
+`rideTimeS`
+`numberOfTrains`
+`entryTimeS`
+`meanFailureRate`
+]);
+CreateTableColumn(2, 150, [`Expression`
+12
+`100
+`
+4
+45
+0.05
+]);
+Set(OnCreation, [4DS[
+             do(
+              if(
+               not(comparetext(name(c),[])),
+               if(fileexists([C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp]),
+                execfile([C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               )
+              ),
+              set(oncreation(c),concat(sbo,[nothing],sbc))
+             )
+            ]4DS]);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Entry}
+
+sets;
+AtomByName([Assembler], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Assembler'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Entry], 1, false);
+SetExprAtt([cycletime], [4DS[lognormal(TableFindString(Up(c), [entryTimeS], 1, 2),10)]4DS]);
+SetExprAtt([entrytrigger], [0]);
+SetExprAtt([exittrigger], [0]);
+SetExprAtt([sendto], [{.~1|~1~.}1]);
+SetAtt([curcolref], 12);
+SetExprAtt([4Dscript], [4DS[TableFindString(Up(c), [trainCapacity], 1, 2)]4DS]);
+SetAtt([finishquant], 13);
+SetAtt([showcontents], 1);
+SetAtt([pack], 1);
+SetExprAtt([In2Trigger], [0]);
+SetAtt([columns], 1);
+SetAtt([3DIcon], 2);
+SetAtt([CutOffMode], 0);
+SetExprAtt([CutOffTime], [0]);
+SetExprAtt([CutOff], [false]);
+SetAtomSettings([], 4194432, 1200);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\machines\mach1001.bmp]), [mach1001]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([assembler.wrl]), [assembler.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Assembler.ico]));
+SetChannels(2, 1);
+SetChannelRanges(2, 255, 1, 255);
+SetLoadAtomID(2);
+SetChannelRequestCount(1, 0, true, false, 5, 0, [container/order/main product], []);
+SetChannelRequestCount(2, 0, false, true, 0, 0, [], []);
+SetLoc(1, 2, 0);
+SetSize(5, 5, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(2, 20);
+CreateTableColumn(0, 64, [``
+`Input ch1`
+`Input ch2`
+]);
+CreateTableColumn(1, 64, [`Product 1`
+1
+1
+]);
+CreateTableColumn(2, 64, [2
+1
+2
+]);
+CreateTableColumn(3, 64, [3
+1
+3
+]);
+CreateTableColumn(4, 64, [4
+1
+4
+]);
+CreateTableColumn(5, 64, [5
+1
+5
+]);
+CreateTableColumn(6, 64, [6
+1
+6
+]);
+CreateTableColumn(7, 64, [7
+1
+7
+]);
+CreateTableColumn(8, 64, [8
+1
+8
+]);
+CreateTableColumn(9, 64, [9
+1
+9
+]);
+CreateTableColumn(10, 64, [10
+1
+10
+]);
+CreateTableColumn(11, 64, [11
+1
+11
+]);
+CreateTableColumn(12, 64, [12
+1
+12
+]);
+CreateTableColumn(13, 64, [13
+1
+13
+]);
+CreateTableColumn(14, 64, [14
+1
+14
+]);
+CreateTableColumn(15, 64, [15
+1
+15
+]);
+CreateTableColumn(16, 64, [16
+1
+16
+]);
+CreateTableColumn(17, 64, [17
+1
+17
+]);
+CreateTableColumn(18, 64, [18
+1
+18
+]);
+CreateTableColumn(19, 64, [19
+1
+19
+]);
+CreateTableColumn(20, 64, [20
+1
+20
+]);
+SetStatus(1);
+ExecLateInit;
+
+
+{Atom: Exit}
+
+sets;
+AtomByName([Unpack], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Unpack'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Exit], 1, false);
+SetExprAtt([nr unpack products], [content(first(c))]);
+SetExprAtt([cycletime], [0]);
+SetAtt([curunpack], 0);
+SetExprAtt([entrytrigger], [0]);
+SetExprAtt([exittrigger], [0]);
+SetExprAtt([exitpackagetrigger], [0]);
+SetExprAtt([instrategy], [{.openallic(c)|1. Any inputchannel.}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([UnpackOrder], 1);
+SetAtomSettings([], 4194432, 1200);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\server.bmp]), [server]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([disassembler.wrl]), [disassembler.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Unpack.ico]));
+SetChannels(1, 2);
+SetChannelRanges(1, 255, 2, 2);
+SetLoadAtomID(3);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [Contents], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetLoc(11, 2, 0);
+SetSize(4, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(21);
+ExecLateInit;
+
+
+{Atom: Train}
+
+sets;
+AtomByName([Container], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Container'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Train], 1, false);
+SetAtt([AutoReSize], 0);
+SetExprAtt([sx], [1.1]);
+SetExprAtt([sy], [1.1]);
+SetExprAtt([sz], [1]);
+SetAtt([ContainerType], 4);
+SetAtt([UseBoxVisible], 1);
+SetAtomSettings([], 6080220, 1170);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\Pallet.bmp]), [Pallet.bmp]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Container.ico]));
+SetLoadAtomID(4);
+SetSize(1.1, 1.1, 0.15);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: TrainGenerator}
+
+sets;
+AtomByName([Source], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Source'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [TrainGenerator], 1, false);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetExprAtt([CycleTime], [10]);
+SetExprAtt([CreationTrigger], [{.0|10. Do Nothing.}0]);
+SetExprAtt([ExitTrigger], [0]);
+SetExprAtt([FirstProduct], [10]);
+SetExprAtt([MaxProducts], [4DS[{.~1|~Value(TableFindString(Up(c), [numberOfTrains], 1, 2))~.}Value(TableFindString(Up(c), [numberOfTrains], 1, 2))]4DS]);
+SetAtt([Icon3D], 4);
+SetAtomSettings([], 7168771, 176);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\source.bmp]), [source]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([source.wrl]), [source.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([source_Resized.wrl]), [Source_Resized.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Source.ico]));
+SetChannels(1, 1);
+SetChannelRanges(1, 1, 1, 255);
+SetLoadAtomID(5);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(1, 0, 0);
+SetSize(5, 2, 2);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(2);
+ExecLateInit;
+
+
+{Atom: AttractionStatus}
+
+sets;
+AtomByName([Availability Control], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Availability Control'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [AttractionStatus], 1, false);
+SetAtt([Available], 1);
+SetAtt([cntlinput], 1);
+SetAtt([cntloutput], 1);
+SetAtt([cntlevents], 1);
+SetAtt([cntlspeedcontainer], 1);
+SetAtt([cntlspeedcontents], 0);
+SetAtt([cntlrotationcont], 1);
+SetAtt([NrDown], 0);
+SetExprAtt([TriggerOnDown], [0]);
+SetExprAtt([TriggerOnUp], [0]);
+SetAtt([3DIcon], 4);
+SetAtomSettings([], 32768, 1200);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AvailabilityControl.ico]));
+Set(DdbRec, [>t-atomtype:t028.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(6);
+SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
+SetLoc(11, 4, 0);
+SetSize(5, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(1, 8);
+CreateTableColumn(0, 64, [``
+1
+]);
+CreateTableColumn(1, 64, [`Oldstatus`
+0
+]);
+CreateTableColumn(2, 64, [`Downtime`
+0
+]);
+CreateTableColumn(3, 64, [`Down`
+0
+]);
+CreateTableColumn(4, 64, [`xs`
+0
+]);
+CreateTableColumn(5, 64, [`ys`
+0
+]);
+CreateTableColumn(6, 64, [`zs`
+0
+]);
+CreateTableColumn(7, 64, [`rot`
+0
+]);
+CreateTableColumn(8, 64, [`color`
+4194432
+]);
+SetStatus(11);
+ExecLateInit;
+
+
+{Atom: Copy of Fast Non Accumulating Conveyor7}
+
+sets;
+AtomByName([Fast Non Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Fast Non Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Fast Non Accumulating Conveyor7], 1, false);
+SetAtt([length], 1);
+SetAtt([capacity], 10000);
+SetExprAtt([speed], [1]);
+SetExprAtt([calculate], [4DS[ do(  setatt(12,+(att(5,c),if(>(att(8,c),0),-(time,att(8,c)),0)),c),  foratomlayerunder(c,   do(    setcs,    setloc(        -(*(xsize(c),/(*(att(3,c),-(-(time,entrytime(cs)),-(att(12,c),ddb([t-blck],cs)))),att(1,c))),xsize(cs)),    /(-(ysize(c),ysize(cs)),2),zsize(c),cs)    )  ) )]4DS]);
+SetAtt([totblocked], 0);
+SetAtt([entrytrigger], 0);
+SetAtt([exittrigger], 0);
+SetAtt([blocked], 0);
+SetExprAtt([sendto], [1]);
+SetAtt([disp cont], 1);
+SetAtt([curcap], 10000);
+SetAtt([tmp], 0);
+SetAtt([inputopen], 0);
+SetAtt([Use_Physical], 1);
+SetAtt([IsConveyor], 14);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 10012804, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\FastNonConveyor.ico]));
+Set(DdbRec, [>updatetoed10:1.]);
+SetChannels(2, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(7);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, true, 0, 0, [], []);
+SetLoc(15, 2, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Fast Non Accumulating Conveyor7}
+
+sets;
+AtomByName([Fast Non Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Fast Non Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Fast Non Accumulating Conveyor7], 1, false);
+SetAtt([length], 1);
+SetAtt([capacity], 10000);
+SetExprAtt([speed], [1]);
+SetExprAtt([calculate], [4DS[ do(  setatt(12,+(att(5,c),if(>(att(8,c),0),-(time,att(8,c)),0)),c),  foratomlayerunder(c,   do(    setcs,    setloc(        -(*(xsize(c),/(*(att(3,c),-(-(time,entrytime(cs)),-(att(12,c),ddb([t-blck],cs)))),att(1,c))),xsize(cs)),    /(-(ysize(c),ysize(cs)),2),zsize(c),cs)    )  ) )]4DS]);
+SetAtt([totblocked], 0);
+SetExprAtt([entrytrigger], [0]);
+SetExprAtt([exittrigger], [0]);
+SetAtt([blocked], 0);
+SetExprAtt([sendto], [4DS[{.~1|~if(Att([Available], AtomByName([AttractionStatus], Model)), 1, 2)~.}if(Att([Available], AtomByName([AttractionStatus], Model)), 1, 2)]4DS]);
+SetAtt([disp cont], 1);
+SetAtt([curcap], 10000);
+SetAtt([tmp], 0);
+SetAtt([inputopen], 0);
+SetAtt([Use_Physical], 1);
+SetAtt([IsConveyor], 14);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 10012804, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\FastNonConveyor.ico]));
+Set(DdbRec, [>updatetoed10:1.]);
+SetChannels(1, 2);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(8);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetLoc(0, 2, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: EmptyTrains}
+
+sets;
+AtomByName([Queue], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [EmptyTrains], 1, false);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([Capacity], 10);
+SetExprAtt([EntryTrigger], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out).}content(c)]);
+SetAtt([DrawLoc], 1);
+SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([ShowContents], 1);
+SetAtt([FittingContentCount], 0);
+SetAtt([NameLength3D], 11);
+SetAtomSettings([], 12615680, 4272);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Queue.ico]));
+Set(DdbRec, [>updateversion:10.5.]);
+SetChannels(2, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(9);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, true, 0, 0, [], []);
+SetLoc(6, 0, 0);
+SetSize(5, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: RollerCoaster}
+
+sets;
+AtomByName([MultiService], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'MultiService'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [RollerCoaster], 1, false);
+SetAtt([capacity], 10);
+SetExprAtt([cycletime], [4DS[Value(TableFindString(Up(c), [rideTimeS], 1, 2))]4DS]);
+SetAtt([curcycle], 0);
+SetAtt([nblocked], 0);
+SetExprAtt([sendto], [{.~1|~1~.}1]);
+SetExprAtt([instrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetExprAtt([entrytrigger], [0]);
+SetExprAtt([exittrigger], [0]);
+SetAtt([counter], 0);
+SetAtt([2ddisplay], 1);
+SetAtt([Levelcolor], 0);
+SetTextAtt([QtyBatchRules], [1]);
+SetExprAtt([BatchOn], [{.ic(c)|1. Batch by input channel..}ic(c)]);
+SetAtomSettings([], 0, 168);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\server.bmp]), [server]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\MultiServer.ico]));
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(10);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(6, 2, 0);
+SetSize(5, 4, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(1, 5);
+CreateTableColumn(0, 64, [0
+1
+]);
+CreateTableColumn(1, 107, [`Batch indicator`
+`IC_001`
+]);
+CreateTableColumn(2, 105, [`Incoming product`
+1
+]);
+CreateTableColumn(3, 114, [`Outgoing product`
+1
+]);
+CreateTableColumn(4, 128, [`Currently gathered`
+0
+]);
+CreateTableColumn(5, 64, [`PointOfFirstProduct`
+0
+]);
+SetStatus(1);
+ExecLateInit;
+
+
+{Atom: AttractionFailureMtbfMttr}
+
+sets;
+AtomByName([Mtbf Mttr Availability], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Mtbf Mttr Availability'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [AttractionFailureMtbfMttr], 1, false);
+SetExprAtt([mtbf], [4DS[do(
+  var([failureRate], 
+    vbValue, 
+    Value(TableFindString(Up(c), [meanFailureRate], 1, 2))
+  ),
+  negexp(hr(3)*(1-failureRate)/failureRate)
+)]4DS]);
+SetExprAtt([mttr], [negexp(meanAttractionDownTime_s)]);
+SetExprAtt([firstdown], [4DS[do(
+  var([failureRate], 
+    vbValue, 
+    Value(TableFindString(Up(c), [meanFailureRate], 1, 2))
+  ),
+  negexp(hr(3)*(1-failureRate)/failureRate)
+)]4DS]);
+SetAtt([3DIcon], 5);
+SetAtomSettings([], 32768, 1200);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\MtbfMtbrAvailability.ico]));
+Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
+SetChannels(0, 1);
+SetChannelRanges(0, 0, 1, 255);
+SetLoadAtomID(11);
+SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
+SetLoc(11, 6, 0);
+SetSize(5, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(10);
+ExecLateInit;
+Up;
+
+{Saved Model3D settings.}
+
+ConnectLoadAtoms(1, 2, 1, 10, 0);
+ConnectLoadAtoms(1, 9, 1, 2, 0);
+ConnectLoadAtoms(1, 8, 2, 2, 0);
+ConnectLoadAtoms(1, 3, 1, 7, 0);
+ConnectLoadAtoms(1, 10, 1, 3, 0);
+ConnectLoadAtoms(2, 3, 2, 9, 0);
+ConnectLoadAtoms(1, 5, 1, 9, 0);
+ConnectLoadAtoms(0, 4, 1, 5, 0);
+ConnectLoadAtoms(1, 6, 0, 2, 0);
+ConnectLoadAtoms(1, 11, 1, 6, 0);
+ConnectLoadAtoms(1, 7, 1, 12, 0);
+ConnectLoadAtoms(2, 8, 2, 7, 0);
+ConnectLoadAtoms(1, 13, 1, 8, 0);
+ExecOnCreationOnLoad;

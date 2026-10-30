@@ -1,0 +1,76 @@
+{10.5.0.3374}
+
+
+{Atom: Attraction}
+
+sets;
+AtomByName([Composition Container], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Attraction], 1, false);
+SetAtt([openatscale], 17);
+SetAtt([displaycontents], 1);
+SetAtt([nrvariables], 5);
+SetAtt([CheckContentInView], 2);
+SetAtt([xCenter2D], 17);
+SetAtt([yCenter2D], -2.5);
+SetAtt([xRadius2D], 8);
+SetAtt([yRadius2D], 3.5);
+SetAtt([xCenter3D], 8);
+SetAtt([yCenter3D], 3.5);
+SetAtt([zCenter3D], 1);
+SetAtt([Radius3D], 8.78919791562347);
+SetAtt([ShowName], 0);
+SetAtomSettings([], 8421504, 25650);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
+Set(DdbRec, [>atmname:C:\Temp\ptsd\composition_containers\attraction\Attraction.atm.>cmpname:C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp.]);
+SetChannels(1, 0);
+SetChannelRanges(1, 255, 0, 0);
+SetLoadAtomID(1);
+SetLoc(9, -6, 0);
+SetSize(16, 7, 10);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(5, 2);
+CreateTableColumn(0, 25, [``
+1
+2
+3
+4
+5
+]);
+CreateTableColumn(1, 100, [`VariableName`
+`trainCapacity`
+`rideTimeS`
+`numberOfTrains`
+`entryTimeS`
+`meanFailureRate`
+]);
+CreateTableColumn(2, 150, [`Expression`
+12
+`100
+`
+4
+45
+0.05
+]);
+Set(OnCreation, [4DS[
+             do(
+              if(
+               not(comparetext(name(c),[])),
+               if(fileexists([C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp]),
+                execfile([C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               )
+              ),
+              set(oncreation(c),concat(sbo,[nothing],sbc))
+             )
+            ]4DS]);
+SetStatus(0);
+ExecLateInit;
+ExecOnCreationOnLoad;
