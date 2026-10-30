@@ -1,0 +1,173 @@
+﻿{10.5.0.3374}
+
+
+{Load required atoms}
+
+StoreActiveAtom;
+LoadAtomFromFile([Queue], pDir([Atoms\BASIC MODELING\Queue.atm]));
+LoadAtomFromFile([MultiService], pDir([Atoms\PROCESSES\MultiService.atm]));
+LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
+RestoreActiveAtom;
+
+
+{Atom: Foodspot}
+
+sets;
+AtomByName([Composition Container], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Foodspot], 1, false);
+SetAtt([openatscale], 17);
+SetAtt([displaycontents], 1);
+SetAtt([nrvariables], 0);
+SetAtt([CheckContentInView], 2);
+SetAtt([xCenter2D], 14);
+SetAtt([yCenter2D], 13.5);
+SetAtt([xRadius2D], 7);
+SetAtt([yRadius2D], 2.5);
+SetAtt([xCenter3D], 6);
+SetAtt([yCenter3D], 9.5);
+SetAtt([zCenter3D], 0.5);
+SetAtt([Radius3D], 7.44983221287567);
+SetAtt([ShowName], 0);
+SetAtomSettings([], 8421504, 24626);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
+Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\foodspot\Foodspot.atm.>cmpname:C:\temp\ptsd\composition_containers\foodspot\Foodspot.cmp.]);
+SetChannels(1, 0);
+SetChannelRanges(1, 255, 0, 0);
+SetLoadAtomID(1);
+SetLoc(8, 4, 0);
+SetSize(10, 4, 10);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(1, 2);
+CreateTableColumn(0, 25, [``
+1
+]);
+CreateTableColumn(1, 100, [`VariableName`
+`TimeToEat`
+]);
+CreateTableColumn(2, 150, [`Expression`
+600
+]);
+Set(OnCreation, [4DS[
+             do(
+              if(
+               not(comparetext(name(c),[])),
+               if(fileexists([C:\temp\ptsd\composition_containers\foodspot\Foodspot.cmp]),
+                execfile([C:\temp\ptsd\composition_containers\foodspot\Foodspot.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\foodspot\Foodspot.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               )
+              ),
+              set(oncreation(c),concat(sbo,[nothing],sbc))
+             )
+            ]4DS]);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Queue2}
+
+sets;
+AtomByName([Queue], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Queue2], 1, false);
+SetExprAtt([SendTo], [1]);
+SetAtt([Capacity], 10);
+SetAtt([EntryTrigger], 0);
+SetAtt([ExitTrigger], 0);
+SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out) .}content(c)]);
+SetAtt([DrawLoc], 1);
+SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel .}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([ShowContents], 1);
+SetAtt([FittingContentCount], 0);
+SetAtt([NameLength3D], 6);
+SetAtomSettings([], 12615680, 4272);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Queue.ico]));
+Set(DdbRec, [>updateversion:10.5.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(2);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-1, 8, 0);
+SetSize(5, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: MultiService}
+
+sets;
+AtomByName([MultiService], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'MultiService'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [MultiService], 1, false);
+SetAtt([capacity], 10);
+SetExprAtt([cycletime], [4DS[TableFindString(Up(c), [TimeToEat], 1, 2)
+]4DS]);
+SetAtt([curcycle], 0);
+SetAtt([nblocked], 0);
+SetExprAtt([sendto], [{.~1|~1~.}1]);
+SetExprAtt([instrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetExprAtt([entrytrigger], [0]);
+SetExprAtt([exittrigger], [0]);
+SetAtt([counter], 0);
+SetAtt([2ddisplay], 1);
+SetAtt([Levelcolor], 0);
+SetTextAtt([QtyBatchRules], [1]);
+SetExprAtt([BatchOn], [{.ic(c)|1. Batch by input channel..}ic(c)]);
+SetAtomSettings([], 0, 168);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\server.bmp]), [server]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\MultiServer.ico]));
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(3);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(5, 7, 0);
+SetSize(8, 5, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(1, 5);
+CreateTableColumn(0, 64, [0
+1
+]);
+CreateTableColumn(1, 107, [`Batch indicator`
+`IC_001`
+]);
+CreateTableColumn(2, 105, [`Incoming product`
+1
+]);
+CreateTableColumn(3, 114, [`Outgoing product`
+1
+]);
+CreateTableColumn(4, 128, [`Currently gathered`
+0
+]);
+CreateTableColumn(5, 64, [`PointOfFirstProduct`
+0
+]);
+SetStatus(1);
+ExecLateInit;
+Up;
+ConnectLoadAtoms(1, 2, 1, 3, 0);
+ConnectLoadAtoms(1, 4, 1, 2, 0);
+ConnectLoadAtoms(1, 3, 1, 5, 0);
+ExecOnCreationOnLoad;
