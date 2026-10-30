@@ -1,18 +1,18 @@
 {10.5.0.3374}
 
 
-{Atom: Composition Container1}
+{Atom: AttractionQueue}
 
 sets;
 AtomByName([Composition Container], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [Composition Container1], 1, false);
+CreateAtom(a, s, [AttractionQueue], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], 16);
-SetAtt([yCenter2D], 25.5);
+SetAtt([xCenter2D], 5);
+SetAtt([yCenter2D], 13.5);
 SetAtt([xRadius2D], 10);
 SetAtt([yRadius2D], 2.5);
 SetAtt([xCenter3D], 2);
@@ -27,30 +27,30 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\queue\queue.atm.>cmpname:C:\temp\ptsd\composition_containers\queue\queue.cmp.]);
+Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\attraction_queue\AttractionQueue.atm.>cmpname:C:\temp\ptsd\composition_containers\attraction_queue\AttractionQueue.cmp.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetLoc(14, 11, 0);
+SetLoc(3, -1, 0);
 SetSize(10, 4, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
 SetTable(1, 2);
-CreateTableColumn(0, 64, [``
+CreateTableColumn(0, 25, [``
 1
 ]);
-CreateTableColumn(1, 64, [`VariableName`
+CreateTableColumn(1, 100, [`VariableName`
 ]);
-CreateTableColumn(2, 64, [`Expression`
+CreateTableColumn(2, 150, [`Expression`
 ]);
 Set(OnCreation, [4DS[
              do(
               if(
                not(comparetext(name(c),[])),
-               if(fileexists([C:\temp\ptsd\composition_containers\queue\queue.cmp]),
-                execfile([C:\temp\ptsd\composition_containers\queue\queue.cmp]),
-                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\queue\queue.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               if(fileexists([C:\temp\ptsd\composition_containers\attraction_queue\AttractionQueue.cmp]),
+                execfile([C:\temp\ptsd\composition_containers\attraction_queue\AttractionQueue.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\attraction_queue\AttractionQueue.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
                )
               ),
               set(oncreation(c),concat(sbo,[nothing],sbc))
