@@ -150,7 +150,33 @@ sets;
 AtomByName([Queue], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
 CreateAtom(a, Up(s), [Input], 1, false);
-SetExprAtt([SendTo], [4DS[{.~1|~If(Label([hasFastPass],first(c)) = 1, 1, 2)~.}If(Label([hasFastPass],first(c)) = 1, 1, 2)]4DS]);
+SetExprAtt([SendTo], [4DS[{.~1|~do(
+  Var([numOfVisits], vbValue, 0),
+  If(
+    and(
+      HashMapTryGetValue(
+        Var([hash_map], vbAtom, AtomDataContainer([attractions], first(c))),
+        Label([nextAttraction], first(c)),
+        numOfVisits
+      ) = 0,
+      Label([hasFastPass], first(c)) = 1), 
+      1,
+      2
+  )
+)~.}do(
+  Var([numOfVisits], vbValue, 0),
+  If(
+    and(
+      HashMapTryGetValue(
+        Var([hash_map], vbAtom, AtomDataContainer([attractions], first(c))),
+        Label([nextAttraction], first(c)),
+        numOfVisits
+      ) = 0,
+      Label([hasFastPass], first(c)) = 1), 
+      1,
+      2
+  )
+)]4DS]);
 SetAtt([Capacity], 10);
 SetExprAtt([EntryTrigger], [0]);
 SetExprAtt([ExitTrigger], [0]);
