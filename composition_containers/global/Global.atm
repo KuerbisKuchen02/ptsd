@@ -1,37 +1,38 @@
 ﻿{10.5.0.3374}
 
 
-{Atom: Global}
+{Atom: Global14}
 
 sets;
-AtomByName([Composition Container], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [Global], 1, false);
+AtomByName([Global], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Global'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Global14], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], -10.5);
-SetAtt([yCenter2D], 3);
-SetAtt([xRadius2D], 4.5);
-SetAtt([yRadius2D], 4);
-SetAtt([xCenter3D], 5);
-SetAtt([yCenter3D], 3.5);
-SetAtt([zCenter3D], 0.5);
-SetAtt([Radius3D], 4.74341649025257);
+SetAtt([xCenter2D], -3.5);
+SetAtt([yCenter2D], -10);
+SetAtt([xRadius2D], 9.5);
+SetAtt([yRadius2D], 5);
+SetAtt([xCenter3D], 9.5);
+SetAtt([yCenter3D], 5);
+SetAtt([zCenter3D], 5);
+SetAtt([Radius3D], 11.842719282327);
 SetAtt([ShowName], 0);
-SetAtomSettings([], 8421504, 25650);
+SetAtomSettings([], 8421504, 24626);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\Temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\Temp\ptsd\composition_containers\global\Global.cmp.]);
+Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\temp\ptsd\composition_containers\global\Global.cmp.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetSize(11, 10, 10);
+SetLoc(-13, -15, 0);
+SetSize(19, 10, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -47,9 +48,9 @@ Set(OnCreation, [4DS[
              do(
               if(
                not(comparetext(name(c),[])),
-               if(fileexists([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
-                execfile([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
-                msg(concat([Cannot locate:],lf,cr,[C:\Temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               if(fileexists([C:\temp\ptsd\composition_containers\global\Global.cmp]),
+                execfile([C:\temp\ptsd\composition_containers\global\Global.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
                )
               ),
               set(oncreation(c),concat(sbo,[nothing],sbc))

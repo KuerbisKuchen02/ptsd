@@ -4,6 +4,7 @@
 {Load required atoms}
 
 StoreActiveAtom;
+LoadAtomFromFile([ExcelActiveX], pDir([Atoms\DATA\ExcelActiveX.atm]));
 LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
 LoadAtomFromFile([Empirical Distribution], pDir([Atoms\TOOLS\Empirical Distribution.atm]));
 LoadAtomFromFile([Function Editor], pDir([Atoms\TOOLS\Function Editor.atm]));
@@ -14,9 +15,78 @@ RestoreActiveAtom;
 {Preregister 4DS}
 
 PreregisterFunction([indexPOI], 0, 0);
-PreregisterFunction([search], 0, 0);
 PreregisterFunction([initilize], 0, 0);
+PreregisterFunction([getHeight], 1, 1);
+PreregisterFunction([connectSchedule], 0, 0);
+PreregisterFunction([getAttractions], 0, 0);
+PreregisterFunction([getAge], 0, 0);
+PreregisterFunction([setEntryLabels2], 0, 0);
+PreregisterFunction([getExitTime], 0, 0);
+PreregisterFunction([age2], 0, 0);
+PreregisterFunction([fastPass], 0, 0);
+Dim([schedule], vbString);
 Dim([refDist_meanAttractionDownTime_s], vbAtom);
+Dim([refDist_age2], vbAtom);
+Dim([refDist_fastPass], vbAtom);
+
+
+{Atom: Global14}
+
+sets;
+AtomByName([Global], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Global'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Global14], 1, false);
+SetAtt([openatscale], 17);
+SetAtt([displaycontents], 1);
+SetAtt([nrvariables], 0);
+SetAtt([CheckContentInView], 2);
+SetAtt([xCenter2D], -3.5);
+SetAtt([yCenter2D], -10);
+SetAtt([xRadius2D], 9.5);
+SetAtt([yRadius2D], 5);
+SetAtt([xCenter3D], 9.5);
+SetAtt([yCenter3D], 5);
+SetAtt([zCenter3D], 5);
+SetAtt([Radius3D], 11.842719282327);
+SetAtt([ShowName], 0);
+SetAtomSettings([], 8421504, 24626);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
+Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\temp\ptsd\composition_containers\global\Global.cmp.]);
+SetChannels(1, 0);
+SetChannelRanges(1, 255, 0, 0);
+SetLoadAtomID(1);
+SetLoc(-13, -15, 0);
+SetSize(19, 10, 10);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(1, 2);
+CreateTableColumn(0, 25, [``
+1
+]);
+CreateTableColumn(1, 100, [`VariableName`
+]);
+CreateTableColumn(2, 150, [`Expression`
+]);
+Set(OnCreation, [4DS[
+             do(
+              if(
+               not(comparetext(name(c),[])),
+               if(fileexists([C:\temp\ptsd\composition_containers\global\Global.cmp]),
+                execfile([C:\temp\ptsd\composition_containers\global\Global.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               )
+              ),
+              set(oncreation(c),concat(sbo,[nothing],sbc))
+             )
+            ]4DS]);
+SetStatus(0);
+ExecLateInit;
 
 
 {Atom: Global}
@@ -29,27 +99,27 @@ SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], -10.5);
-SetAtt([yCenter2D], 3);
-SetAtt([xRadius2D], 4.5);
+SetAtt([xCenter2D], -3.5);
+SetAtt([yCenter2D], -10);
+SetAtt([xRadius2D], 8.5);
 SetAtt([yRadius2D], 4);
 SetAtt([xCenter3D], 5);
 SetAtt([yCenter3D], 3.5);
 SetAtt([zCenter3D], 0.5);
 SetAtt([Radius3D], 4.74341649025257);
 SetAtt([ShowName], 0);
-SetAtomSettings([], 8421504, 25650);
+SetAtomSettings([], 8421504, 24626);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\Temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\Temp\ptsd\composition_containers\global\Global.cmp.]);
+Set(DdbRec, [>atmname:c:\temp\ptsd\composition_containers\global\global.atm.>cmpname:c:\temp\ptsd\composition_containers\global\global.cmp.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
-SetLoadAtomID(1);
-SetSize(11, 10, 10);
+SetLoadAtomID(2);
+SetSize(19, 10, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -96,9 +166,9 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Initialize.ico]));
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 255);
-SetLoadAtomID(2);
+SetLoadAtomID(3);
 SetLoc(1, 1, 0);
-SetSize(5, 2, 1);
+SetSize(8, 2, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -112,81 +182,32 @@ sets;
 AtomByName([Function Editor], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Function Editor'. Inheriting from BaseClass.]));
 CreateAtom(a, Up(s), [Function Editor43], 1, false);
-CreateAttributes(3);
-SetAttributeName(r(1), [search_Att], a);
+CreateAttributes(8);
+SetAttributeName(r(1), [getExitTime_Att], a);
 SetAttributeName(r(2), [indexPOI_Att], a);
 SetAttributeName(r(3), [initilize_Att], a);
-SetAttribute(r(1), [search_Att], vbVariant, [4DS[{c is the atom calling the function}
-{i is the guest}
-
-Do(
-  EnterDebugger(),
-  
-  {Cleanup previous data}
-  If(AtomDataContainer([visited], c) > 0, AtomDataContainerDelete([visited], c)),
-  IF(AtomDataContainer([queue], c) > 0, AtomDataContainerDelete([queue], c)),
-  
-  Var([target], vbValue, Label([nextAttraction], First(c))),
-  Assert(target <= 0),
-  Trace([Target ID: ], target),
-  {Find the atom ref for the given target or stop if the target is not defined}
-  Var([pois], vbValue, AtomDataContainer([pois], Model)),
-  Var([targetRef], vbAtom),
-  If(Not(HashMapTryGetValue(pois, target, targetRef)), Do(
-    Trace([Error while routing guest! Target = '], target, [' is not a valid POI. Is the id of the POI set correctly and was the POI index successful?]),
-    Stop(),
-    Return()
-  )),
-  
-  {breath search}
-  Var([visitedRef], vbValue, HashMapCreate(c, [visited], vbAtom, vbValue)),
-  Var([queueRef], vbValue, VectorCreate(c, [queue], vbAtom)),
-  Var([node], vbAtom),
-  Var([child], vbAtom),
-  Var([channel], vbValue, -1),
-  
-  VectorAdd(queueRef, c),
-  HashMapAdd(visitedRef, c, -1),
-  
-  While(VectorSize(queueRef) <> 0, Do(
-    node := VectorItem(queueRef, 0),
-    VectorDelete(queueRef, 0),
-    
-    If(Up(node) = targetRef, Do(
-      channel := HashMapItem(visitedRef, node),
-      Trace([Found target, use channel ], channel),
-      Break
-    )),
-    
-    Repeat(NrOC(node), Do(
-      If(Not(OcConnected(Count, node)), Continue),
-      child := Out(Count, node),
-      
-      {Make sure pathfinding is only done through conveyors}
-      if(AttExists([isConveyor]) = 0, child, do(
-        Msg(Concat([No path to the target: ], String(target))),
-        Stop,
-        Return
-      )),
-            
-      If(HashMapContainsKey(visitedRef, child), Continue),
-      VectorAdd(queueRef, child),
-      
-      channel := HashMapItem(visitedRef, node),
-      If(channel = -1, 
-        HashMapAdd(visitedRef, child, Count),
-        HashMapAdd(visitedRef, child, channel)
-      )  
-    ))
-  )),
-  {Cleanup}
-  HashMapDestroy(visitedRef),
-  VectorDestroy(queueRef),
-  
-  If(channel < 0, 
-    Trace([Found no valid route to target ], Name(targetRef), [ (internal id: ], targetRef, [ id: ], target, [)])
-  ),
-  Return(channel)
+SetAttributeName(r(4), [getHeight_Att], a);
+SetAttributeName(r(5), [connectSchedule_Att], a);
+SetAttributeName(r(6), [getAge_Att], a);
+SetAttributeName(r(7), [getAttractions_Att], a);
+SetAttributeName(r(8), [setEntryLabels2_Att], a);
+SetAttribute(r(1), [getExitTime_Att], vbVariant, [4DS[Round(
+  Time - Mod(Time, hr(24)) +
+  hr(
+    if(
+      CompareText(schedule, [Normal]),
+      18 - Abs(Normal(0, 2)),
+      if(
+        CompareText(schedule, [LongHour]),
+        19 - Abs(Normal(0, 2)),
+        if(
+          CompareText(schedule, [Winter]),
+          20 - Abs(Normal(0, 2)),
+          0
+        )
+      )
+    )
+  )
 )
 ]4DS], a, [public], [], false);
 SetAttribute(r(2), [indexPOI_Att], vbVariant, [4DS[Do(
@@ -217,7 +238,112 @@ SetAttribute(r(2), [indexPOI_Att], vbVariant, [4DS[Do(
 ]4DS], a, [public], [], false);
 SetAttribute(r(3), [initilize_Att], vbVariant, [4DS[Do(
   ReadTableFromFile(Model, [C:\Temp\ptsd\data\ptsd.csv], [;]),
-  indexPOI
+  indexPOI,
+  dim([schedule], vbString, [LongHour]),
+  connectSchedule
+)]4DS], a, [public], [], false);
+SetAttribute(r(4), [getHeight_Att], vbVariant, [4DS[do(
+  var([ageParam], vbValue, p(1)),
+  var([row], vbValue),
+  var([meanHeight], vbValue),
+
+  if(ageParam <= 18,
+    row := ageParam + 2,
+    if(ageParam <= 29,
+      row := 21,
+      if(ageParam <= 39,
+        row := 22,
+        if(ageParam <= 49,
+          row := 23,
+          if(ageParam <= 59,
+            row := 24,
+            if(ageParam <= 69,
+              row := 25,
+              row := 26
+            )
+          )
+        )
+      )
+    )
+  ),
+
+  meanHeight := ExcelActiveX_Read(row, 2),
+
+  Return(Round(Normal(meanHeight, 3)))
+)]4DS], a, [public], [], false);
+SetAttribute(r(5), [connectSchedule_Att], vbVariant, [4DS[do(
+  if(
+    CompareText(Label([Schedule], Model), [Normal]),
+
+    Connect(
+      1,
+      AtomByName([NormalParkOpenSchedule], Model),
+      1,
+      AtomByName([Availability Control10], Model)
+    ),
+
+    if(
+      CompareText(Label([Schedule], Model), [LongHour]),
+
+      Connect(
+        1,
+        AtomByName([LongHourParkOpenSchedule], Model),
+        1,
+        AtomByName([Availability Control10], Model)
+      ),
+
+      if(
+        CompareText(Label([Schedule], Model), [Winter]),
+
+        Connect(
+          1,
+          AtomByName([WinterParkOpenSchedule], Model),
+          1,
+          AtomByName([Availability Control10], Model)
+        )
+      )
+    )
+  )
+)
+]4DS], a, [public], [], false);
+SetAttribute(r(6), [getAge_Att], vbVariant, [4DS[Do(
+  EnterDebugger,  
+
+  var([ageParam], vbValue, age2),
+
+  If(ageParam = 25,
+    ageParam := DUniform(19,29)
+  ),
+
+  If(ageParam = 35,
+    ageParam := DUniform(30,39)
+  ),
+
+  If(ageParam = 45,
+    ageParam := DUniform(40,49)
+  ),
+
+  If(ageParam = 55,
+    ageParam := DUniform(50,59)
+  ),
+
+  If(ageParam = 65,
+    ageParam := DUniform(60,69)
+  ),
+
+  If(ageParam = 75,
+    ageParam := DUniform(70,79)
+  ),
+
+  Return(ageParam)
+)]4DS], a, [public], [], false);
+SetAttribute(r(7), [getAttractions_Att], vbVariant, 0, a, [public], [], false);
+SetAttribute(r(8), [setEntryLabels2_Att], vbVariant, [4DS[Do(
+  SetLabel([hasFastPass], fastPass, i),
+  SetLabel([entryTime], Time, i),
+  SetLabel([existTime], getExitTime, i),
+  SetLabel([age], getAge, i),
+  SetLabel([height], getHeight(Label([age], i)), i)
 )]4DS], a, [public], [], false);
 SetAtomSettings([], 33023, 1192);
 DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
@@ -246,107 +372,173 @@ DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
 )
 
 ]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([search], [Various], 0, 0, [4DS[{c is the atom calling the function}
-{i is the guest}
-
-Do(
-  EnterDebugger(),
-  
-  {Cleanup previous data}
-  If(AtomDataContainer([visited], c) > 0, AtomDataContainerDelete([visited], c)),
-  IF(AtomDataContainer([queue], c) > 0, AtomDataContainerDelete([queue], c)),
-  
-  Var([target], vbValue, Label([nextAttraction], First(c))),
-  Assert(target <= 0),
-  Trace([Target ID: ], target),
-  {Find the atom ref for the given target or stop if the target is not defined}
-  Var([pois], vbValue, AtomDataContainer([pois], Model)),
-  Var([targetRef], vbAtom),
-  If(Not(HashMapTryGetValue(pois, target, targetRef)), Do(
-    Trace([Error while routing guest! Target = '], target, [' is not a valid POI. Is the id of the POI set correctly and was the POI index successful?]),
-    Stop(),
-    Return()
-  )),
-  
-  {breath search}
-  Var([visitedRef], vbValue, HashMapCreate(c, [visited], vbAtom, vbValue)),
-  Var([queueRef], vbValue, VectorCreate(c, [queue], vbAtom)),
-  Var([node], vbAtom),
-  Var([child], vbAtom),
-  Var([channel], vbValue, -1),
-  
-  VectorAdd(queueRef, c),
-  HashMapAdd(visitedRef, c, -1),
-  
-  While(VectorSize(queueRef) <> 0, Do(
-    node := VectorItem(queueRef, 0),
-    VectorDelete(queueRef, 0),
-    
-    If(Up(node) = targetRef, Do(
-      channel := HashMapItem(visitedRef, node),
-      Trace([Found target, use channel ], channel),
-      Break
-    )),
-    
-    Repeat(NrOC(node), Do(
-      If(Not(OcConnected(Count, node)), Continue),
-      child := Out(Count, node),
-      
-      {Make sure pathfinding is only done through conveyors}
-      if(AttExists([isConveyor]) = 0, child, do(
-        Msg(Concat([No path to the target: ], String(target))),
-        Stop,
-        Return
-      )),
-            
-      If(HashMapContainsKey(visitedRef, child), Continue),
-      VectorAdd(queueRef, child),
-      
-      channel := HashMapItem(visitedRef, node),
-      If(channel = -1, 
-        HashMapAdd(visitedRef, child, Count),
-        HashMapAdd(visitedRef, child, channel)
-      )  
-    ))
-  )),
-  {Cleanup}
-  HashMapDestroy(visitedRef),
-  VectorDestroy(queueRef),
-  
-  If(channel < 0, 
-    Trace([Found no valid route to target ], Name(targetRef), [ (internal id: ], targetRef, [ id: ], target, [)])
-  ),
-  Return(channel)
-)
-]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([initilize], [Various], 0, 0, [4DS[Do(
   ReadTableFromFile(Model, [C:\Temp\ptsd\data\ptsd.csv], [;]),
-  indexPOI
-)]4DS], [], [], [public], [Function Editor43], a, 0, vbVariant, []);
+  indexPOI,
+  dim([schedule], vbString, [LongHour]),
+  connectSchedule
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([getHeight], [Various], 1, 1, [4DS[do(
+  var([ageParam], vbValue, p(1)),
+  var([row], vbValue),
+  var([meanHeight], vbValue),
+
+  if(ageParam <= 18,
+    row := ageParam + 2,
+    if(ageParam <= 29,
+      row := 21,
+      if(ageParam <= 39,
+        row := 22,
+        if(ageParam <= 49,
+          row := 23,
+          if(ageParam <= 59,
+            row := 24,
+            if(ageParam <= 69,
+              row := 25,
+              row := 26
+            )
+          )
+        )
+      )
+    )
+  ),
+
+  meanHeight := ExcelActiveX_Read(row, 2),
+
+  Return(Round(Normal(meanHeight, 3)))
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([connectSchedule], [Various], 0, 0, [4DS[do(
+  if(
+    CompareText(Label([Schedule], Model), [Normal]),
+
+    Connect(
+      1,
+      AtomByName([NormalParkOpenSchedule], Model),
+      1,
+      AtomByName([Availability Control10], Model)
+    ),
+
+    if(
+      CompareText(Label([Schedule], Model), [LongHour]),
+
+      Connect(
+        1,
+        AtomByName([LongHourParkOpenSchedule], Model),
+        1,
+        AtomByName([Availability Control10], Model)
+      ),
+
+      if(
+        CompareText(Label([Schedule], Model), [Winter]),
+
+        Connect(
+          1,
+          AtomByName([WinterParkOpenSchedule], Model),
+          1,
+          AtomByName([Availability Control10], Model)
+        )
+      )
+    )
+  )
+)
+]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([getAttractions], [Various], 0, 0, [], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([getAge], [Various], 0, 0, [4DS[Do(
+  EnterDebugger,  
+
+  var([ageParam], vbValue, age2),
+
+  If(ageParam = 25,
+    ageParam := DUniform(19,29)
+  ),
+
+  If(ageParam = 35,
+    ageParam := DUniform(30,39)
+  ),
+
+  If(ageParam = 45,
+    ageParam := DUniform(40,49)
+  ),
+
+  If(ageParam = 55,
+    ageParam := DUniform(50,59)
+  ),
+
+  If(ageParam = 65,
+    ageParam := DUniform(60,69)
+  ),
+
+  If(ageParam = 75,
+    ageParam := DUniform(70,79)
+  ),
+
+  Return(ageParam)
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([setEntryLabels2], [Various], 0, 0, [4DS[Do(
+  SetLabel([hasFastPass], fastPass, i),
+  SetLabel([entryTime], Time, i),
+  SetLabel([existTime], getExitTime, i),
+  SetLabel([age], getAge, i),
+  SetLabel([height], getHeight(Label([age], i)), i)
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([getExitTime], [Various], 0, 0, [4DS[Round(
+  Time - Mod(Time, hr(24)) +
+  hr(
+    if(
+      CompareText(schedule, [Normal]),
+      18 - Abs(Normal(0, 2)),
+      if(
+        CompareText(schedule, [LongHour]),
+        19 - Abs(Normal(0, 2)),
+        if(
+          CompareText(schedule, [Winter]),
+          20 - Abs(Normal(0, 2)),
+          0
+        )
+      )
+    )
+  )
+)
+]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\FunctionEditor.ico]));
-SetLoadAtomID(3);
+SetLoadAtomID(4);
 SetLoc(1, 4, 0);
 SetSize(8, 2, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(3, 8);
+SetTable(8, 8);
 CreateTableColumn(0, 64, [``
 1
 3
 3
+4
+5
+6
+7
+8
 ]);
 CreateTableColumn(1, 64, [`Function`
-`search`
+`getExitTime`
 `indexPOI`
 `initilize`
+`getHeight`
+`connectSchedule`
+`getAge`
+`getAttractions`
+`setEntryLabels2`
 ]);
 CreateTableColumn(2, 64, [`Category`
+`Various`
+`Various`
+`Various`
+`Various`
+`Various`
 `Various`
 `Various`
 `Various`
@@ -355,8 +547,18 @@ CreateTableColumn(3, 64, [`Minpar`
 0
 0
 0
+1
+0
+0
+0
+0
 ]);
 CreateTableColumn(4, 64, [`Maxpar`
+0
+0
+0
+1
+0
 0
 0
 0
@@ -365,21 +567,41 @@ CreateTableColumn(5, 64, [`Helptext`
 0
 0
 0
+0
+0
+0
+0
+0
 ]);
 CreateTableColumn(6, 64, [`Example`
 0
 0
 0
+0
+0
+0
+0
+0
 ]);
 CreateTableColumn(7, 64, [`Include`
-1
+0
 1
 0
+0
+0
+0
+0
+1
 ]);
 CreateTableColumn(8, 64, [`Sort order`
 1
 2
 3
+4
+5
+6
+7
+8
 ]);
 SetStatus(0);
 ExecLateInit;
@@ -407,9 +629,9 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
-SetLoadAtomID(4);
-SetLoc(1, 7, 0);
-SetSize(9, 2, 1);
+SetLoadAtomID(5);
+SetLoc(10, 7, 0);
+SetSize(8, 2, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -431,5 +653,283 @@ CreateTableColumn(2, 64, [`Value`
 ]);
 SetStatus(0);
 ExecLateInit;
+
+
+{Atom: age2}
+
+sets;
+AtomByName([Empirical Distribution], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Empirical Distribution'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [age2], 1, false);
+Set(OnInit, [4DS[Dim([refDist_age2], vbAtom, c)]4DS]);
+SetTextAtt([empiricalname], [age2]);
+SetAtt([nrrecords], 25);
+SetAtt([randomnr], 12.4551828627922);
+SetAtt([flag], 1);
+SetAtt([value], 8);
+SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
+SetTextAtt([oldname], [age23]);
+SetAtt([textflag], 0);
+SetAtomSettings([], 8421504, 160);
+DefineFunction([age2], [Stochastic], 0, 0, [4DS[
+do(
+  var([atmDistribution], vbAtom, refDist_age2), 
+
+  Att([randomnr],atmDistribution) := random(100),
+  Att([flag], atmDistribution) := 0,
+  Repeat(
+    nRows(atmDistribution),
+    if(
+      att([flag], atmDistribution) = 0,
+      if(
+        att([randomnr], atmDistribution) < cell(count,1, atmDistribution),
+        do(
+          setatt([flag],1, atmDistribution),
+          if(
+           att([textflag], atmDistribution),
+           settextAtt([value], cell(count,2, atmDistribution)),
+           setatt([value], cell(count,2, atmDistribution))
+          )
+        )
+      )
+    )
+  ),
+  if(
+    att([textflag], atmDistribution),  
+    TextAtt([value], atmDistribution),
+    att([value], atmDistribution)
+  )
+)]4DS], [Returns a random sample from the empirical distribution table], [age2], [public], [age2], a, 0, vbVariant, []);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
+SetLoadAtomID(6);
+SetLoc(10, 4, 0);
+SetSize(8, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(25, 2);
+CreateTableColumn(0, 64, [``
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+]);
+CreateTableColumn(1, 79, [`Cumulative%`
+1
+2
+3
+4
+5
+6
+8
+11
+13
+16
+18
+21
+23
+26
+29
+31
+34
+37
+39
+62
+78
+90
+96
+99
+100
+]);
+CreateTableColumn(2, 64, [`Value`
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+25
+35
+45
+55
+65
+75
+]);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: fastPass}
+
+sets;
+AtomByName([Empirical Distribution], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Empirical Distribution'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [fastPass], 1, false);
+Set(OnInit, [4DS[Dim([refDist_fastPass], vbAtom, c)]4DS]);
+SetTextAtt([empiricalname], [fastPass]);
+SetAtt([nrrecords], 2);
+SetAtt([randomnr], 45.0601460543886);
+SetAtt([flag], 1);
+SetAtt([value], 2);
+SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
+SetTextAtt([oldname], [fastPass2]);
+SetAtt([textflag], 0);
+SetAtomSettings([], 8421504, 160);
+DefineFunction([fastPass], [Stochastic], 0, 0, [4DS[
+do(
+  var([atmDistribution], vbAtom, refDist_fastPass), 
+
+  Att([randomnr],atmDistribution) := random(100),
+  Att([flag], atmDistribution) := 0,
+  Repeat(
+    nRows(atmDistribution),
+    if(
+      att([flag], atmDistribution) = 0,
+      if(
+        att([randomnr], atmDistribution) < cell(count,1, atmDistribution),
+        do(
+          setatt([flag],1, atmDistribution),
+          if(
+           att([textflag], atmDistribution),
+           settextAtt([value], cell(count,2, atmDistribution)),
+           setatt([value], cell(count,2, atmDistribution))
+          )
+        )
+      )
+    )
+  ),
+  if(
+    att([textflag], atmDistribution),  
+    TextAtt([value], atmDistribution),
+    att([value], atmDistribution)
+  )
+)]4DS], [Returns a random sample from the empirical distribution table], [fastPass], [public], [fastPass], a, 0, vbVariant, []);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
+SetLoadAtomID(7);
+SetLoc(10, 1, 0);
+SetSize(8, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(2, 2);
+CreateTableColumn(0, 64, [``
+1
+2
+]);
+CreateTableColumn(1, 64, [`Cumulative%`
+5
+100
+]);
+CreateTableColumn(2, 64, [`Value`
+1
+2
+]);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: ExcelActiveHeights}
+
+sets;
+AtomByName([ExcelActiveX], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'ExcelActiveX'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [ExcelActiveHeights], 1, false);
+Set(OnInit, [4DS[LateInit([ExcelActiveX_Init(c)])]4DS]);
+SetTextAtt([FileName], [ptsd\ptsd.xlsx]);
+SetTextAtt([SheetName], [Heights]);
+SetAtt([Visible], 0);
+SetAtt([NoTables], 0);
+SetAtt([RefWorkbook], 1070380600);
+SetTextAtt([RefWorkbookName], [oleExcelActiveX_Workbook1]);
+SetAtt([UseAtomName], 1);
+SetAtt([AliasesCreated], 0);
+SetAtt([CreateAlias], 0);
+SetTextAtt([AliasName], [ExcelActiveHeights]);
+SetAtomSettings([], 16744448, 1184);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Excel2k7.ico]));
+Set(DdbRec, [>t-excel:1.]);
+SetLoadAtomID(8);
+SetLoc(1, 7, 0);
+SetSize(8, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(0, 11);
+CreateTableColumn(0, 64, [0
+]);
+CreateTableColumn(1, 88, [`Atom Name`
+]);
+CreateTableColumn(2, 64, [`Sheet Name`
+]);
+CreateTableColumn(3, 64, [`# Rows Table`
+]);
+CreateTableColumn(4, 64, [`# Cols Table`
+]);
+CreateTableColumn(5, 64, [`Start Row Excel`
+]);
+CreateTableColumn(6, 64, [`Start Col Excel`
+]);
+CreateTableColumn(7, 64, [`# Rows from/to Excel`
+]);
+CreateTableColumn(8, 64, [`# Cols from/to Excel`
+]);
+CreateTableColumn(9, 64, [`Time to Read/Write`
+]);
+CreateTableColumn(10, 64, [`Read(1))/Write(2)`
+]);
+CreateTableColumn(11, 64, [`OnReset(1)/OnTime(2)/OnUser(3)`
+]);
+SetStatus(0);
+ExecLateInit;
+Up;
 Up;
 ExecOnCreationOnLoad;
