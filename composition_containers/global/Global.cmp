@@ -1,0 +1,384 @@
+﻿{10.5.0.3374}
+
+
+{Load required atoms}
+
+StoreActiveAtom;
+LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
+LoadAtomFromFile([Function Editor], pDir([Atoms\TOOLS\Function Editor.atm]));
+LoadAtomFromFile([Initialize], pDir([Atoms\TOOLS\Initialize.atm]));
+RestoreActiveAtom;
+
+
+{Preregister 4DS}
+
+PreregisterFunction([search], 0, 0);
+PreregisterFunction([indexPOI], 0, 0);
+PreregisterFunction([nextAttraction], 0, 0);
+
+
+{Atom: Global}
+
+sets;
+AtomByName([Composition Container], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Global], 1, false);
+SetAtt([openatscale], 17);
+SetAtt([displaycontents], 1);
+SetAtt([nrvariables], 0);
+SetAtt([CheckContentInView], 2);
+SetAtt([xCenter2D], -40);
+SetAtt([yCenter2D], 18);
+SetAtt([xRadius2D], 4);
+SetAtt([yRadius2D], 3);
+SetAtt([xCenter3D], 5);
+SetAtt([yCenter3D], 4);
+SetAtt([zCenter3D], 0.5);
+SetAtt([Radius3D], 5.02493781056044);
+SetAtt([ShowName], 0);
+SetAtomSettings([], 8421504, 25650);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
+Set(DdbRec, [>atmname:C:\Temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\Temp\ptsd\composition_containers\global\Global.cmp.]);
+SetChannels(1, 0);
+SetChannelRanges(1, 255, 0, 0);
+SetLoadAtomID(1);
+SetLoc(-45, 14, 0);
+SetSize(10, 8, 10);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(1, 2);
+CreateTableColumn(0, 25, [``
+1
+]);
+CreateTableColumn(1, 100, [`VariableName`
+]);
+CreateTableColumn(2, 150, [`Expression`
+]);
+Set(OnCreation, [4DS[
+             do(
+              if(
+               not(comparetext(name(c),[])),
+               if(fileexists([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
+                execfile([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\Temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               )
+              ),
+              set(oncreation(c),concat(sbo,[nothing],sbc))
+             )
+            ]4DS]);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Initialize}
+
+sets;
+AtomByName([Initialize], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Initialize'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Initialize], 1, false);
+Set(OnInit, [4DS[LateInit([Initialize_OnInit(c)])]4DS]);
+SetExprAtt([code to execute], [indexPOI()]);
+SetAtt([Check], 1);
+SetAtt([CheckOnInit], 0);
+SetAtomSettings([], 4194432, 184);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Initialize.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 255, 0, 255);
+SetLoadAtomID(2);
+SetLoc(1, 1, 0);
+SetSize(5, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Function Editor43}
+
+sets;
+AtomByName([Function Editor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Function Editor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Function Editor43], 1, false);
+CreateAttributes(3);
+SetAttributeName(r(1), [search_Att], a);
+SetAttributeName(r(2), [indexPOI_Att], a);
+SetAttributeName(r(3), [nextAttraction_Att], a);
+SetAttribute(r(1), [search_Att], vbVariant, [4DS[{c is the atom calling the function}
+{i is the guest}
+
+Do(
+  EnterDebugger(),
+  
+  {Cleanup previous data}
+  If(AtomDataContainer([visited], c) > 0, AtomDataContainerDelete([visited], c)),
+  IF(AtomDataContainer([queue], c) > 0, AtomDataContainerDelete([queue], c)),
+  
+  Var([target], vbValue, Label([nextAttraction], First(c))),
+  Assert(target <= 0),
+  Trace([Target ID: ], target),
+  {Find the atom ref for the given target or stop if the target is not defined}
+  Var([pois], vbValue, AtomDataContainer([pois], Model)),
+  Var([targetRef], vbAtom),
+  If(Not(HashMapTryGetValue(pois, target, targetRef)), Do(
+    Trace([Error while routing guest! Target = '], target, [' is not a valid POI. Is the id of the POI set correctly and was the POI index successful?]),
+    Stop(),
+    Return()
+  )),
+  
+  {breath search}
+  Var([visitedRef], vbValue, HashMapCreate(c, [visited], vbAtom, vbValue)),
+  Var([queueRef], vbValue, VectorCreate(c, [queue], vbAtom)),
+  Var([node], vbAtom),
+  Var([child], vbAtom),
+  Var([channel], vbValue, -1),
+  
+  VectorAdd(queueRef, c),
+  HashMapAdd(visitedRef, c, -1),
+  
+  While(VectorSize(queueRef) <> 0, Do(
+    node := VectorItem(queueRef, 0),
+    VectorDelete(queueRef, 0),
+    
+    If(Up(node) = targetRef, Do(
+      channel := HashMapItem(visitedRef, node),
+      Trace([Found target, use channel ], channel),
+      Break
+    )),
+    
+    Repeat(NrOC(node), Do(
+      If(Not(OcConnected(Count, node)), Continue),
+      child := Out(Count, node),
+      If(HashMapContainsKey(visitedRef, child), Continue),
+      VectorAdd(queueRef, child),
+      
+      channel := HashMapItem(visitedRef, node),
+      If(channel = -1, 
+        HashMapAdd(visitedRef, child, Count),
+        HashMapAdd(visitedRef, child, channel)
+      )  
+    ))
+  )),
+  {Cleanup}
+  HashMapDestroy(visitedRef),
+  VectorDestroy(queueRef),
+  
+  If(channel < 0, 
+    Trace([Found no valid route to target ], Name(targetRef), [ (internal id: ], targetRef, [ id: ], target, [)])
+  ),
+  Return(channel)
+)
+]4DS], a, [public], [], false);
+SetAttribute(r(2), [indexPOI_Att], vbVariant, [4DS[Do(
+  
+  {Store all point of interests in the root atom 'Model'}
+  AtomDataContainerDelete([pois], Model),
+  Var([pois], vbValue, HashMapCreate(Model, [pois], vbValue, vbAtom)),
+  
+  Var([temp], vbValue),
+  ForAtomTreeUnder(Model,
+    Do(
+      temp := Value(TableFindString(a, [id], 1, 2)),
+      If(temp > 0, Do(
+        {Test if id is defined multiple times and then throw an error}
+        If(HashMapContainsKey(pois, temp), Do(
+          Trace([Id '], temp, [' in container '], Name(a), [ (], a, [)' >]),
+          Trace([  already exists in container '], Name(HashMapItem(pois, temp)), [']),
+          Msg(Concat([Error while indexing POIs: Id '], String(temp), [' is defined multiple times!])),
+          Return()
+        )), 
+        HashMapAdd(pois, temp, a)
+      ))
+    )
+  ),
+  Trace([Index successful: Found ], HashMapSize(pois), [ POIs])
+)
+
+]4DS], a, [public], [], false);
+SetAttribute(r(3), [nextAttraction_Att], vbVariant, [4DS[Do(
+  Var([dest], vbValue, AttractionRating),
+  SetLabel([nextAttraction], dest, i),
+  If(dest = 7, Color(i) := ColorBlack),
+  If(dest = 1, Color(i) := ColorRed),
+  If(dest = 2, Color(i) := ColorBlue),
+  If(dest = 3, Color(i) := ColorGreen),
+  If(dest = 4, Color(i) := ColorYellow),
+  If(dest = 5, Color(i) := ColorOrange),
+  If(dest = 6, Color(i) := ColorBrown)
+)]4DS], a, [public], [], false);
+SetAtomSettings([], 33023, 1192);
+DefineFunction([search], [Various], 0, 0, [4DS[{c is the atom calling the function}
+{i is the guest}
+
+Do(
+  EnterDebugger(),
+  
+  {Cleanup previous data}
+  If(AtomDataContainer([visited], c) > 0, AtomDataContainerDelete([visited], c)),
+  IF(AtomDataContainer([queue], c) > 0, AtomDataContainerDelete([queue], c)),
+  
+  Var([target], vbValue, Label([nextAttraction], First(c))),
+  Assert(target <= 0),
+  Trace([Target ID: ], target),
+  {Find the atom ref for the given target or stop if the target is not defined}
+  Var([pois], vbValue, AtomDataContainer([pois], Model)),
+  Var([targetRef], vbAtom),
+  If(Not(HashMapTryGetValue(pois, target, targetRef)), Do(
+    Trace([Error while routing guest! Target = '], target, [' is not a valid POI. Is the id of the POI set correctly and was the POI index successful?]),
+    Stop(),
+    Return()
+  )),
+  
+  {breath search}
+  Var([visitedRef], vbValue, HashMapCreate(c, [visited], vbAtom, vbValue)),
+  Var([queueRef], vbValue, VectorCreate(c, [queue], vbAtom)),
+  Var([node], vbAtom),
+  Var([child], vbAtom),
+  Var([channel], vbValue, -1),
+  
+  VectorAdd(queueRef, c),
+  HashMapAdd(visitedRef, c, -1),
+  
+  While(VectorSize(queueRef) <> 0, Do(
+    node := VectorItem(queueRef, 0),
+    VectorDelete(queueRef, 0),
+    
+    If(Up(node) = targetRef, Do(
+      channel := HashMapItem(visitedRef, node),
+      Trace([Found target, use channel ], channel),
+      Break
+    )),
+    
+    Repeat(NrOC(node), Do(
+      If(Not(OcConnected(Count, node)), Continue),
+      child := Out(Count, node),
+      If(HashMapContainsKey(visitedRef, child), Continue),
+      VectorAdd(queueRef, child),
+      
+      channel := HashMapItem(visitedRef, node),
+      If(channel = -1, 
+        HashMapAdd(visitedRef, child, Count),
+        HashMapAdd(visitedRef, child, channel)
+      )  
+    ))
+  )),
+  {Cleanup}
+  HashMapDestroy(visitedRef),
+  VectorDestroy(queueRef),
+  
+  If(channel < 0, 
+    Trace([Found no valid route to target ], Name(targetRef), [ (internal id: ], targetRef, [ id: ], target, [)])
+  ),
+  Return(channel)
+)
+]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
+  
+  {Store all point of interests in the root atom 'Model'}
+  AtomDataContainerDelete([pois], Model),
+  Var([pois], vbValue, HashMapCreate(Model, [pois], vbValue, vbAtom)),
+  
+  Var([temp], vbValue),
+  ForAtomTreeUnder(Model,
+    Do(
+      temp := Value(TableFindString(a, [id], 1, 2)),
+      If(temp > 0, Do(
+        {Test if id is defined multiple times and then throw an error}
+        If(HashMapContainsKey(pois, temp), Do(
+          Trace([Id '], temp, [' in container '], Name(a), [ (], a, [)' >]),
+          Trace([  already exists in container '], Name(HashMapItem(pois, temp)), [']),
+          Msg(Concat([Error while indexing POIs: Id '], String(temp), [' is defined multiple times!])),
+          Return()
+        )), 
+        HashMapAdd(pois, temp, a)
+      ))
+    )
+  ),
+  Trace([Index successful: Found ], HashMapSize(pois), [ POIs])
+)
+
+]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([nextAttraction], [Various], 0, 0, [4DS[Do(
+  Var([dest], vbValue, AttractionRating),
+  SetLabel([nextAttraction], dest, i),
+  If(dest = 7, Color(i) := ColorBlack),
+  If(dest = 1, Color(i) := ColorRed),
+  If(dest = 2, Color(i) := ColorBlue),
+  If(dest = 3, Color(i) := ColorGreen),
+  If(dest = 4, Color(i) := ColorYellow),
+  If(dest = 5, Color(i) := ColorOrange),
+  If(dest = 6, Color(i) := ColorBrown)
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\FunctionEditor.ico]));
+SetLoadAtomID(3);
+SetLoc(1, 5, 0);
+SetSize(8, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(3, 8);
+CreateTableColumn(0, 64, [``
+1
+3
+4
+]);
+CreateTableColumn(1, 64, [`Function`
+`search`
+`indexPOI`
+`nextAttraction`
+]);
+CreateTableColumn(2, 64, [`Category`
+`Various`
+`Various`
+`Various`
+]);
+CreateTableColumn(3, 64, [`Minpar`
+0
+0
+0
+]);
+CreateTableColumn(4, 64, [`Maxpar`
+0
+0
+0
+]);
+CreateTableColumn(5, 64, [`Helptext`
+0
+0
+0
+]);
+CreateTableColumn(6, 64, [`Example`
+0
+0
+0
+]);
+CreateTableColumn(7, 64, [`Include`
+1
+1
+1
+]);
+CreateTableColumn(8, 64, [`Sort order`
+1
+2
+3
+]);
+SetStatus(0);
+ExecLateInit;
+Up;
+ExecOnCreationOnLoad;
