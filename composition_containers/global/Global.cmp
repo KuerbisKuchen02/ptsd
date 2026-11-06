@@ -12,9 +12,9 @@ RestoreActiveAtom;
 
 {Preregister 4DS}
 
-PreregisterFunction([search], 0, 0);
-PreregisterFunction([indexPOI], 0, 0);
 PreregisterFunction([nextAttraction], 0, 0);
+PreregisterFunction([indexPOI], 0, 0);
+PreregisterFunction([search], 0, 0);
 
 
 {Atom: Global}
@@ -27,14 +27,14 @@ SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], -40);
-SetAtt([yCenter2D], 18);
+SetAtt([xCenter2D], -17);
+SetAtt([yCenter2D], 35.5);
 SetAtt([xRadius2D], 4);
-SetAtt([yRadius2D], 3);
+SetAtt([yRadius2D], 2.5);
 SetAtt([xCenter3D], 5);
-SetAtt([yCenter3D], 4);
+SetAtt([yCenter3D], 3.5);
 SetAtt([zCenter3D], 0.5);
-SetAtt([Radius3D], 5.02493781056044);
+SetAtt([Radius3D], 4.74341649025257);
 SetAtt([ShowName], 0);
 SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
@@ -43,12 +43,11 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\Temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\Temp\ptsd\composition_containers\global\Global.cmp.]);
+Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\temp\ptsd\composition_containers\global\Global.cmp.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetLoc(-45, 14, 0);
-SetSize(10, 8, 10);
+SetSize(10, 7, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -64,9 +63,9 @@ Set(OnCreation, [4DS[
              do(
               if(
                not(comparetext(name(c),[])),
-               if(fileexists([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
-                execfile([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
-                msg(concat([Cannot locate:],lf,cr,[C:\Temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               if(fileexists([C:\temp\ptsd\composition_containers\global\Global.cmp]),
+                execfile([C:\temp\ptsd\composition_containers\global\Global.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
                )
               ),
               set(oncreation(c),concat(sbo,[nothing],sbc))
@@ -160,6 +159,14 @@ Do(
     Repeat(NrOC(node), Do(
       If(Not(OcConnected(Count, node)), Continue),
       child := Out(Count, node),
+      
+      {Make sure pathfinding is only done through conveyors}
+      if(AttExists([isConveyor]) = 0, child, do(
+        Msg(Concat([No path to the target: ], String(target))),
+        Stop,
+        Return
+      )),
+            
       If(HashMapContainsKey(visitedRef, child), Continue),
       VectorAdd(queueRef, child),
       
@@ -218,6 +225,43 @@ SetAttribute(r(3), [nextAttraction_Att], vbVariant, [4DS[Do(
   If(dest = 6, Color(i) := ColorBrown)
 )]4DS], a, [public], [], false);
 SetAtomSettings([], 33023, 1192);
+DefineFunction([nextAttraction], [Various], 0, 0, [4DS[Do(
+  Var([dest], vbValue, AttractionRating),
+  SetLabel([nextAttraction], dest, i),
+  If(dest = 7, Color(i) := ColorBlack),
+  If(dest = 1, Color(i) := ColorRed),
+  If(dest = 2, Color(i) := ColorBlue),
+  If(dest = 3, Color(i) := ColorGreen),
+  If(dest = 4, Color(i) := ColorYellow),
+  If(dest = 5, Color(i) := ColorOrange),
+  If(dest = 6, Color(i) := ColorBrown)
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
+  
+  {Store all point of interests in the root atom 'Model'}
+  AtomDataContainerDelete([pois], Model),
+  Var([pois], vbValue, HashMapCreate(Model, [pois], vbValue, vbAtom)),
+  
+  Var([temp], vbValue),
+  ForAtomTreeUnder(Model,
+    Do(
+      temp := Value(TableFindString(a, [id], 1, 2)),
+      If(temp > 0, Do(
+        {Test if id is defined multiple times and then throw an error}
+        If(HashMapContainsKey(pois, temp), Do(
+          Trace([Id '], temp, [' in container '], Name(a), [ (], a, [)' >]),
+          Trace([  already exists in container '], Name(HashMapItem(pois, temp)), [']),
+          Msg(Concat([Error while indexing POIs: Id '], String(temp), [' is defined multiple times!])),
+          Return()
+        )), 
+        HashMapAdd(pois, temp, a)
+      ))
+    )
+  ),
+  Trace([Index successful: Found ], HashMapSize(pois), [ POIs])
+)
+
+]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([search], [Various], 0, 0, [4DS[{c is the atom calling the function}
 {i is the guest}
 
@@ -263,6 +307,14 @@ Do(
     Repeat(NrOC(node), Do(
       If(Not(OcConnected(Count, node)), Continue),
       child := Out(Count, node),
+      
+      {Make sure pathfinding is only done through conveyors}
+      if(AttExists([isConveyor]) = 0, child, do(
+        Msg(Concat([No path to the target: ], String(target))),
+        Stop,
+        Return
+      )),
+            
       If(HashMapContainsKey(visitedRef, child), Continue),
       VectorAdd(queueRef, child),
       
@@ -283,43 +335,6 @@ Do(
   Return(channel)
 )
 ]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
-  
-  {Store all point of interests in the root atom 'Model'}
-  AtomDataContainerDelete([pois], Model),
-  Var([pois], vbValue, HashMapCreate(Model, [pois], vbValue, vbAtom)),
-  
-  Var([temp], vbValue),
-  ForAtomTreeUnder(Model,
-    Do(
-      temp := Value(TableFindString(a, [id], 1, 2)),
-      If(temp > 0, Do(
-        {Test if id is defined multiple times and then throw an error}
-        If(HashMapContainsKey(pois, temp), Do(
-          Trace([Id '], temp, [' in container '], Name(a), [ (], a, [)' >]),
-          Trace([  already exists in container '], Name(HashMapItem(pois, temp)), [']),
-          Msg(Concat([Error while indexing POIs: Id '], String(temp), [' is defined multiple times!])),
-          Return()
-        )), 
-        HashMapAdd(pois, temp, a)
-      ))
-    )
-  ),
-  Trace([Index successful: Found ], HashMapSize(pois), [ POIs])
-)
-
-]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([nextAttraction], [Various], 0, 0, [4DS[Do(
-  Var([dest], vbValue, AttractionRating),
-  SetLabel([nextAttraction], dest, i),
-  If(dest = 7, Color(i) := ColorBlack),
-  If(dest = 1, Color(i) := ColorRed),
-  If(dest = 2, Color(i) := ColorBlue),
-  If(dest = 3, Color(i) := ColorGreen),
-  If(dest = 4, Color(i) := ColorYellow),
-  If(dest = 5, Color(i) := ColorOrange),
-  If(dest = 6, Color(i) := ColorBrown)
-)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
@@ -327,7 +342,7 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\FunctionEditor.ico]));
 SetLoadAtomID(3);
-SetLoc(1, 5, 0);
+SetLoc(1, 4, 0);
 SetSize(8, 2, 1);
 LockPosition(false);
 LockSize(false);
