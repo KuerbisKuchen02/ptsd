@@ -5,6 +5,7 @@
 
 StoreActiveAtom;
 LoadAtomFromFile([Product], pDir([Atoms\BASIC MODELING\Product.atm]));
+LoadAtomFromFile([Sink], pDir([Atoms\BASIC MODELING\Sink.atm]));
 LoadAtomFromFile([Source], pDir([Atoms\BASIC MODELING\Source.atm]));
 LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
 LoadAtomFromFile([Accumulating Conveyor], pDir([Atoms\TRANSPORT\CONVEYORS\ACCUMULATING\Accumulating Conveyor.atm]));
@@ -19,16 +20,16 @@ if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inhe
 CreateAtom(a, s, [Entrance], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
-SetAtt([nrvariables], 0);
+SetAtt([nrvariables], 1);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], 16.5);
-SetAtt([yCenter2D], 4.5);
-SetAtt([xRadius2D], 17.5);
-SetAtt([yRadius2D], 1.5);
+SetAtt([xCenter2D], 28);
+SetAtt([yCenter2D], 7.5);
+SetAtt([xRadius2D], 30);
+SetAtt([yRadius2D], 3.5);
 SetAtt([xCenter3D], 18.5);
-SetAtt([yCenter3D], 2.5);
+SetAtt([yCenter3D], 4.5);
 SetAtt([zCenter3D], 1);
-SetAtt([Radius3D], 17.5926120857592);
+SetAtt([Radius3D], 17.8745629317195);
 SetAtt([ShowName], 0);
 SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
@@ -41,7 +42,7 @@ Set(DdbRec, [>cmpname:C:\temp\ptsd\composition_containers\entrance\Entrance.cmp.
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetSize(37, 5, 10);
+SetSize(37, 9, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -50,8 +51,10 @@ CreateTableColumn(0, 25, [``
 1
 ]);
 CreateTableColumn(1, 100, [`VariableName`
+`id`
 ]);
 CreateTableColumn(2, 150, [`Expression`
+1
 ]);
 Set(OnCreation, [4DS[
              do(
@@ -195,10 +198,96 @@ LockSize(false);
 DisableIconRotation(false);
 SetStatus(13);
 ExecLateInit;
+
+
+{Atom: Sink3}
+
+sets;
+AtomByName([Sink], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Sink'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Sink3], 1, false);
+SetAtt([EntryTrigger], 0);
+SetAtt([Icon3D], 4);
+SetAtomSettings([], 7168771, 176);
+Set(Icon(a), 
+	RegisterIcon(pDir([Media\Images\Atoms\sink.bmp]), [sink]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([sink.wrl]), [sink.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([sink_Resized.wrl]), [sink_Resized.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Sink.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 255, 0, 0);
+SetLoadAtomID(5);
+SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
+SetLoc(4, 5, 0);
+SetSize(5, 3, 2);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Accumulating Conveyor13}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Accumulating Conveyor13], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 25);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 9);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(6);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(36, 7, 0);
+SetSize(25, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
 Up;
 
 {Saved Model3D settings.}
 
 ConnectLoadAtoms(1, 2, 1, 4, 0);
 ConnectLoadAtoms(0, 3, 1, 2, 0);
+ConnectLoadAtoms(1, 6, 1, 5, 0);
 ExecOnCreationOnLoad;

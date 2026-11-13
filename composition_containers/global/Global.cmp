@@ -405,6 +405,7 @@ SetAttribute(r(8), [setEntryLabels2_Att], vbVariant, [4DS[Do(
   SetLabel([exitTime], getExitTime, i),
   SetLabel([age], getAge, i),
   SetLabel([height], getHeight(Label([age], i)), i),
+  SetLabel([entranceId], Value(TableFindString(up(c), [id], 1, 2)), i),
   getAttractions
 )]4DS], a, [public], [], false);
 SetAttribute(r(9), [setTrainCapacities_Att], vbVariant, [4DS[Do(
@@ -909,6 +910,7 @@ DefineFunction([setEntryLabels2], [Various], 0, 0, [4DS[Do(
   SetLabel([exitTime], getExitTime, i),
   SetLabel([age], getAge, i),
   SetLabel([height], getHeight(Label([age], i)), i),
+  SetLabel([entranceId], Value(TableFindString(up(c), [id], 1, 2)), i),
   getAttractions
 )]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 Set(Icon(a), 
@@ -1102,7 +1104,7 @@ CreateAtom(a, Up(s), [fastPass], 1, false);
 Set(OnInit, [4DS[Dim([refDist_fastPass], vbAtom, c)]4DS]);
 SetTextAtt([empiricalname], [fastPass]);
 SetAtt([nrrecords], 2);
-SetAtt([randomnr], 45.1623615263722);
+SetAtt([randomnr], 93.1105568690417);
 SetAtt([flag], 1);
 SetAtt([value], 2);
 SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
@@ -1176,7 +1178,7 @@ CreateAtom(a, Up(s), [age2], 1, false);
 Set(OnInit, [4DS[Dim([refDist_age2], vbAtom, c)]4DS]);
 SetTextAtt([empiricalname], [age2]);
 SetAtt([nrrecords], 25);
-SetAtt([randomnr], 57.2536143206987);
+SetAtt([randomnr], 49.0244432216483);
 SetAtt([flag], 1);
 SetAtt([value], 25);
 SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
@@ -1501,51 +1503,41 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\AvailabilityControl.ico]));
 Set(DdbRec, [>t-atomtype:t028.]);
-SetChannels(1, 2);
+SetChannels(1, 1);
 SetChannelRanges(1, 255, 0, 255);
 SetLoadAtomID(10);
 SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
-SetChannelRequestCount(2, 0, true, true, 0, 0, [], []);
 SetLoc(27, 1, 0);
 SetSize(5, 3, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(2, 8);
+SetTable(1, 8);
 CreateTableColumn(0, 64, [``
 1
-2
 ]);
 CreateTableColumn(1, 64, [`Oldstatus`
-5
 5
 ]);
 CreateTableColumn(2, 64, [`Downtime`
 0
-0
 ]);
 CreateTableColumn(3, 64, [`Down`
-0
 0
 ]);
 CreateTableColumn(4, 64, [`xs`
 0
-0
 ]);
 CreateTableColumn(5, 64, [`ys`
-0
 0
 ]);
 CreateTableColumn(6, 64, [`zs`
 0
-0
 ]);
 CreateTableColumn(7, 64, [`rot`
 0
-0
 ]);
 CreateTableColumn(8, 64, [`color`
-255
 255
 ]);
 SetStatus(11);
@@ -1556,5 +1548,4 @@ Up;
 
 ConnectLoadAtoms(1, 7, 1, 10, 0);
 ConnectLoadAtoms(1, 10, 0, 11, 0);
-ConnectLoadAtoms(2, 10, 0, 12, 0);
 ExecOnCreationOnLoad;

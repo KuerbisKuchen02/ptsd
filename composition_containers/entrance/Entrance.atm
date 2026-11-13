@@ -9,16 +9,16 @@ if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inhe
 CreateAtom(a, s, [Entrance], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
-SetAtt([nrvariables], 0);
+SetAtt([nrvariables], 1);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], 16.5);
-SetAtt([yCenter2D], 4.5);
-SetAtt([xRadius2D], 17.5);
-SetAtt([yRadius2D], 1.5);
+SetAtt([xCenter2D], 28);
+SetAtt([yCenter2D], 7.5);
+SetAtt([xRadius2D], 30);
+SetAtt([yRadius2D], 3.5);
 SetAtt([xCenter3D], 18.5);
-SetAtt([yCenter3D], 2.5);
+SetAtt([yCenter3D], 4.5);
 SetAtt([zCenter3D], 1);
-SetAtt([Radius3D], 17.5926120857592);
+SetAtt([Radius3D], 17.8745629317195);
 SetAtt([ShowName], 0);
 SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
@@ -31,7 +31,7 @@ Set(DdbRec, [>cmpname:C:\temp\ptsd\composition_containers\entrance\Entrance.cmp.
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetSize(37, 5, 10);
+SetSize(37, 9, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -40,8 +40,10 @@ CreateTableColumn(0, 25, [``
 1
 ]);
 CreateTableColumn(1, 100, [`VariableName`
+`id`
 ]);
 CreateTableColumn(2, 150, [`Expression`
+1
 ]);
 Set(OnCreation, [4DS[
              do(
