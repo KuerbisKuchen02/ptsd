@@ -1,4 +1,4 @@
-﻿{10.5.0.3374}
+{10.5.0.3374}
 
 
 {Atom: Global}
@@ -11,10 +11,10 @@ SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], -17);
-SetAtt([yCenter2D], 35.5);
-SetAtt([xRadius2D], 4);
-SetAtt([yRadius2D], 2.5);
+SetAtt([xCenter2D], -3.5);
+SetAtt([yCenter2D], -10);
+SetAtt([xRadius2D], 8.5);
+SetAtt([yRadius2D], 4);
 SetAtt([xCenter3D], 5);
 SetAtt([yCenter3D], 3.5);
 SetAtt([zCenter3D], 0.5);
@@ -31,7 +31,7 @@ Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmp
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetSize(10, 7, 10);
+SetSize(19, 10, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
