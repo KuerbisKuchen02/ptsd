@@ -1,4 +1,4 @@
-﻿{10.5.0.3374}
+{10.5.0.3374}
 
 
 {Load required atoms}
@@ -14,42 +14,42 @@ RestoreActiveAtom;
 
 {Preregister 4DS}
 
+PreregisterFunction([getExitTime], 0, 0);
 PreregisterFunction([indexPOI], 0, 0);
 PreregisterFunction([initilize], 0, 0);
-PreregisterFunction([getHeight], 1, 1);
 PreregisterFunction([connectSchedule], 0, 0);
-PreregisterFunction([getAttractions], 0, 0);
+PreregisterFunction([getHeight], 1, 1);
 PreregisterFunction([getAge], 0, 0);
 PreregisterFunction([setEntryLabels2], 0, 0);
-PreregisterFunction([getExitTime], 0, 0);
-PreregisterFunction([age2], 0, 0);
+PreregisterFunction([getAttractions], 0, 0);
 PreregisterFunction([fastPass], 0, 0);
+PreregisterFunction([age2], 0, 0);
 Dim([schedule], vbString);
+Dim([refDist_fastPass], vbAtom);
 Dim([refDist_meanAttractionDownTime_s], vbAtom);
 Dim([refDist_age2], vbAtom);
-Dim([refDist_fastPass], vbAtom);
 
 
-{Atom: Global14}
+{Atom: Global}
 
 sets;
-AtomByName([Global], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Global'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [Global14], 1, false);
+AtomByName([Composition Container], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
+CreateAtom(a, s, [Global], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
 SetAtt([xCenter2D], -3.5);
 SetAtt([yCenter2D], -10);
-SetAtt([xRadius2D], 9.5);
-SetAtt([yRadius2D], 5);
-SetAtt([xCenter3D], 9.5);
-SetAtt([yCenter3D], 5);
-SetAtt([zCenter3D], 5);
-SetAtt([Radius3D], 11.842719282327);
+SetAtt([xRadius2D], 8.5);
+SetAtt([yRadius2D], 4);
+SetAtt([xCenter3D], 5);
+SetAtt([yCenter3D], 3.5);
+SetAtt([zCenter3D], 0.5);
+SetAtt([Radius3D], 4.74341649025257);
 SetAtt([ShowName], 0);
-SetAtomSettings([], 8421504, 24626);
+SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
@@ -60,7 +60,6 @@ Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmp
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetLoc(-13, -15, 0);
 SetSize(19, 10, 10);
 LockPosition(false);
 LockSize(false);
@@ -89,64 +88,6 @@ SetStatus(0);
 ExecLateInit;
 
 
-{Atom: Global}
-
-sets;
-AtomByName([Composition Container], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [Global], 1, false);
-SetAtt([openatscale], 17);
-SetAtt([displaycontents], 1);
-SetAtt([nrvariables], 0);
-SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], -3.5);
-SetAtt([yCenter2D], -10);
-SetAtt([xRadius2D], 8.5);
-SetAtt([yRadius2D], 4);
-SetAtt([xCenter3D], 5);
-SetAtt([yCenter3D], 3.5);
-SetAtt([zCenter3D], 0.5);
-SetAtt([Radius3D], 4.74341649025257);
-SetAtt([ShowName], 0);
-SetAtomSettings([], 8421504, 24626);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:c:\temp\ptsd\composition_containers\global\global.atm.>cmpname:c:\temp\ptsd\composition_containers\global\global.cmp.]);
-SetChannels(1, 0);
-SetChannelRanges(1, 255, 0, 0);
-SetLoadAtomID(2);
-SetSize(19, 10, 10);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetTable(1, 2);
-CreateTableColumn(0, 25, [``
-1
-]);
-CreateTableColumn(1, 100, [`VariableName`
-]);
-CreateTableColumn(2, 150, [`Expression`
-]);
-Set(OnCreation, [4DS[
-             do(
-              if(
-               not(comparetext(name(c),[])),
-               if(fileexists([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
-                execfile([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
-                msg(concat([Cannot locate:],lf,cr,[C:\Temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
-               )
-              ),
-              set(oncreation(c),concat(sbo,[nothing],sbc))
-             )
-            ]4DS]);
-SetStatus(0);
-ExecLateInit;
-
-
 {Atom: Initialize}
 
 sets;
@@ -166,7 +107,7 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Initialize.ico]));
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 255);
-SetLoadAtomID(3);
+SetLoadAtomID(2);
 SetLoc(1, 1, 0);
 SetSize(8, 2, 1);
 LockPosition(false);
@@ -195,13 +136,13 @@ SetAttribute(r(1), [getExitTime_Att], vbVariant, [4DS[Round(
   Time - Mod(Time, hr(24)) +
   hr(
     if(
-      CompareText(schedule, [Normal]),
+      CompareText(Label([Schedule], Model), [Normal]),
       18 - Abs(Normal(0, 2)),
       if(
-        CompareText(schedule, [LongHour]),
+        CompareText(Label([Schedule], Model), [LongHour]),
         19 - Abs(Normal(0, 2)),
         if(
-          CompareText(schedule, [Winter]),
+          CompareText(Label([Schedule], Model), [Winter]),
           20 - Abs(Normal(0, 2)),
           0
         )
@@ -337,15 +278,58 @@ SetAttribute(r(6), [getAge_Att], vbVariant, [4DS[Do(
 
   Return(ageParam)
 )]4DS], a, [public], [], false);
-SetAttribute(r(7), [getAttractions_Att], vbVariant, 0, a, [public], [], false);
+SetAttribute(r(7), [getAttractions_Att], vbVariant, [4DS[Do(
+  Var(
+    [attractionsRef],
+    vbValue,
+    HashMapCreate(i, [attractions], vbValue, vbValue)
+  ),
+
+  Repeat(
+    nRows(model),
+    Do(
+      Var([attractionId], vbValue, CellAsValue(Count, 0, model)),
+
+      If(
+        Or(
+          Label([age], i) < CellAsValue(Count, 11, model),
+          Label([height], i) < CellAsValue(Count, 12, model),
+          Label([height], i) > CellAsValue(Count, 13, model)
+        ),
+        HashMapAdd(attractionsRef, attractionId, -1),
+        HashMapAdd(attractionsRef, attractionId, 0)
+      )
+    )
+  )
+)]4DS], a, [public], [], false);
 SetAttribute(r(8), [setEntryLabels2_Att], vbVariant, [4DS[Do(
   SetLabel([hasFastPass], fastPass, i),
   SetLabel([entryTime], Time, i),
   SetLabel([existTime], getExitTime, i),
   SetLabel([age], getAge, i),
-  SetLabel([height], getHeight(Label([age], i)), i)
+  SetLabel([height], getHeight(Label([age], i)), i),
+  getAttractions
 )]4DS], a, [public], [], false);
 SetAtomSettings([], 33023, 1192);
+DefineFunction([getExitTime], [Various], 0, 0, [4DS[Round(
+  Time - Mod(Time, hr(24)) +
+  hr(
+    if(
+      CompareText(Label([Schedule], Model), [Normal]),
+      18 - Abs(Normal(0, 2)),
+      if(
+        CompareText(Label([Schedule], Model), [LongHour]),
+        19 - Abs(Normal(0, 2)),
+        if(
+          CompareText(Label([Schedule], Model), [Winter]),
+          20 - Abs(Normal(0, 2)),
+          0
+        )
+      )
+    )
+  )
+)
+]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
   
   {Store all point of interests in the root atom 'Model'}
@@ -377,35 +361,6 @@ DefineFunction([initilize], [Various], 0, 0, [4DS[Do(
   indexPOI,
   dim([schedule], vbString, [LongHour]),
   connectSchedule
-)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([getHeight], [Various], 1, 1, [4DS[do(
-  var([ageParam], vbValue, p(1)),
-  var([row], vbValue),
-  var([meanHeight], vbValue),
-
-  if(ageParam <= 18,
-    row := ageParam + 2,
-    if(ageParam <= 29,
-      row := 21,
-      if(ageParam <= 39,
-        row := 22,
-        if(ageParam <= 49,
-          row := 23,
-          if(ageParam <= 59,
-            row := 24,
-            if(ageParam <= 69,
-              row := 25,
-              row := 26
-            )
-          )
-        )
-      )
-    )
-  ),
-
-  meanHeight := ExcelActiveX_Read(row, 2),
-
-  Return(Round(Normal(meanHeight, 3)))
 )]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([connectSchedule], [Various], 0, 0, [4DS[do(
   if(
@@ -442,7 +397,35 @@ DefineFunction([connectSchedule], [Various], 0, 0, [4DS[do(
   )
 )
 ]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([getAttractions], [Various], 0, 0, [], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([getHeight], [Various], 1, 1, [4DS[do(
+  var([ageParam], vbValue, p(1)),
+  var([row], vbValue),
+  var([meanHeight], vbValue),
+
+  if(ageParam <= 18,
+    row := ageParam + 2,
+    if(ageParam <= 29,
+      row := 21,
+      if(ageParam <= 39,
+        row := 22,
+        if(ageParam <= 49,
+          row := 23,
+          if(ageParam <= 59,
+            row := 24,
+            if(ageParam <= 69,
+              row := 25,
+              row := 26
+            )
+          )
+        )
+      )
+    )
+  ),
+
+  meanHeight := ExcelActiveX_Read(row, 2),
+
+  Return(Round(Normal(meanHeight, 3)))
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([getAge], [Various], 0, 0, [4DS[Do(
   EnterDebugger,  
 
@@ -479,34 +462,40 @@ DefineFunction([setEntryLabels2], [Various], 0, 0, [4DS[Do(
   SetLabel([entryTime], Time, i),
   SetLabel([existTime], getExitTime, i),
   SetLabel([age], getAge, i),
-  SetLabel([height], getHeight(Label([age], i)), i)
+  SetLabel([height], getHeight(Label([age], i)), i),
+  getAttractions
 )]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([getExitTime], [Various], 0, 0, [4DS[Round(
-  Time - Mod(Time, hr(24)) +
-  hr(
-    if(
-      CompareText(schedule, [Normal]),
-      18 - Abs(Normal(0, 2)),
-      if(
-        CompareText(schedule, [LongHour]),
-        19 - Abs(Normal(0, 2)),
-        if(
-          CompareText(schedule, [Winter]),
-          20 - Abs(Normal(0, 2)),
-          0
-        )
+DefineFunction([getAttractions], [Various], 0, 0, [4DS[Do(
+  Var(
+    [attractionsRef],
+    vbValue,
+    HashMapCreate(i, [attractions], vbValue, vbValue)
+  ),
+
+  Repeat(
+    nRows(model),
+    Do(
+      Var([attractionId], vbValue, CellAsValue(Count, 0, model)),
+
+      If(
+        Or(
+          Label([age], i) < CellAsValue(Count, 11, model),
+          Label([height], i) < CellAsValue(Count, 12, model),
+          Label([height], i) > CellAsValue(Count, 13, model)
+        ),
+        HashMapAdd(attractionsRef, attractionId, -1),
+        HashMapAdd(attractionsRef, attractionId, 0)
       )
     )
   )
-)
-]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\FunctionEditor.ico]));
-SetLoadAtomID(4);
+SetLoadAtomID(3);
 SetLoc(1, 4, 0);
 SetSize(8, 2, 1);
 LockPosition(false);
@@ -584,7 +573,7 @@ CreateTableColumn(6, 64, [`Example`
 0
 ]);
 CreateTableColumn(7, 64, [`Include`
-0
+1
 1
 0
 0
@@ -629,7 +618,7 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
-SetLoadAtomID(5);
+SetLoadAtomID(4);
 SetLoc(10, 7, 0);
 SetSize(8, 2, 1);
 LockPosition(false);
@@ -655,6 +644,140 @@ SetStatus(0);
 ExecLateInit;
 
 
+{Atom: ExcelActiveHeights}
+
+sets;
+AtomByName([ExcelActiveX], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'ExcelActiveX'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [ExcelActiveHeights], 1, false);
+Set(OnInit, [4DS[LateInit([ExcelActiveX_Init(c)])]4DS]);
+SetTextAtt([FileName], [ptsd\ptsd.xlsx]);
+SetTextAtt([SheetName], [Heights]);
+SetAtt([Visible], 0);
+SetAtt([NoTables], 0);
+SetAtt([RefWorkbook], 977253944);
+SetTextAtt([RefWorkbookName], [oleExcelActiveX_Workbook2]);
+SetAtt([UseAtomName], 1);
+SetAtt([AliasesCreated], 0);
+SetAtt([CreateAlias], 0);
+SetTextAtt([AliasName], [ExcelActiveHeights]);
+SetAtomSettings([], 16744448, 1184);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Excel2k7.ico]));
+Set(DdbRec, [>t-excel:1.]);
+SetLoadAtomID(5);
+SetLoc(1, 7, 0);
+SetSize(8, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(0, 11);
+CreateTableColumn(0, 64, [0
+]);
+CreateTableColumn(1, 88, [`Atom Name`
+]);
+CreateTableColumn(2, 64, [`Sheet Name`
+]);
+CreateTableColumn(3, 64, [`# Rows Table`
+]);
+CreateTableColumn(4, 64, [`# Cols Table`
+]);
+CreateTableColumn(5, 64, [`Start Row Excel`
+]);
+CreateTableColumn(6, 64, [`Start Col Excel`
+]);
+CreateTableColumn(7, 64, [`# Rows from/to Excel`
+]);
+CreateTableColumn(8, 64, [`# Cols from/to Excel`
+]);
+CreateTableColumn(9, 64, [`Time to Read/Write`
+]);
+CreateTableColumn(10, 64, [`Read(1))/Write(2)`
+]);
+CreateTableColumn(11, 64, [`OnReset(1)/OnTime(2)/OnUser(3)`
+]);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: fastPass}
+
+sets;
+AtomByName([Empirical Distribution], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Empirical Distribution'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [fastPass], 1, false);
+Set(OnInit, [4DS[Dim([refDist_fastPass], vbAtom, c)]4DS]);
+SetTextAtt([empiricalname], [fastPass]);
+SetAtt([nrrecords], 2);
+SetAtt([randomnr], 43.3500978943464);
+SetAtt([flag], 1);
+SetAtt([value], 2);
+SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
+SetTextAtt([oldname], [fastPast]);
+SetAtt([textflag], 0);
+SetAtomSettings([], 8421504, 160);
+DefineFunction([fastPass], [Stochastic], 0, 0, [4DS[
+do(
+  var([atmDistribution], vbAtom, refDist_fastPass), 
+
+  Att([randomnr],atmDistribution) := random(100),
+  Att([flag], atmDistribution) := 0,
+  Repeat(
+    nRows(atmDistribution),
+    if(
+      att([flag], atmDistribution) = 0,
+      if(
+        att([randomnr], atmDistribution) < cell(count,1, atmDistribution),
+        do(
+          setatt([flag],1, atmDistribution),
+          if(
+           att([textflag], atmDistribution),
+           settextAtt([value], cell(count,2, atmDistribution)),
+           setatt([value], cell(count,2, atmDistribution))
+          )
+        )
+      )
+    )
+  ),
+  if(
+    att([textflag], atmDistribution),  
+    TextAtt([value], atmDistribution),
+    att([value], atmDistribution)
+  )
+)]4DS], [Returns a random sample from the empirical distribution table], [fastPass], [public], [fastPass], a, 0, vbVariant, []);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
+SetLoadAtomID(6);
+SetLoc(10, 1, 0);
+SetSize(8, 2, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(2, 2);
+CreateTableColumn(0, 64, [``
+1
+2
+]);
+CreateTableColumn(1, 64, [`Cumulative%`
+5
+100
+]);
+CreateTableColumn(2, 64, [`Value`
+1
+2
+]);
+SetStatus(0);
+ExecLateInit;
+
+
 {Atom: age2}
 
 sets;
@@ -664,11 +787,11 @@ CreateAtom(a, Up(s), [age2], 1, false);
 Set(OnInit, [4DS[Dim([refDist_age2], vbAtom, c)]4DS]);
 SetTextAtt([empiricalname], [age2]);
 SetAtt([nrrecords], 25);
-SetAtt([randomnr], 12.4551828627922);
+SetAtt([randomnr], 48.0111556962082);
 SetAtt([flag], 1);
-SetAtt([value], 8);
+SetAtt([value], 25);
 SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
-SetTextAtt([oldname], [age23]);
+SetTextAtt([oldname], [age3]);
 SetAtt([textflag], 0);
 SetAtomSettings([], 8421504, 160);
 DefineFunction([age2], [Stochastic], 0, 0, [4DS[
@@ -706,7 +829,7 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
-SetLoadAtomID(6);
+SetLoadAtomID(7);
 SetLoc(10, 4, 0);
 SetSize(8, 2, 1);
 LockPosition(false);
@@ -796,140 +919,5 @@ CreateTableColumn(2, 64, [`Value`
 ]);
 SetStatus(0);
 ExecLateInit;
-
-
-{Atom: fastPass}
-
-sets;
-AtomByName([Empirical Distribution], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Empirical Distribution'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [fastPass], 1, false);
-Set(OnInit, [4DS[Dim([refDist_fastPass], vbAtom, c)]4DS]);
-SetTextAtt([empiricalname], [fastPass]);
-SetAtt([nrrecords], 2);
-SetAtt([randomnr], 45.0601460543886);
-SetAtt([flag], 1);
-SetAtt([value], 2);
-SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
-SetTextAtt([oldname], [fastPass2]);
-SetAtt([textflag], 0);
-SetAtomSettings([], 8421504, 160);
-DefineFunction([fastPass], [Stochastic], 0, 0, [4DS[
-do(
-  var([atmDistribution], vbAtom, refDist_fastPass), 
-
-  Att([randomnr],atmDistribution) := random(100),
-  Att([flag], atmDistribution) := 0,
-  Repeat(
-    nRows(atmDistribution),
-    if(
-      att([flag], atmDistribution) = 0,
-      if(
-        att([randomnr], atmDistribution) < cell(count,1, atmDistribution),
-        do(
-          setatt([flag],1, atmDistribution),
-          if(
-           att([textflag], atmDistribution),
-           settextAtt([value], cell(count,2, atmDistribution)),
-           setatt([value], cell(count,2, atmDistribution))
-          )
-        )
-      )
-    )
-  ),
-  if(
-    att([textflag], atmDistribution),  
-    TextAtt([value], atmDistribution),
-    att([value], atmDistribution)
-  )
-)]4DS], [Returns a random sample from the empirical distribution table], [fastPass], [public], [fastPass], a, 0, vbVariant, []);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
-SetLoadAtomID(7);
-SetLoc(10, 1, 0);
-SetSize(8, 2, 1);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetTable(2, 2);
-CreateTableColumn(0, 64, [``
-1
-2
-]);
-CreateTableColumn(1, 64, [`Cumulative%`
-5
-100
-]);
-CreateTableColumn(2, 64, [`Value`
-1
-2
-]);
-SetStatus(0);
-ExecLateInit;
-
-
-{Atom: ExcelActiveHeights}
-
-sets;
-AtomByName([ExcelActiveX], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'ExcelActiveX'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [ExcelActiveHeights], 1, false);
-Set(OnInit, [4DS[LateInit([ExcelActiveX_Init(c)])]4DS]);
-SetTextAtt([FileName], [ptsd\ptsd.xlsx]);
-SetTextAtt([SheetName], [Heights]);
-SetAtt([Visible], 0);
-SetAtt([NoTables], 0);
-SetAtt([RefWorkbook], 1070380600);
-SetTextAtt([RefWorkbookName], [oleExcelActiveX_Workbook1]);
-SetAtt([UseAtomName], 1);
-SetAtt([AliasesCreated], 0);
-SetAtt([CreateAlias], 0);
-SetTextAtt([AliasName], [ExcelActiveHeights]);
-SetAtomSettings([], 16744448, 1184);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\Excel2k7.ico]));
-Set(DdbRec, [>t-excel:1.]);
-SetLoadAtomID(8);
-SetLoc(1, 7, 0);
-SetSize(8, 2, 1);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetTable(0, 11);
-CreateTableColumn(0, 64, [0
-]);
-CreateTableColumn(1, 88, [`Atom Name`
-]);
-CreateTableColumn(2, 64, [`Sheet Name`
-]);
-CreateTableColumn(3, 64, [`# Rows Table`
-]);
-CreateTableColumn(4, 64, [`# Cols Table`
-]);
-CreateTableColumn(5, 64, [`Start Row Excel`
-]);
-CreateTableColumn(6, 64, [`Start Col Excel`
-]);
-CreateTableColumn(7, 64, [`# Rows from/to Excel`
-]);
-CreateTableColumn(8, 64, [`# Cols from/to Excel`
-]);
-CreateTableColumn(9, 64, [`Time to Read/Write`
-]);
-CreateTableColumn(10, 64, [`Read(1))/Write(2)`
-]);
-CreateTableColumn(11, 64, [`OnReset(1)/OnTime(2)/OnUser(3)`
-]);
-SetStatus(0);
-ExecLateInit;
-Up;
 Up;
 ExecOnCreationOnLoad;
