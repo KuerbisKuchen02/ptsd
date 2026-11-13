@@ -6,7 +6,6 @@
 StoreActiveAtom;
 LoadAtomFromFile([Availability Control], pDir([Atoms\AVAILABILITY\Availability Control.atm]));
 LoadAtomFromFile([Time Schedule Availability], pDir([Atoms\AVAILABILITY\Time Schedule Availability.atm]));
-LoadAtomFromFile([ExcelActiveX], pDir([Atoms\DATA\ExcelActiveX.atm]));
 LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
 LoadAtomFromFile([Empirical Distribution], pDir([Atoms\TOOLS\Empirical Distribution.atm]));
 LoadAtomFromFile([Function Editor], pDir([Atoms\TOOLS\Function Editor.atm]));
@@ -16,16 +15,16 @@ RestoreActiveAtom;
 
 {Preregister 4DS}
 
-PreregisterFunction([getExitTime], 0, 0);
 PreregisterFunction([indexPOI], 0, 0);
-PreregisterFunction([getHeight], 1, 1);
 PreregisterFunction([getAge], 0, 0);
 PreregisterFunction([setEntryLabels2], 0, 0);
 PreregisterFunction([getAttractions], 0, 0);
 PreregisterFunction([connectSchedule], 0, 0);
 PreregisterFunction([setTrainCapacities], 0, 0);
-PreregisterFunction([initilize], 0, 0);
 PreregisterFunction([setNextAttraction], 1, 1);
+PreregisterFunction([getExitTime], 0, 0);
+PreregisterFunction([initilize], 0, 0);
+PreregisterFunction([getHeight], 1, 1);
 PreregisterFunction([fastPass], 0, 0);
 PreregisterFunction([age2], 0, 0);
 Dim([schedule], vbString);
@@ -44,8 +43,8 @@ SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], -5.5);
-SetAtt([yCenter2D], -12);
+SetAtt([xCenter2D], 14.5);
+SetAtt([yCenter2D], -6);
 SetAtt([xRadius2D], 15.5);
 SetAtt([yRadius2D], 4);
 SetAtt([xCenter3D], 16.5);
@@ -117,6 +116,61 @@ SetSize(8, 2, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
+SetTable(25, 1);
+CreateTableColumn(0, 64, [`age`
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+`19–29`
+`30–39`
+`40–49`
+`50–59`
+`60–69`
+`70–79`
+]);
+CreateTableColumn(1, 64, [`height`
+51.7
+75.86
+87.47
+96.44
+104.03
+111.03
+117.69
+124.08
+130.14
+135.81
+141.37
+147.17
+153.26
+159.33
+164.84
+168.85
+171.02
+171.89
+172.41
+172.8
+172.05
+171.85
+169.9
+167.6
+165.25
+]);
 SetStatus(0);
 ExecLateInit;
 
@@ -138,25 +192,34 @@ SetAttributeName(r(7), [getAttractions_Att], a);
 SetAttributeName(r(8), [setEntryLabels2_Att], a);
 SetAttributeName(r(9), [setTrainCapacities_Att], a);
 SetAttributeName(r(10), [setNextAttraction_Att], a);
-SetAttribute(r(1), [getExitTime_Att], vbVariant, [4DS[Round(
-  Time - Mod(Time, hr(24)) +
-  hr(
-    if(
-      CompareText(Label([Schedule], Model), [Normal]),
-      18 - Abs(Normal(0, 2)),
-      if(
-        CompareText(Label([Schedule], Model), [LongHour]),
-        19 - Abs(Normal(0, 2)),
+SetAttribute(r(1), [getExitTime_Att], vbVariant, [4DS[Do(
+  EnterDebugger,
+  
+  Var(
+    [exitTime],
+    vbValue,
+    Round(
+      Time - Mod(Time, hr(24)) +
+      hr(
         if(
-          CompareText(Label([Schedule], Model), [Winter]),
-          20 - Abs(Normal(0, 2)),
-          0
+          CompareText(schedule, [Normal]),
+          18 - Abs(Normal(0, 2)),
+          if(
+            CompareText(schedule, [LongHour]),
+            19 - Abs(Normal(0, 2)),
+            if(
+              CompareText(schedule, [Winter]),
+              20 - Abs(Normal(0, 2)),
+              Time
+            )
+          )
         )
       )
     )
-  )
-)
-]4DS], a, [public], [], false);
+  ),
+    
+  exitTime
+)]4DS], a, [public], [], false);
 SetAttribute(r(2), [indexPOI_Att], vbVariant, [4DS[Do(
   
   {Store all point of interests in the root atom 'Model'}
@@ -185,6 +248,7 @@ SetAttribute(r(2), [indexPOI_Att], vbVariant, [4DS[Do(
 ]4DS], a, [public], [], false);
 SetAttribute(r(3), [initilize_Att], vbVariant, [4DS[Do(
   ReadTableFromFile(Model, [C:\Temp\ptsd\data\ptsd.csv], [;]),
+  ReadTableFromFile(AtomByName([Initialize], Model), [C:\Temp\ptsd\data\heights.csv], [;]),
   indexPOI,
   dim([schedule], vbString, [LongHour]),
   connectSchedule,
@@ -196,18 +260,18 @@ SetAttribute(r(4), [getHeight_Att], vbVariant, [4DS[do(
   var([meanHeight], vbValue),
 
   if(ageParam <= 18,
-    row := ageParam + 2,
+    row := ageParam + 1,
     if(ageParam <= 29,
-      row := 21,
+      row := 20,
       if(ageParam <= 39,
-        row := 22,
+        row := 21,
         if(ageParam <= 49,
-          row := 23,
+          row := 22,
           if(ageParam <= 59,
-            row := 24,
+            row := 23,
             if(ageParam <= 69,
-              row := 25,
-              row := 26
+              row := 24,
+              row := 25
             )
           )
         )
@@ -215,9 +279,9 @@ SetAttribute(r(4), [getHeight_Att], vbVariant, [4DS[do(
     )
   ),
 
-  meanHeight := ExcelActiveX_Read(row, 2),
+  meanHeight := CellAsValue(row, 1, AtomByName([Initialize], Model)),
 
-  Return(Round(Normal(meanHeight, 3)))
+  Round(Normal(meanHeight, 3))
 )]4DS], a, [public], [], false);
 SetAttribute(r(5), [connectSchedule_Att], vbVariant, [4DS[Do(
   Var([spawnerReferences], vbValue, VectorCreate(c, [spawnerReferencesVector], vbAtom)),
@@ -415,25 +479,6 @@ SetAttribute(r(10), [setNextAttraction_Att], vbVariant, [4DS[Do(
     )))
 ]4DS], a, [public], [], false);
 SetAtomSettings([], 33023, 1192);
-DefineFunction([getExitTime], [Various], 0, 0, [4DS[Round(
-  Time - Mod(Time, hr(24)) +
-  hr(
-    if(
-      CompareText(Label([Schedule], Model), [Normal]),
-      18 - Abs(Normal(0, 2)),
-      if(
-        CompareText(Label([Schedule], Model), [LongHour]),
-        19 - Abs(Normal(0, 2)),
-        if(
-          CompareText(Label([Schedule], Model), [Winter]),
-          20 - Abs(Normal(0, 2)),
-          0
-        )
-      )
-    )
-  )
-)
-]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
   
   {Store all point of interests in the root atom 'Model'}
@@ -460,35 +505,6 @@ DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
 )
 
 ]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([getHeight], [Various], 1, 1, [4DS[do(
-  var([ageParam], vbValue, p(1)),
-  var([row], vbValue),
-  var([meanHeight], vbValue),
-
-  if(ageParam <= 18,
-    row := ageParam + 2,
-    if(ageParam <= 29,
-      row := 21,
-      if(ageParam <= 39,
-        row := 22,
-        if(ageParam <= 49,
-          row := 23,
-          if(ageParam <= 59,
-            row := 24,
-            if(ageParam <= 69,
-              row := 25,
-              row := 26
-            )
-          )
-        )
-      )
-    )
-  ),
-
-  meanHeight := ExcelActiveX_Read(row, 2),
-
-  Return(Round(Normal(meanHeight, 3)))
-)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([getAge], [Various], 0, 0, [4DS[Do(
   EnterDebugger,  
 
@@ -625,13 +641,6 @@ DefineFunction([setTrainCapacities], [Various], 0, 0, [4DS[Do(
     ))
   ))
 )]4DS], [], [], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([initilize], [Various], 0, 0, [4DS[Do(
-  ReadTableFromFile(Model, [C:\Temp\ptsd\data\ptsd.csv], [;]),
-  indexPOI,
-  dim([schedule], vbString, [LongHour]),
-  connectSchedule,
-  setTrainCapacities
-)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([setNextAttraction], [Various], 1, 1, [4DS[Do(
   EnterDebugger(),
   trace([a]),
@@ -691,6 +700,71 @@ DefineFunction([setNextAttraction], [Various], 1, 1, [4DS[Do(
       )))
     )))
 ]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([getExitTime], [Various], 0, 0, [4DS[Do(
+  EnterDebugger,
+  
+  Var(
+    [exitTime],
+    vbValue,
+    Round(
+      Time - Mod(Time, hr(24)) +
+      hr(
+        if(
+          CompareText(schedule, [Normal]),
+          18 - Abs(Normal(0, 2)),
+          if(
+            CompareText(schedule, [LongHour]),
+            19 - Abs(Normal(0, 2)),
+            if(
+              CompareText(schedule, [Winter]),
+              20 - Abs(Normal(0, 2)),
+              Time
+            )
+          )
+        )
+      )
+    )
+  ),
+    
+  exitTime
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([initilize], [Various], 0, 0, [4DS[Do(
+  ReadTableFromFile(Model, [C:\Temp\ptsd\data\ptsd.csv], [;]),
+  ReadTableFromFile(AtomByName([Initialize], Model), [C:\Temp\ptsd\data\heights.csv], [;]),
+  indexPOI,
+  dim([schedule], vbString, [LongHour]),
+  connectSchedule,
+  setTrainCapacities
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([getHeight], [Various], 1, 1, [4DS[do(
+  var([ageParam], vbValue, p(1)),
+  var([row], vbValue),
+  var([meanHeight], vbValue),
+
+  if(ageParam <= 18,
+    row := ageParam + 1,
+    if(ageParam <= 29,
+      row := 20,
+      if(ageParam <= 39,
+        row := 21,
+        if(ageParam <= 49,
+          row := 22,
+          if(ageParam <= 59,
+            row := 23,
+            if(ageParam <= 69,
+              row := 24,
+              row := 25
+            )
+          )
+        )
+      )
+    )
+  ),
+
+  meanHeight := CellAsValue(row, 1, AtomByName([Initialize], Model)),
+
+  Round(Normal(meanHeight, 3))
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
@@ -864,66 +938,6 @@ SetStatus(0);
 ExecLateInit;
 
 
-{Atom: ExcelActiveHeights}
-
-sets;
-AtomByName([ExcelActiveX], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'ExcelActiveX'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [ExcelActiveHeights], 1, false);
-Set(OnInit, [4DS[LateInit([ExcelActiveX_Init(c)])]4DS]);
-SetTextAtt([FileName], [C:\temp\ptsd\ptsd.xlsx]);
-SetTextAtt([SheetName], [Heights]);
-SetAtt([Visible], 0);
-SetAtt([NoTables], 0);
-SetAtt([RefWorkbook], 2044995528);
-SetTextAtt([RefWorkbookName], [oleExcelActiveX_Workbook2]);
-SetAtt([UseAtomName], 1);
-SetAtt([AliasesCreated], 0);
-SetAtt([CreateAlias], 0);
-SetTextAtt([AliasName], [ExcelActiveHeights]);
-SetAtomSettings([], 16744448, 1184);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\Excel2k7.ico]));
-Set(DdbRec, [>t-excel:1.]);
-SetLoadAtomID(5);
-SetLoc(1, 7, 0);
-SetSize(8, 2, 1);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetTable(0, 11);
-CreateTableColumn(0, 64, [0
-]);
-CreateTableColumn(1, 88, [`Atom Name`
-]);
-CreateTableColumn(2, 64, [`Sheet Name`
-]);
-CreateTableColumn(3, 64, [`# Rows Table`
-]);
-CreateTableColumn(4, 64, [`# Cols Table`
-]);
-CreateTableColumn(5, 64, [`Start Row Excel`
-]);
-CreateTableColumn(6, 64, [`Start Col Excel`
-]);
-CreateTableColumn(7, 64, [`# Rows from/to Excel`
-]);
-CreateTableColumn(8, 64, [`# Cols from/to Excel`
-]);
-CreateTableColumn(9, 64, [`Time to Read/Write`
-]);
-CreateTableColumn(10, 64, [`Read(1))/Write(2)`
-]);
-CreateTableColumn(11, 64, [`OnReset(1)/OnTime(2)/OnUser(3)`
-]);
-SetStatus(0);
-ExecLateInit;
-
-
 {Atom: fastPass}
 
 sets;
@@ -933,7 +947,7 @@ CreateAtom(a, Up(s), [fastPass], 1, false);
 Set(OnInit, [4DS[Dim([refDist_fastPass], vbAtom, c)]4DS]);
 SetTextAtt([empiricalname], [fastPass]);
 SetAtt([nrrecords], 2);
-SetAtt([randomnr], 43.3500978943464);
+SetAtt([randomnr], 53.1962391584998);
 SetAtt([flag], 1);
 SetAtt([value], 2);
 SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
@@ -975,7 +989,7 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
-SetLoadAtomID(6);
+SetLoadAtomID(5);
 SetLoc(10, 1, 0);
 SetSize(8, 2, 1);
 LockPosition(false);
@@ -1007,9 +1021,9 @@ CreateAtom(a, Up(s), [age2], 1, false);
 Set(OnInit, [4DS[Dim([refDist_age2], vbAtom, c)]4DS]);
 SetTextAtt([empiricalname], [age2]);
 SetAtt([nrrecords], 25);
-SetAtt([randomnr], 48.0111556962082);
+SetAtt([randomnr], 94.3341940953083);
 SetAtt([flag], 1);
-SetAtt([value], 25);
+SetAtt([value], 55);
 SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
 SetTextAtt([oldname], [age3]);
 SetAtt([textflag], 0);
@@ -1049,7 +1063,7 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\EmpiricalDistribution.ico]));
-SetLoadAtomID(7);
+SetLoadAtomID(6);
 SetLoc(10, 4, 0);
 SetSize(8, 2, 1);
 LockPosition(false);
@@ -1168,7 +1182,7 @@ SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
 Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
 SetChannels(0, 1);
 SetChannelRanges(0, 0, 1, 255);
-SetLoadAtomID(8);
+SetLoadAtomID(7);
 SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
 SetLoc(19, 1, 0);
 SetSize(7, 1, 1);
@@ -1222,7 +1236,7 @@ SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
 Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
 SetChannels(0, 1);
 SetChannelRanges(0, 0, 1, 255);
-SetLoadAtomID(9);
+SetLoadAtomID(8);
 SetLoc(19, 3, 0);
 SetSize(7, 1, 1);
 LockPosition(false);
@@ -1275,7 +1289,7 @@ SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
 Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
 SetChannels(0, 1);
 SetChannelRanges(0, 0, 1, 255);
-SetLoadAtomID(10);
+SetLoadAtomID(9);
 SetLoc(19, 5, 0);
 SetSize(7, 1, 1);
 LockPosition(false);
@@ -1332,41 +1346,51 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\AvailabilityControl.ico]));
 Set(DdbRec, [>t-atomtype:t028.]);
-SetChannels(1, 1);
+SetChannels(1, 2);
 SetChannelRanges(1, 255, 0, 255);
-SetLoadAtomID(11);
+SetLoadAtomID(10);
 SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, true, 0, 0, [], []);
 SetLoc(27, 1, 0);
 SetSize(5, 3, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(1, 8);
+SetTable(2, 8);
 CreateTableColumn(0, 64, [``
 1
+2
 ]);
 CreateTableColumn(1, 64, [`Oldstatus`
-0
+5
+5
 ]);
 CreateTableColumn(2, 64, [`Downtime`
+0
 0
 ]);
 CreateTableColumn(3, 64, [`Down`
 0
+0
 ]);
 CreateTableColumn(4, 64, [`xs`
+0
 0
 ]);
 CreateTableColumn(5, 64, [`ys`
 0
+0
 ]);
 CreateTableColumn(6, 64, [`zs`
+0
 0
 ]);
 CreateTableColumn(7, 64, [`rot`
 0
+0
 ]);
 CreateTableColumn(8, 64, [`color`
+255
 255
 ]);
 SetStatus(11);
@@ -1375,6 +1399,7 @@ Up;
 
 {Saved Model3D settings.}
 
-ConnectLoadAtoms(1, 8, 1, 11, 0);
-ConnectLoadAtoms(1, 11, 0, 12, 0);
+ConnectLoadAtoms(1, 7, 1, 10, 0);
+ConnectLoadAtoms(1, 10, 0, 11, 0);
+ConnectLoadAtoms(2, 10, 0, 12, 0);
 ExecOnCreationOnLoad;
