@@ -1,11 +1,9 @@
-﻿{10.5.0.3374}
+{10.5.0.3374}
 
 
 {Load required atoms}
 
 StoreActiveAtom;
-LoadAtomFromFile([Availability Control], pDir([Atoms\AVAILABILITY\Availability Control.atm]));
-LoadAtomFromFile([Time Schedule Availability], pDir([Atoms\AVAILABILITY\Time Schedule Availability.atm]));
 LoadAtomFromFile([Product], pDir([Atoms\BASIC MODELING\Product.atm]));
 LoadAtomFromFile([Source], pDir([Atoms\BASIC MODELING\Source.atm]));
 LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
@@ -13,48 +11,47 @@ LoadAtomFromFile([Accumulating Conveyor], pDir([Atoms\TRANSPORT\CONVEYORS\ACCUMU
 RestoreActiveAtom;
 
 
-{Atom: Composition Container10}
+{Atom: Entrance}
 
 sets;
 AtomByName([Composition Container], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [Composition Container10], 1, false);
+CreateAtom(a, s, [Entrance], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], 8.5);
-SetAtt([yCenter2D], 2);
-SetAtt([xRadius2D], 20.5);
-SetAtt([yRadius2D], 5);
-SetAtt([xCenter3D], 21.5);
-SetAtt([yCenter3D], 6);
+SetAtt([xCenter2D], 16.5);
+SetAtt([yCenter2D], 4.5);
+SetAtt([xRadius2D], 17.5);
+SetAtt([yRadius2D], 1.5);
+SetAtt([xCenter3D], 18.5);
+SetAtt([yCenter3D], 2.5);
 SetAtt([zCenter3D], 1);
-SetAtt([Radius3D], 21.1246301742776);
+SetAtt([Radius3D], 17.5926120857592);
 SetAtt([ShowName], 0);
-SetAtomSettings([], 8421504, 24626);
+SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\entrance\Entrance.atm.>cmpname:C:\temp\ptsd\composition_containers\entrance\Entrance.cmp.]);
+Set(DdbRec, [>cmpname:C:\temp\ptsd\composition_containers\entrance\Entrance.cmp.>atmname:C:\temp\ptsd\composition_containers\entrance\Entrance.atm.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetLoc(-13, -4, 0);
-SetSize(43, 12, 10);
+SetSize(37, 5, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
 SetTable(1, 2);
-CreateTableColumn(0, 64, [``
+CreateTableColumn(0, 25, [``
 1
 ]);
-CreateTableColumn(1, 64, [`VariableName`
+CreateTableColumn(1, 100, [`VariableName`
 ]);
-CreateTableColumn(2, 64, [`Expression`
+CreateTableColumn(2, 150, [`Expression`
 ]);
 Set(OnCreation, [4DS[
              do(
@@ -72,172 +69,12 @@ SetStatus(0);
 ExecLateInit;
 
 
-{Atom: NormalParkOpenSchedule}
-
-sets;
-AtomByName([Time Schedule Availability], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Time Schedule Availability'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [NormalParkOpenSchedule], 1, false);
-SetAtt([RepeatTable], 1);
-SetAtt([AddCycle], 0);
-SetAtt([CurRecord], 1);
-SetAtt([MaxRec], 8);
-SetAtt([3DIcon], 3);
-SetAtomSettings([], 32768, 1200);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
-Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
-SetChannels(0, 1);
-SetChannelRanges(0, 0, 1, 255);
-SetLoadAtomID(2);
-SetLoc(1, 1, 0);
-SetSize(7, 1, 1);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetTable(3, 2);
-CreateTableColumn(0, 64, [``
-1
-2
-3
-]);
-CreateTableColumn(1, 64, [`Time`
-`hr(0)`
-`hr(9)`
-`hr(18)`
-]);
-CreateTableColumn(2, 64, [`Down=1`
-1
-0
-1
-]);
-SetStatus(11);
-ExecLateInit;
-
-
-{Atom: LongHourParkOpenSchedule}
-
-sets;
-AtomByName([Time Schedule Availability], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Time Schedule Availability'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [LongHourParkOpenSchedule], 1, false);
-SetAtt([RepeatTable], 1);
-SetAtt([AddCycle], 0);
-SetAtt([CurRecord], 1);
-SetAtt([MaxRec], 8);
-SetAtt([3DIcon], 3);
-SetAtomSettings([], 32768, 1200);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
-Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
-SetChannels(0, 1);
-SetChannelRanges(0, 0, 1, 255);
-SetLoadAtomID(3);
-SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
-SetLoc(1, 3, 0);
-SetSize(7, 1, 1);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetTable(3, 2);
-CreateTableColumn(0, 64, [``
-1
-2
-3
-]);
-CreateTableColumn(1, 64, [`Time`
-`hr(0)`
-`hr(9)`
-`hr(19)`
-]);
-CreateTableColumn(2, 64, [`Down=1`
-1
-0
-1
-]);
-SetStatus(11);
-ExecLateInit;
-
-
-{Atom: WinterParkOpenSchedule}
-
-sets;
-AtomByName([Time Schedule Availability], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Time Schedule Availability'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [WinterParkOpenSchedule], 1, false);
-SetAtt([RepeatTable], 1);
-SetAtt([AddCycle], 0);
-SetAtt([CurRecord], 1);
-SetAtt([MaxRec], 8);
-SetAtt([3DIcon], 3);
-SetAtomSettings([], 32768, 1200);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
-Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
-SetChannels(0, 1);
-SetChannelRanges(0, 0, 1, 255);
-SetLoadAtomID(4);
-SetLoc(1, 5, 0);
-SetSize(7, 1, 1);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetTable(3, 2);
-CreateTableColumn(0, 64, [``
-1
-2
-3
-]);
-CreateTableColumn(1, 64, [`Time`
-`hr(0)`
-`hr(11)`
-`hr(20)`
-]);
-CreateTableColumn(2, 64, [`Down=1`
-1
-0
-1
-]);
-SetStatus(11);
-ExecLateInit;
-
-
-{Atom: Source6}
+{Atom: Spawner}
 
 sets;
 AtomByName([Source], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Source'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [Source6], 1, false);
+CreateAtom(a, s, [Spawner], 1, false);
 SetExprAtt([SendTo], [{.~1|~1~.}1]);
 SetExprAtt([CycleTime], [10]);
 SetExprAtt([CreationTrigger], [{.~1|~setEntryLabels2~.}setEntryLabels2]);
@@ -258,9 +95,9 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Source.ico]));
 SetChannels(1, 1);
 SetChannelRanges(1, 1, 1, 255);
-SetLoadAtomID(5);
+SetLoadAtomID(2);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
-SetLoc(10, 8, 0);
+SetLoc(4, 1, 0);
 SetSize(5, 3, 2);
 LockPosition(false);
 LockSize(false);
@@ -269,12 +106,12 @@ SetStatus(2);
 ExecLateInit;
 
 
-{Atom: Besucher}
+{Atom: Visitors}
 
 sets;
 AtomByName([Product], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Product'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [Besucher], 1, false);
+CreateAtom(a, Up(s), [Visitors], 1, false);
 SetAtt([Icon3D], 11);
 SetAtt([Hide2DIcon], 0);
 SetAtt([ShowColor], 0);
@@ -298,85 +135,13 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Product.ico]));
 Set(DdbRec, [>drawxsize:1.>drawysize:1.]);
-SetLoadAtomID(6);
-SetLoc(7, 9, 0);
+SetLoadAtomID(3);
+SetLoc(1, 2, 0);
 SetSize(1, 1, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
 SetStatus(0);
-ExecLateInit;
-
-
-{Atom: Availability Control10}
-
-sets;
-AtomByName([Availability Control], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Availability Control'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [Availability Control10], 1, false);
-SetAtt([Available], 1);
-SetAtt([cntlinput], 1);
-SetAtt([cntloutput], 1);
-SetAtt([cntlevents], 1);
-SetAtt([cntlspeedcontainer], 1);
-SetAtt([cntlspeedcontents], 0);
-SetAtt([cntlrotationcont], 1);
-SetAtt([NrDown], 0);
-SetAtt([TriggerOnDown], 0);
-SetAtt([TriggerOnUp], 0);
-SetAtt([3DIcon], 4);
-SetAtomSettings([], 32768, 1200);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-AddModel3D(
-	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\AvailabilityControl.ico]));
-Set(DdbRec, [>t-atomtype:t028.]);
-SetChannels(1, 1);
-SetChannelRanges(1, 255, 1, 255);
-SetLoadAtomID(7);
-SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
-SetLoc(10, 2, 0);
-SetSize(5, 3, 1);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetTable(1, 8);
-CreateTableColumn(0, 64, [``
-1
-]);
-CreateTableColumn(1, 64, [`Oldstatus`
-0
-]);
-CreateTableColumn(2, 64, [`Downtime`
-0
-]);
-CreateTableColumn(3, 64, [`Down`
-0
-]);
-CreateTableColumn(4, 64, [`xs`
-0
-]);
-CreateTableColumn(5, 64, [`ys`
-0
-]);
-CreateTableColumn(6, 64, [`zs`
-0
-]);
-CreateTableColumn(7, 64, [`rot`
-0
-]);
-CreateTableColumn(8, 64, [`color`
-255
-]);
-SetStatus(11);
 ExecLateInit;
 
 
@@ -421,9 +186,9 @@ SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
 Set(DdbRec, [>legdist:3.]);
 SetChannels(1, 1);
 SetChannelRanges(1, 255, 1, 255);
-SetLoadAtomID(8);
+SetLoadAtomID(4);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
-SetLoc(17, 9, 0);
+SetLoc(11, 2, 0);
 SetSize(25, 1, 1);
 LockPosition(false);
 LockSize(false);
@@ -434,8 +199,6 @@ Up;
 
 {Saved Model3D settings.}
 
-ConnectLoadAtoms(1, 3, 1, 7, 0);
-ConnectLoadAtoms(1, 5, 1, 8, 0);
-ConnectLoadAtoms(0, 6, 1, 5, 0);
-ConnectLoadAtoms(1, 7, 0, 5, 0);
+ConnectLoadAtoms(1, 2, 1, 4, 0);
+ConnectLoadAtoms(0, 3, 1, 2, 0);
 ExecOnCreationOnLoad;

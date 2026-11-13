@@ -4,6 +4,8 @@
 {Load required atoms}
 
 StoreActiveAtom;
+LoadAtomFromFile([Availability Control], pDir([Atoms\AVAILABILITY\Availability Control.atm]));
+LoadAtomFromFile([Time Schedule Availability], pDir([Atoms\AVAILABILITY\Time Schedule Availability.atm]));
 LoadAtomFromFile([ExcelActiveX], pDir([Atoms\DATA\ExcelActiveX.atm]));
 LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
 LoadAtomFromFile([Empirical Distribution], pDir([Atoms\TOOLS\Empirical Distribution.atm]));
@@ -17,11 +19,11 @@ RestoreActiveAtom;
 PreregisterFunction([getExitTime], 0, 0);
 PreregisterFunction([indexPOI], 0, 0);
 PreregisterFunction([initilize], 0, 0);
-PreregisterFunction([connectSchedule], 0, 0);
 PreregisterFunction([getHeight], 1, 1);
 PreregisterFunction([getAge], 0, 0);
 PreregisterFunction([setEntryLabels2], 0, 0);
 PreregisterFunction([getAttractions], 0, 0);
+PreregisterFunction([connectSchedule], 0, 0);
 PreregisterFunction([fastPass], 0, 0);
 PreregisterFunction([age2], 0, 0);
 Dim([schedule], vbString);
@@ -40,14 +42,14 @@ SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], -3.5);
-SetAtt([yCenter2D], -10);
-SetAtt([xRadius2D], 8.5);
+SetAtt([xCenter2D], 14.5);
+SetAtt([yCenter2D], -6);
+SetAtt([xRadius2D], 15.5);
 SetAtt([yRadius2D], 4);
-SetAtt([xCenter3D], 5);
+SetAtt([xCenter3D], 16.5);
 SetAtt([yCenter3D], 3.5);
 SetAtt([zCenter3D], 0.5);
-SetAtt([Radius3D], 4.74341649025257);
+SetAtt([Radius3D], 15.708278072405);
 SetAtt([ShowName], 0);
 SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
@@ -60,7 +62,7 @@ Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmp
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetSize(19, 10, 10);
+SetSize(33, 10, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -212,7 +214,31 @@ SetAttribute(r(4), [getHeight_Att], vbVariant, [4DS[do(
 
   Return(Round(Normal(meanHeight, 3)))
 )]4DS], a, [public], [], false);
-SetAttribute(r(5), [connectSchedule_Att], vbVariant, [4DS[do(
+SetAttribute(r(5), [connectSchedule_Att], vbVariant, [4DS[Do(
+  Var([spawnerReferences], vbValue, VectorCreate(c, [spawnerReferencesVector], vbAtom)),
+  Var([availabilityControl], vbAtom, AtomByName([AvailabilityControl], Model)),
+  
+  ForAtomTreeUnder(
+    Model,
+    If(CompareText(name(a), [Spawner]),VectorAdd(spawnerReferences, a))
+  ),
+
+  SetChannels(1, VectorSize(spawnerReferences), availabilityControl),
+  
+  Repeat(
+    VectorSize(spawnerReferences), 
+    Do(
+      Connect(
+        Count,
+        availabilityControl,
+        0,
+        VectorItem(spawnerReferences, Count-1)
+      )
+    )
+  ),
+  
+  VectorDestroy(spawnerReferences),
+
   if(
     CompareText(Label([Schedule], Model), [Normal]),
 
@@ -220,7 +246,7 @@ SetAttribute(r(5), [connectSchedule_Att], vbVariant, [4DS[do(
       1,
       AtomByName([NormalParkOpenSchedule], Model),
       1,
-      AtomByName([Availability Control10], Model)
+      availabilityControl
     ),
 
     if(
@@ -230,7 +256,7 @@ SetAttribute(r(5), [connectSchedule_Att], vbVariant, [4DS[do(
         1,
         AtomByName([LongHourParkOpenSchedule], Model),
         1,
-        AtomByName([Availability Control10], Model)
+        availabilityControl
       ),
 
       if(
@@ -240,7 +266,7 @@ SetAttribute(r(5), [connectSchedule_Att], vbVariant, [4DS[do(
           1,
           AtomByName([WinterParkOpenSchedule], Model),
           1,
-          AtomByName([Availability Control10], Model)
+          availabilityControl
         )
       )
     )
@@ -362,41 +388,6 @@ DefineFunction([initilize], [Various], 0, 0, [4DS[Do(
   dim([schedule], vbString, [LongHour]),
   connectSchedule
 )]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([connectSchedule], [Various], 0, 0, [4DS[do(
-  if(
-    CompareText(Label([Schedule], Model), [Normal]),
-
-    Connect(
-      1,
-      AtomByName([NormalParkOpenSchedule], Model),
-      1,
-      AtomByName([Availability Control10], Model)
-    ),
-
-    if(
-      CompareText(Label([Schedule], Model), [LongHour]),
-
-      Connect(
-        1,
-        AtomByName([LongHourParkOpenSchedule], Model),
-        1,
-        AtomByName([Availability Control10], Model)
-      ),
-
-      if(
-        CompareText(Label([Schedule], Model), [Winter]),
-
-        Connect(
-          1,
-          AtomByName([WinterParkOpenSchedule], Model),
-          1,
-          AtomByName([Availability Control10], Model)
-        )
-      )
-    )
-  )
-)
-]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([getHeight], [Various], 1, 1, [4DS[do(
   var([ageParam], vbValue, p(1)),
   var([row], vbValue),
@@ -489,6 +480,65 @@ DefineFunction([getAttractions], [Various], 0, 0, [4DS[Do(
     )
   )
 )]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([connectSchedule], [Various], 0, 0, [4DS[Do(
+  Var([spawnerReferences], vbValue, VectorCreate(c, [spawnerReferencesVector], vbAtom)),
+  Var([availabilityControl], vbAtom, AtomByName([AvailabilityControl], Model)),
+  
+  ForAtomTreeUnder(
+    Model,
+    If(CompareText(name(a), [Spawner]),VectorAdd(spawnerReferences, a))
+  ),
+
+  SetChannels(1, VectorSize(spawnerReferences), availabilityControl),
+  
+  Repeat(
+    VectorSize(spawnerReferences), 
+    Do(
+      Connect(
+        Count,
+        availabilityControl,
+        0,
+        VectorItem(spawnerReferences, Count-1)
+      )
+    )
+  ),
+  
+  VectorDestroy(spawnerReferences),
+
+  if(
+    CompareText(Label([Schedule], Model), [Normal]),
+
+    Connect(
+      1,
+      AtomByName([NormalParkOpenSchedule], Model),
+      1,
+      availabilityControl
+    ),
+
+    if(
+      CompareText(Label([Schedule], Model), [LongHour]),
+
+      Connect(
+        1,
+        AtomByName([LongHourParkOpenSchedule], Model),
+        1,
+        availabilityControl
+      ),
+
+      if(
+        CompareText(Label([Schedule], Model), [Winter]),
+
+        Connect(
+          1,
+          AtomByName([WinterParkOpenSchedule], Model),
+          1,
+          availabilityControl
+        )
+      )
+    )
+  )
+)
+]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
@@ -655,8 +705,8 @@ SetTextAtt([FileName], [ptsd\ptsd.xlsx]);
 SetTextAtt([SheetName], [Heights]);
 SetAtt([Visible], 0);
 SetAtt([NoTables], 0);
-SetAtt([RefWorkbook], 977253944);
-SetTextAtt([RefWorkbookName], [oleExcelActiveX_Workbook2]);
+SetAtt([RefWorkbook], 1065801864);
+SetTextAtt([RefWorkbookName], [oleExcelActiveX_Workbook1]);
 SetAtt([UseAtomName], 1);
 SetAtt([AliasesCreated], 0);
 SetAtt([CreateAlias], 0);
@@ -919,5 +969,242 @@ CreateTableColumn(2, 64, [`Value`
 ]);
 SetStatus(0);
 ExecLateInit;
+
+
+{Atom: NormalParkOpenSchedule}
+
+sets;
+AtomByName([Time Schedule Availability], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Time Schedule Availability'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [NormalParkOpenSchedule], 1, false);
+SetAtt([RepeatTable], 1);
+SetAtt([AddCycle], 0);
+SetAtt([CurRecord], 1);
+SetAtt([MaxRec], 8);
+SetAtt([3DIcon], 3);
+SetAtomSettings([], 32768, 1200);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
+Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
+SetChannels(0, 1);
+SetChannelRanges(0, 0, 1, 255);
+SetLoadAtomID(8);
+SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
+SetLoc(19, 1, 0);
+SetSize(7, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(3, 2);
+CreateTableColumn(0, 64, [``
+1
+2
+3
+]);
+CreateTableColumn(1, 64, [`Time`
+`hr(0)`
+`hr(9)`
+`hr(18)`
+]);
+CreateTableColumn(2, 64, [`Down=1`
+1
+0
+1
+]);
+SetStatus(11);
+ExecLateInit;
+
+
+{Atom: LongHourParkOpenSchedule}
+
+sets;
+AtomByName([Time Schedule Availability], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Time Schedule Availability'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [LongHourParkOpenSchedule], 1, false);
+SetAtt([RepeatTable], 1);
+SetAtt([AddCycle], 0);
+SetAtt([CurRecord], 1);
+SetAtt([MaxRec], 8);
+SetAtt([3DIcon], 3);
+SetAtomSettings([], 32768, 1200);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
+Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
+SetChannels(0, 1);
+SetChannelRanges(0, 0, 1, 255);
+SetLoadAtomID(9);
+SetLoc(19, 3, 0);
+SetSize(7, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(3, 2);
+CreateTableColumn(0, 64, [``
+1
+2
+3
+]);
+CreateTableColumn(1, 64, [`Time`
+`hr(0)`
+`hr(9)`
+`hr(19)`
+]);
+CreateTableColumn(2, 64, [`Down=1`
+1
+0
+1
+]);
+SetStatus(11);
+ExecLateInit;
+
+
+{Atom: WinterParkOpenSchedule}
+
+sets;
+AtomByName([Time Schedule Availability], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Time Schedule Availability'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [WinterParkOpenSchedule], 1, false);
+SetAtt([RepeatTable], 1);
+SetAtt([AddCycle], 0);
+SetAtt([CurRecord], 1);
+SetAtt([MaxRec], 8);
+SetAtt([3DIcon], 3);
+SetAtomSettings([], 32768, 1200);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\TimeScheduleAvailability.ico]));
+Set(DdbRec, [>t-atomoutconnect:t028.>t-available:1.]);
+SetChannels(0, 1);
+SetChannelRanges(0, 0, 1, 255);
+SetLoadAtomID(10);
+SetLoc(19, 5, 0);
+SetSize(7, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(3, 2);
+CreateTableColumn(0, 64, [``
+1
+2
+3
+]);
+CreateTableColumn(1, 64, [`Time`
+`hr(0)`
+`hr(11)`
+`hr(20)`
+]);
+CreateTableColumn(2, 64, [`Down=1`
+1
+0
+1
+]);
+SetStatus(11);
+ExecLateInit;
+
+
+{Atom: AvailabilityControl}
+
+sets;
+AtomByName([Availability Control], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Availability Control'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [AvailabilityControl], 1, false);
+SetAtt([Available], 1);
+SetAtt([cntlinput], 1);
+SetAtt([cntloutput], 1);
+SetAtt([cntlevents], 1);
+SetAtt([cntlspeedcontainer], 1);
+SetAtt([cntlspeedcontents], 0);
+SetAtt([cntlrotationcont], 1);
+SetAtt([NrDown], 0);
+SetExprAtt([TriggerOnDown], [0]);
+SetExprAtt([TriggerOnUp], [0]);
+SetAtt([3DIcon], 4);
+SetAtomSettings([], 32768, 1200);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller.wrl]), [controller.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller1.wrl]), [controller1.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([controller2.wrl]), [controller2.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AvailabilityControl.ico]));
+Set(DdbRec, [>t-atomtype:t028.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(11);
+SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
+SetLoc(27, 1, 0);
+SetSize(5, 3, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetTable(1, 8);
+CreateTableColumn(0, 64, [``
+1
+]);
+CreateTableColumn(1, 64, [`Oldstatus`
+2
+]);
+CreateTableColumn(2, 64, [`Downtime`
+0
+]);
+CreateTableColumn(3, 64, [`Down`
+0
+]);
+CreateTableColumn(4, 64, [`xs`
+0
+]);
+CreateTableColumn(5, 64, [`ys`
+0
+]);
+CreateTableColumn(6, 64, [`zs`
+0
+]);
+CreateTableColumn(7, 64, [`rot`
+0
+]);
+CreateTableColumn(8, 64, [`color`
+255
+]);
+SetStatus(11);
+ExecLateInit;
 Up;
+
+{Saved Model3D settings.}
+
+ConnectLoadAtoms(1, 8, 1, 11, 0);
+ConnectLoadAtoms(1, 11, 0, 12, 0);
 ExecOnCreationOnLoad;

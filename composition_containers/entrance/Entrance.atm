@@ -1,48 +1,47 @@
-﻿{10.5.0.3374}
+{10.5.0.3374}
 
 
-{Atom: Composition Container10}
+{Atom: Entrance}
 
 sets;
 AtomByName([Composition Container], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [Composition Container10], 1, false);
+CreateAtom(a, s, [Entrance], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], 8.5);
-SetAtt([yCenter2D], 2);
-SetAtt([xRadius2D], 20.5);
-SetAtt([yRadius2D], 5);
-SetAtt([xCenter3D], 21.5);
-SetAtt([yCenter3D], 6);
+SetAtt([xCenter2D], 16.5);
+SetAtt([yCenter2D], 4.5);
+SetAtt([xRadius2D], 17.5);
+SetAtt([yRadius2D], 1.5);
+SetAtt([xCenter3D], 18.5);
+SetAtt([yCenter3D], 2.5);
 SetAtt([zCenter3D], 1);
-SetAtt([Radius3D], 21.1246301742776);
+SetAtt([Radius3D], 17.5926120857592);
 SetAtt([ShowName], 0);
-SetAtomSettings([], 8421504, 24626);
+SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\entrance\Entrance.atm.>cmpname:C:\temp\ptsd\composition_containers\entrance\Entrance.cmp.]);
+Set(DdbRec, [>cmpname:C:\temp\ptsd\composition_containers\entrance\Entrance.cmp.>atmname:C:\temp\ptsd\composition_containers\entrance\Entrance.atm.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetLoc(-13, -4, 0);
-SetSize(43, 12, 10);
+SetSize(37, 5, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
 SetTable(1, 2);
-CreateTableColumn(0, 64, [``
+CreateTableColumn(0, 25, [``
 1
 ]);
-CreateTableColumn(1, 64, [`VariableName`
+CreateTableColumn(1, 100, [`VariableName`
 ]);
-CreateTableColumn(2, 64, [`Expression`
+CreateTableColumn(2, 150, [`Expression`
 ]);
 Set(OnCreation, [4DS[
              do(
