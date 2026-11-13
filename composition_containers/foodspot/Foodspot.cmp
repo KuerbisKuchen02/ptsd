@@ -1,10 +1,9 @@
-﻿{10.5.0.3374}
+{10.5.0.3374}
 
 
 {Load required atoms}
 
 StoreActiveAtom;
-LoadAtomFromFile([Queue], pDir([Atoms\BASIC MODELING\Queue.atm]));
 LoadAtomFromFile([MultiService], pDir([Atoms\PROCESSES\MultiService.atm]));
 LoadAtomFromFile([Composition Container], pDir([Atoms\TOOLS\Composition Container.atm]));
 RestoreActiveAtom;
@@ -18,18 +17,18 @@ if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inhe
 CreateAtom(a, s, [Foodspot], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
-SetAtt([nrvariables], 0);
+SetAtt([nrvariables], 2);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], 14);
-SetAtt([yCenter2D], 13.5);
-SetAtt([xRadius2D], 7);
+SetAtt([xCenter2D], 10);
+SetAtt([yCenter2D], 10.5);
+SetAtt([xRadius2D], 4);
 SetAtt([yRadius2D], 2.5);
-SetAtt([xCenter3D], 6);
-SetAtt([yCenter3D], 9.5);
+SetAtt([xCenter3D], 5);
+SetAtt([yCenter3D], 7.5);
 SetAtt([zCenter3D], 0.5);
-SetAtt([Radius3D], 7.44983221287567);
+SetAtt([Radius3D], 4.74341649025257);
 SetAtt([ShowName], 0);
-SetAtomSettings([], 8421504, 24626);
+SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
@@ -40,20 +39,23 @@ Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\foodspot\Foodspot.atm.
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetLoc(8, 4, 0);
+SetLoc(5, 3, 0);
 SetSize(10, 4, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(1, 2);
+SetTable(2, 2);
 CreateTableColumn(0, 25, [``
 1
+2
 ]);
 CreateTableColumn(1, 100, [`VariableName`
+`id`
 `TimeToEat`
 ]);
 CreateTableColumn(2, 150, [`Expression`
-600
+0
+0
 ]);
 Set(OnCreation, [4DS[
              do(
@@ -71,51 +73,13 @@ SetStatus(0);
 ExecLateInit;
 
 
-{Atom: Queue2}
-
-sets;
-AtomByName([Queue], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [Queue2], 1, false);
-SetExprAtt([SendTo], [1]);
-SetAtt([Capacity], 10);
-SetAtt([EntryTrigger], 0);
-SetAtt([ExitTrigger], 0);
-SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out) .}content(c)]);
-SetAtt([DrawLoc], 1);
-SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel .}openallic(c)]);
-SetAtt([3DIcon], 2);
-SetAtt([ShowContents], 1);
-SetAtt([FittingContentCount], 0);
-SetAtt([NameLength3D], 6);
-SetAtomSettings([], 12615680, 4272);
-Set(Icon(a), 
-	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\Queue.ico]));
-Set(DdbRec, [>updateversion:10.5.]);
-SetChannels(1, 1);
-SetChannelRanges(1, 255, 1, 255);
-SetLoadAtomID(2);
-SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
-SetLoc(-1, 8, 0);
-SetSize(5, 2, 0);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetStatus(13);
-ExecLateInit;
-
-
-{Atom: MultiService}
+{Atom: Foodspot}
 
 sets;
 AtomByName([MultiService], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'MultiService'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [MultiService], 1, false);
-SetAtt([capacity], 10);
+CreateAtom(a, s, [Foodspot], 1, false);
+SetAtt([capacity], 100);
 SetExprAtt([cycletime], [4DS[TableFindString(Up(c), [TimeToEat], 1, 2)
 ]4DS]);
 SetAtt([curcycle], 0);
@@ -138,9 +102,9 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\MultiServer.ico]));
 SetChannels(1, 1);
 SetChannelRanges(1, 255, 1, 255);
-SetLoadAtomID(3);
+SetLoadAtomID(2);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
-SetLoc(5, 7, 0);
+SetLoc(1, 5, 0);
 SetSize(8, 5, 1);
 LockPosition(false);
 LockSize(false);
@@ -168,6 +132,4 @@ SetStatus(1);
 ExecLateInit;
 Up;
 ConnectLoadAtoms(1, 2, 1, 3, 0);
-ConnectLoadAtoms(1, 4, 1, 2, 0);
-ConnectLoadAtoms(1, 3, 1, 5, 0);
 ExecOnCreationOnLoad;
