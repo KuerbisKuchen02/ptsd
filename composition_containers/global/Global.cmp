@@ -17,7 +17,6 @@ RestoreActiveAtom;
 
 PreregisterFunction([indexPOI], 0, 0);
 PreregisterFunction([getAge], 0, 0);
-PreregisterFunction([setEntryLabels2], 0, 0);
 PreregisterFunction([getAttractions], 0, 0);
 PreregisterFunction([connectSchedule], 0, 0);
 PreregisterFunction([setTrainCapacities], 0, 0);
@@ -25,6 +24,8 @@ PreregisterFunction([setNextAttraction], 1, 1);
 PreregisterFunction([getExitTime], 0, 0);
 PreregisterFunction([initilize], 0, 0);
 PreregisterFunction([getHeight], 1, 1);
+PreregisterFunction([search], 3, 3);
+PreregisterFunction([setEntryLabels2], 0, 0);
 PreregisterFunction([fastPass], 0, 0);
 PreregisterFunction([age2], 0, 0);
 Dim([schedule], vbString);
@@ -59,7 +60,7 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\temp\ptsd\composition_containers\global\Global.cmp.]);
+Set(DdbRec, [>cmpname:C:\temp\ptsd\composition_containers\global\Global.cmp.>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
@@ -181,7 +182,7 @@ sets;
 AtomByName([Function Editor], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Function Editor'. Inheriting from BaseClass.]));
 CreateAtom(a, Up(s), [Function Editor43], 1, false);
-CreateAttributes(10);
+CreateAttributes(11);
 SetAttributeName(r(1), [getExitTime_Att], a);
 SetAttributeName(r(2), [indexPOI_Att], a);
 SetAttributeName(r(3), [initilize_Att], a);
@@ -192,6 +193,7 @@ SetAttributeName(r(7), [getAttractions_Att], a);
 SetAttributeName(r(8), [setEntryLabels2_Att], a);
 SetAttributeName(r(9), [setTrainCapacities_Att], a);
 SetAttributeName(r(10), [setNextAttraction_Att], a);
+SetAttributeName(r(11), [search_Att], a);
 SetAttribute(r(1), [getExitTime_Att], vbVariant, [4DS[Do(
   EnterDebugger,
   
@@ -400,7 +402,7 @@ SetAttribute(r(7), [getAttractions_Att], vbVariant, [4DS[Do(
 SetAttribute(r(8), [setEntryLabels2_Att], vbVariant, [4DS[Do(
   SetLabel([hasFastPass], fastPass, i),
   SetLabel([entryTime], Time, i),
-  SetLabel([existTime], getExitTime, i),
+  SetLabel([exitTime], getExitTime, i),
   SetLabel([age], getAge, i),
   SetLabel([height], getHeight(Label([age], i)), i),
   getAttractions
@@ -478,6 +480,78 @@ SetAttribute(r(10), [setNextAttraction_Att], vbVariant, [4DS[Do(
       )))
     )))
 ]4DS], a, [public], [], false);
+SetAttribute(r(11), [search_Att], vbVariant, [4DS[{c is the atom calling the function}
+{i is the guest}
+
+Do(
+  EnterDebugger(),
+  
+  {Cleanup previous data}
+  If(AtomDataContainer([visited], c) > 0, AtomDataContainerDelete([visited], c)),
+  IF(AtomDataContainer([queue], c) > 0, AtomDataContainerDelete([queue], c)),
+  
+  Var([target], vbValue, Label([nextAttraction], First(c))),
+  Assert(target <= 0),
+  Trace([Target ID: ], target),
+  {Find the atom ref for the given target or stop if the target is not defined}
+  Var([pois], vbValue, AtomDataContainer([pois], Model)),
+  Var([targetRef], vbAtom),
+  If(Not(HashMapTryGetValue(pois, target, targetRef)), Do(
+    Trace([Error while routing guest! Target = '], target, [' is not a valid POI. Is the id of the POI set correctly and was the POI index successful?]),
+    Stop(),
+    Return()
+  )),
+  
+  {breath search}
+  Var([visitedRef], vbValue, HashMapCreate(c, [visited], vbAtom, vbValue)),
+  Var([queueRef], vbValue, VectorCreate(c, [queue], vbAtom)),
+  Var([node], vbAtom),
+  Var([child], vbAtom),
+  Var([channel], vbValue, -1),
+  
+  VectorAdd(queueRef, c),
+  HashMapAdd(visitedRef, c, -1),
+  
+  While(VectorSize(queueRef) <> 0, Do(
+    node := VectorItem(queueRef, 0),
+    VectorDelete(queueRef, 0),
+    
+    If(Up(node) = targetRef, Do(
+      channel := HashMapItem(visitedRef, node),
+      Trace([Found target, use channel ], channel),
+      Break
+    )),
+    
+    Repeat(NrOC(node), Do(
+      If(Not(OcConnected(Count, node)), Continue),
+      child := Out(Count, node),
+      
+      {Make sure pathfinding is only done through conveyors}
+      if(AttExists([isConveyor]) = 0, child, do(
+        Msg(Concat([No path to the target: ], String(target))),
+        Stop,
+        Return
+      )),
+            
+      If(HashMapContainsKey(visitedRef, child), Continue),
+      VectorAdd(queueRef, child),
+      
+      channel := HashMapItem(visitedRef, node),
+      If(channel = -1, 
+        HashMapAdd(visitedRef, child, Count),
+        HashMapAdd(visitedRef, child, channel)
+      )  
+    ))
+  )),
+  {Cleanup}
+  HashMapDestroy(visitedRef),
+  VectorDestroy(queueRef),
+  
+  If(channel < 0, 
+    Trace([Found no valid route to target ], Name(targetRef), [ (internal id: ], targetRef, [ id: ], target, [)])
+  ),
+  Return(channel)
+)]4DS], a, [public], [], false);
 SetAtomSettings([], 33023, 1192);
 DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
   
@@ -535,14 +609,6 @@ DefineFunction([getAge], [Various], 0, 0, [4DS[Do(
   ),
 
   Return(ageParam)
-)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([setEntryLabels2], [Various], 0, 0, [4DS[Do(
-  SetLabel([hasFastPass], fastPass, i),
-  SetLabel([entryTime], Time, i),
-  SetLabel([existTime], getExitTime, i),
-  SetLabel([age], getAge, i),
-  SetLabel([height], getHeight(Label([age], i)), i),
-  getAttractions
 )]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([getAttractions], [Various], 0, 0, [4DS[Do(
   Var(
@@ -765,6 +831,86 @@ DefineFunction([getHeight], [Various], 1, 1, [4DS[do(
 
   Round(Normal(meanHeight, 3))
 )]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([search], [Various], 3, 3, [4DS[{c is the atom calling the function}
+{i is the guest}
+
+Do(
+  EnterDebugger(),
+  
+  {Cleanup previous data}
+  If(AtomDataContainer([visited], c) > 0, AtomDataContainerDelete([visited], c)),
+  IF(AtomDataContainer([queue], c) > 0, AtomDataContainerDelete([queue], c)),
+  
+  Var([target], vbValue, Label([nextAttraction], First(c))),
+  Assert(target <= 0),
+  Trace([Target ID: ], target),
+  {Find the atom ref for the given target or stop if the target is not defined}
+  Var([pois], vbValue, AtomDataContainer([pois], Model)),
+  Var([targetRef], vbAtom),
+  If(Not(HashMapTryGetValue(pois, target, targetRef)), Do(
+    Trace([Error while routing guest! Target = '], target, [' is not a valid POI. Is the id of the POI set correctly and was the POI index successful?]),
+    Stop(),
+    Return()
+  )),
+  
+  {breath search}
+  Var([visitedRef], vbValue, HashMapCreate(c, [visited], vbAtom, vbValue)),
+  Var([queueRef], vbValue, VectorCreate(c, [queue], vbAtom)),
+  Var([node], vbAtom),
+  Var([child], vbAtom),
+  Var([channel], vbValue, -1),
+  
+  VectorAdd(queueRef, c),
+  HashMapAdd(visitedRef, c, -1),
+  
+  While(VectorSize(queueRef) <> 0, Do(
+    node := VectorItem(queueRef, 0),
+    VectorDelete(queueRef, 0),
+    
+    If(Up(node) = targetRef, Do(
+      channel := HashMapItem(visitedRef, node),
+      Trace([Found target, use channel ], channel),
+      Break
+    )),
+    
+    Repeat(NrOC(node), Do(
+      If(Not(OcConnected(Count, node)), Continue),
+      child := Out(Count, node),
+      
+      {Make sure pathfinding is only done through conveyors}
+      if(AttExists([isConveyor]) = 0, child, do(
+        Msg(Concat([No path to the target: ], String(target))),
+        Stop,
+        Return
+      )),
+            
+      If(HashMapContainsKey(visitedRef, child), Continue),
+      VectorAdd(queueRef, child),
+      
+      channel := HashMapItem(visitedRef, node),
+      If(channel = -1, 
+        HashMapAdd(visitedRef, child, Count),
+        HashMapAdd(visitedRef, child, channel)
+      )  
+    ))
+  )),
+  {Cleanup}
+  HashMapDestroy(visitedRef),
+  VectorDestroy(queueRef),
+  
+  If(channel < 0, 
+    Trace([Found no valid route to target ], Name(targetRef), [ (internal id: ], targetRef, [ id: ], target, [)])
+  ),
+  Return(channel)
+)]4DS], [], [], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([setEntryLabels2], [Various], 0, 0, [4DS[Do(
+  SetLabel([hasFastPass], fastPass, i),
+  SetLabel([entryTime], Time, i),
+  SetLabel([exitTime], getExitTime, i),
+  SetLabel([age], getAge, i),
+  SetLabel([height], getHeight(Label([age], i)), i),
+  getAttractions
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
@@ -777,7 +923,7 @@ SetSize(8, 2, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(10, 8);
+SetTable(11, 8);
 CreateTableColumn(0, 64, [``
 1
 3
@@ -789,6 +935,7 @@ CreateTableColumn(0, 64, [``
 8
 9
 10
+11
 ]);
 CreateTableColumn(1, 64, [`Function`
 `getExitTime`
@@ -801,8 +948,10 @@ CreateTableColumn(1, 64, [`Function`
 `setEntryLabels2`
 `setTrainCapacities`
 `setNextAttraction`
+`search`
 ]);
 CreateTableColumn(2, 64, [`Category`
+`Various`
 `Various`
 `Various`
 `Various`
@@ -825,6 +974,7 @@ CreateTableColumn(3, 64, [`Minpar`
 0
 0
 1
+3
 ]);
 CreateTableColumn(4, 64, [`Maxpar`
 0
@@ -837,8 +987,10 @@ CreateTableColumn(4, 64, [`Maxpar`
 0
 0
 1
+3
 ]);
 CreateTableColumn(5, 64, [`Helptext`
+0
 0
 0
 0
@@ -861,6 +1013,7 @@ CreateTableColumn(6, 64, [`Example`
 0
 0
 0
+0
 ]);
 CreateTableColumn(7, 64, [`Include`
 1
@@ -872,6 +1025,7 @@ CreateTableColumn(7, 64, [`Include`
 0
 1
 0
+1
 1
 ]);
 CreateTableColumn(8, 64, [`Sort order`
@@ -885,6 +1039,7 @@ CreateTableColumn(8, 64, [`Sort order`
 8
 9
 10
+11
 ]);
 SetStatus(0);
 ExecLateInit;
@@ -947,7 +1102,7 @@ CreateAtom(a, Up(s), [fastPass], 1, false);
 Set(OnInit, [4DS[Dim([refDist_fastPass], vbAtom, c)]4DS]);
 SetTextAtt([empiricalname], [fastPass]);
 SetAtt([nrrecords], 2);
-SetAtt([randomnr], 53.1962391584998);
+SetAtt([randomnr], 45.1623615263722);
 SetAtt([flag], 1);
 SetAtt([value], 2);
 SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
@@ -1021,9 +1176,9 @@ CreateAtom(a, Up(s), [age2], 1, false);
 Set(OnInit, [4DS[Dim([refDist_age2], vbAtom, c)]4DS]);
 SetTextAtt([empiricalname], [age2]);
 SetAtt([nrrecords], 25);
-SetAtt([randomnr], 94.3341940953083);
+SetAtt([randomnr], 57.2536143206987);
 SetAtt([flag], 1);
-SetAtt([value], 55);
+SetAtt([value], 25);
 SetExprAtt([regfunc], [4DS[EmpiricalDistribution_AddFunction(c, Concat([refDist_], TextAtt([empiricalname], c)))]4DS]);
 SetTextAtt([oldname], [age3]);
 SetAtt([textflag], 0);

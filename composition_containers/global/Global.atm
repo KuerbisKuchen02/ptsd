@@ -27,7 +27,7 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\temp\ptsd\composition_containers\global\Global.cmp.]);
+Set(DdbRec, [>cmpname:C:\temp\ptsd\composition_containers\global\Global.cmp.>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
