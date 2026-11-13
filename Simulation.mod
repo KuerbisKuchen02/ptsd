@@ -13,6 +13,7 @@ AddLayer([Main], 1, 1, 0);
 
 StoreActiveAtom;
 LoadAtomFromFile([Container], pDir([Atoms\BASIC MODELING\Container.atm]));
+LoadAtomFromFile([Product], pDir([Atoms\BASIC MODELING\Product.atm]));
 LoadAtomFromFile([Accumulating Conveyor], pDir([Atoms\TRANSPORT\CONVEYORS\ACCUMULATING\Accumulating Conveyor.atm]));
 LoadAtomFromFile([Textbox], pDir([Atoms\VISUALIZATION\Textbox.atm]));
 RestoreActiveAtom;
@@ -1004,7 +1005,7 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(40);
-SetLoc(12, -86, 0);
+SetLoc(12, -92, 0);
 SetSize(37, 4, 0.15);
 LockPosition(false);
 LockSize(false);
@@ -1043,7 +1044,7 @@ SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
 SetChannels(1, 0);
 SetChannelRanges(1, 1, 0, 0);
 SetLoadAtomID(41);
-SetLoc(25, -85, 1);
+SetLoc(28, -91, 1);
 SetSize(6, 2, 0);
 LockPosition(false);
 LockSize(false);
@@ -1394,8 +1395,8 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(64);
-SetLoc(12, -81, 0);
-SetSize(37, 16, 0.15);
+SetLoc(12, -87, 0);
+SetSize(37, 22, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -1429,8 +1430,8 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(65);
-SetLoc(50, -86, 0);
-SetSize(9, 18, 0.15);
+SetLoc(50, -92, 0);
+SetSize(9, 24, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -1788,7 +1789,7 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(75);
 SetLoc(-16, 33, 0);
-SetSize(23, 10, 0.15);
+SetSize(20, 10, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -2317,7 +2318,7 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(90);
 SetLoc(60, -87, 0);
-SetSize(5, 44, 0.15);
+SetSize(5, 50, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -2352,7 +2353,7 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(91);
 SetLoc(65, -63, 0);
-SetSize(27, 12, 0.15);
+SetSize(26, 12, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -2387,7 +2388,7 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(92);
 SetLoc(86, -101, 0);
-SetSize(6, 38, 0.15);
+SetSize(5, 38, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -2421,7 +2422,7 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(93);
-SetLoc(93, -100, 0);
+SetLoc(92, -100, 0);
 SetSize(9, 40, 0.15);
 LockPosition(false);
 LockSize(false);
@@ -2456,8 +2457,8 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(94);
-SetLoc(60, -93, 0);
-SetSize(56, 6, 0.15);
+SetLoc(60, -92, 0);
+SetSize(56, 5, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -2491,7 +2492,7 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(95);
-SetLoc(102, -100, 0);
+SetLoc(101, -100, 0);
 SetSize(3, 6, 0.15);
 LockPosition(false);
 LockSize(false);
@@ -2526,8 +2527,8 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(96);
-SetLoc(86, -108, 0);
-SetSize(18, 7, 0.15);
+SetLoc(86, -106, 0);
+SetSize(18, 5, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -2596,7 +2597,7 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(98);
-SetLoc(102, -79, 0);
+SetLoc(101, -79, 0);
 SetSize(19, 26, 0.15);
 LockPosition(false);
 LockSize(false);
@@ -2862,45 +2863,6 @@ SetStatus(0);
 ExecLateInit;
 
 
-{Atom: Copy of Copy of Copy of Copy of Attraktion Text (1)}
-
-sets;
-AtomByName([Textbox], Main);
-if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Attraktion Text (1)], 1, false);
-SetTextAtt([Text], [Bolles Flugschule]);
-SetAtt([TextColor], 0);
-SetAtt([BackgroundColor], 8454143);
-SetAtt([FontSize], 1);
-SetExprAtt([Font], [4DS[[Arial]]4DS]);
-SetAtt([FontScale], 5);
-SetAtt([Italic], 0);
-SetAtt([Pitch], 0);
-SetAtt([xPitch], -45);
-SetAtt([zPitch], 0);
-SetAtt([3DEnabled], 0);
-SetAtt([3DFontSize], 1);
-SetAtt([2DEnabled], 1);
-SetAtt([TextScript], 0);
-SetAtomSettings([], 15, 8224);
-Set(Icon(a), 
-	RegisterIcon(pDir([media\images\default.jpg]), [default]));
-SetMaterial(
-	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
-Set(Version(a), 0);
-SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
-SetChannels(1, 0);
-SetChannelRanges(1, 1, 0, 0);
-SetLoadAtomID(106);
-SetLoc(49, 29, 1);
-SetSize(6, 2, 0);
-LockPosition(false);
-LockSize(false);
-DisableIconRotation(false);
-SetStatus(0);
-ExecLateInit;
-
-
 {Atom: Copy of Copy of Copy of Copy of Copy of Copy of Container27 (1) (1)}
 
 sets;
@@ -2963,7 +2925,7 @@ Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(108);
 SetLoc(15, 22, 0);
-SetSize(7, 9, 0.15);
+SetSize(8, 9, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -3036,7 +2998,7 @@ SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
 SetChannels(1, 0);
 SetChannelRanges(1, 1, 0, 0);
 SetLoadAtomID(110);
-SetLoc(14, 25, 1);
+SetLoc(12, 24, 1);
 SetSize(6, 2, 0);
 LockPosition(false);
 LockSize(false);
@@ -3176,8 +3138,8 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(114);
-SetLoc(-2, -1, 0);
-SetSize(3, 14, 0.15);
+SetLoc(-3, -1, 0);
+SetSize(5, 10, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -3211,8 +3173,8 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(115);
-SetLoc(-20, 10, 0);
-SetSize(18, 3, 0.15);
+SetLoc(-19, 9, 0);
+SetSize(21, 5, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -3246,8 +3208,8 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(116);
-SetLoc(-23, -1, 0);
-SetSize(3, 14, 0.15);
+SetLoc(-24, -1, 0);
+SetSize(5, 15, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -3320,7 +3282,7 @@ SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
 SetChannels(1, 0);
 SetChannelRanges(1, 1, 0, 0);
 SetLoadAtomID(118);
-SetLoc(-8, 37, 1);
+SetLoc(-12, 37, 1);
 SetSize(6, 2, 0);
 LockPosition(false);
 LockSize(false);
@@ -3437,7 +3399,7 @@ SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
 SetChannels(1, 0);
 SetChannelRanges(1, 1, 0, 0);
 SetLoadAtomID(121);
-SetLoc(72, -46, 1);
+SetLoc(72, -47, 1);
 SetSize(6, 2, 0);
 LockPosition(false);
 LockSize(false);
@@ -3476,7 +3438,7 @@ SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
 SetChannels(1, 0);
 SetChannelRanges(1, 1, 0, 0);
 SetLoadAtomID(122);
-SetLoc(71, -76, 1);
+SetLoc(73, -76, 1);
 SetSize(6, 2, 0);
 LockPosition(false);
 LockSize(false);
@@ -3550,8 +3512,8 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(124);
-SetLoc(60, -34, 0);
-SetSize(5, 77, 0.15);
+SetLoc(60, -36, 0);
+SetSize(5, 72, 0.15);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
@@ -3701,6 +3663,12887 @@ LockSize(false);
 DisableIconRotation(false);
 SetStatus(0);
 ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(129);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(29, 18, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(130);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(30, 17, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(131);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(32, 12, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(132);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(33, 15, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(133);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(38, 17, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(134);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(35, 18, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(135);
+SetLoc(34, 17, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(136);
+SetLoc(32, 15, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(137);
+SetLoc(30, 17, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(138);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(32, 17, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(139);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(33, 2, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(140);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(32, -1, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(141);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(27, -3, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(142);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(30, -4, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(143);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(32, -7, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(144);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(33, -6, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (1)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (1)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(145);
+SetLoc(32, -6, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(146);
+SetLoc(30, -4, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(147);
+SetLoc(32, -2, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(148);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(32, -4, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(149);
+SetLoc(33, 12, 0);
+SetSize(10, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(150);
+SetLoc(32, 2, 0);
+SetSize(10, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(151);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(46, 23, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(152);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(45, 20, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(153);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(40, 18, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(154);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(43, 17, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(155);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(51, 17, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(156);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(48, 18, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(157);
+SetLoc(47, 17, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(158);
+SetLoc(43, 17, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (1)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (1)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(159);
+SetLoc(45, 19, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(160);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(45, 17, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(161);
+SetLoc(58, 17, 0);
+SetSize(7, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(162);
+SetLoc(51, 18, 0);
+SetSize(7, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(163);
+SetLoc(40, 17, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(164);
+SetLoc(38, 18, 0);
+SetSize(2, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 11);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(167);
+SetLoc(32, -48, 0);
+SetSize(31, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 11);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(168);
+SetLoc(33, -17, 0);
+SetSize(31, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(169);
+SetLoc(7, -62, 0);
+SetSize(6, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(170);
+SetLoc(13, -63, 0);
+SetSize(6, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(171);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(19, -57, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(172);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(18, -60, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(173);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(13, -62, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(174);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(16, -63, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(175);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(18, -68, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(176);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(19, -65, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (2)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (2)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(177);
+SetLoc(18, -65, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (3)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (3)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(178);
+SetLoc(16, -63, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (2)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (2)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(179);
+SetLoc(18, -61, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(180);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(18, -63, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(181);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(33, -48, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(182);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(32, -51, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(183);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(27, -53, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(184);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(30, -54, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(185);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(38, -54, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(186);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(35, -53, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (2)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (2)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(187);
+SetLoc(34, -54, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (4)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (4)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(188);
+SetLoc(30, -54, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (3)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (3)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(189);
+SetLoc(32, -52, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(190);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(32, -54, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(191);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(45, -58, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(192);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(44, -60, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(193);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(44, -68, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(194);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(45, -65, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(195);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(50, -63, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(196);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(47, -62, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (3)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (3)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(197);
+SetLoc(46, -63, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (3)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (3)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(198);
+SetLoc(44, -65, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (4)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (4)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(199);
+SetLoc(44, -61, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(200);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(44, -63, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(201);
+SetLoc(27, -4, 0);
+SetSize(22, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(202);
+SetLoc(5, -3, 0);
+SetSize(22, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(203);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(63, -59, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(204);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(62, -60, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(205);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(57, -62, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(206);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(60, -63, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(207);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(62, -68, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(208);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(63, -65, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (4)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (4)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(209);
+SetLoc(62, -65, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (5)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (5)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(210);
+SetLoc(60, -63, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (5)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (5)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(211);
+SetLoc(62, -61, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(212);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(62, -63, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(213);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(63, -50, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(214);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(62, -53, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(215);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(62, -59, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(216);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(63, -58, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(217);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(68, -56, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(218);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(65, -55, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (4)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (4)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(219);
+SetLoc(64, -56, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (5)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (5)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(220);
+SetLoc(61.9634756483138, -57.8992662765086, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (6)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (6)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(221);
+SetLoc(61.9634756483138, -53.8992662765086, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(222);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(61.9634756483138, -55.8992662765086, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(223);
+SetLoc(57, -63, 0);
+SetSize(7, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(224);
+SetLoc(50, -62, 0);
+SetSize(7, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(225);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(89, -84, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(226);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(88, -87, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(227);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(83, -89, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(228);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(86, -90, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(229);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(88, -95, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(230);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(89, -92, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(231);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(94, -90, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(232);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(91, -89, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (5)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (5)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(233);
+SetLoc(90, -90, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (6)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (6)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(234);
+SetLoc(88, -92, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (6)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (6)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(235);
+SetLoc(86.2188014835119, -90, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (7)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (7)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(236);
+SetLoc(88.2188014835119, -88, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(237);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(88.2188014835119, -90, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 7);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(238);
+SetLoc(63, -89, 0);
+SetSize(20, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(239);
+SetLoc(83, -90, 0);
+SetSize(21, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(240);
+SetLoc(62, -91, 0);
+SetSize(23, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (2)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (2)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 7);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(241);
+SetLoc(63, -68, 0);
+SetSize(20, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(244);
+SetLoc(88, -84, 0);
+SetSize(23, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (3)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (3)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(245);
+SetLoc(89, -61, 0);
+SetSize(23, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(246);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(0, 2, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(247);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-1, -1, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(248);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-6, -3, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(249);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-3, -4, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(250);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(5, -4, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(251);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(2, -3, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (6)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (6)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(252);
+SetLoc(1, -4, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (7)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (7)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(253);
+SetLoc(-3, -4, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (8)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (8)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(254);
+SetLoc(-1, -2, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(255);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(-1, -4, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(256);
+SetLoc(-23, 12, 0);
+SetSize(23, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (6)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (6)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 7);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(257);
+SetLoc(-1, 11, 0);
+SetSize(19, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(258);
+SetLoc(-1, 2, 0);
+SetSize(8, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(259);
+SetLoc(0, 13, 0);
+SetSize(11, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(260);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(35, 46, 0);
+SetSize(8, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(261);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(34, 38, 0);
+SetSize(8, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(262);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(24, 36, 0);
+SetSize(8, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(263);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(32, 35, 0);
+SetSize(5, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(264);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(40, 35, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(265);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(37, 36, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (7)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (7)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(266);
+SetLoc(36, 35, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (8)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (8)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(267);
+SetLoc(32, 35, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (9)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (9)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(268);
+SetLoc(34, 37, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(269);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(33.8152442425489, 34.8682902380824, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(274);
+SetLoc(45, 35, 0);
+SetSize(5, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(275);
+SetLoc(40, 36, 0);
+SetSize(6, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(278);
+SetLoc(17, -53, 0);
+SetSize(10, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(279);
+SetLoc(27, -54, 0);
+SetSize(7, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(280);
+SetLoc(18, -57, 0);
+SetSize(4, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(281);
+SetLoc(19, -54, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 9);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(282);
+SetLoc(19, -76, 0);
+SetSize(24, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 10);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(283);
+SetLoc(46, -77, 0);
+SetSize(28, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(284);
+SetLoc(18, -78, 0);
+SetSize(10, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(285);
+SetLoc(19, -68, 0);
+SetSize(7, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (9) (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (9) (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(286);
+SetLoc(44, -76, 0);
+SetSize(8, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(287);
+SetLoc(45, -68, 0);
+SetSize(9, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(288);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(89, -50, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(289);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(88, -53, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(290);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(83, -55, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(291);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(86, -56, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(292);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(88, -61, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (7)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (7)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(293);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(89, -58, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(294);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(94, -56, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(295);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(91, -55, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (8)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (8)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(296);
+SetLoc(90, -56, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (7)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (7)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(297);
+SetLoc(88, -58, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (9)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (9)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(298);
+SetLoc(86, -56, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (10)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (10)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(299);
+SetLoc(88, -54, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(300);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(88.1781461089849, -55.7327808402479, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 6);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(301);
+SetLoc(68, -55, 0);
+SetSize(15, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 6);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(302);
+SetLoc(83, -56, 0);
+SetSize(15, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(303);
+SetLoc(62, -50, 0);
+SetSize(11, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(304);
+SetLoc(63, -40, 0);
+SetSize(11, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 6);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(305);
+SetLoc(89, -103, 0);
+SetSize(15, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 6);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(306);
+SetLoc(104, -104, 0);
+SetSize(16, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(307);
+SetLoc(88, -105, 0);
+SetSize(10, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(308);
+SetLoc(89, -95, 0);
+SetSize(7, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(309);
+SetLoc(94, -89, 0);
+SetSize(22, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 8);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(310);
+SetLoc(116, -90, 0);
+SetSize(22, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(311);
+SetLoc(-16, -3, 0);
+SetSize(10, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(312);
+SetLoc(-6, -4, 0);
+SetSize(10, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Container27 (1) (2) (2)}
+
+sets;
+AtomByName([Container], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Container'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Container27 (1) (2) (2)], 1, false);
+SetAtt([AutoReSize], 0);
+SetExprAtt([sx], [1.1]);
+SetExprAtt([sy], [1.1]);
+SetExprAtt([sz], [1]);
+SetAtt([ContainerType], 4);
+SetAtt([UseBoxVisible], 1);
+SetAtomSettings([], 8421631, 1170);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\Pallet.bmp]), [Pallet.bmp]));
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Container.ico]));
+SetLoadAtomID(313);
+SetLoc(6, 33, 0);
+SetSize(1, 10, 0.15);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(314);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-21, 2, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(315);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-22, -1, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(316);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-27, -3, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(317);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-24, -4, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(318);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-16, -4, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(319);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-19, -3, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (9)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (9)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(320);
+SetLoc(-20, -4, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (10)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (10)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(321);
+SetLoc(-24, -4, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (11)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (11)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(322);
+SetLoc(-22, -2, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(323);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(-22, -4, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (5) (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (5) (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(324);
+SetLoc(-22, 2, 0);
+SetSize(10, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (4)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (2) (4)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 4);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(325);
+SetLoc(-21, 11, 0);
+SetSize(9, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Lillis Cafe}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Lillis Cafe], 1, false);
+SetTextAtt([Text], [Lillis Cafe]);
+SetAtt([TextColor], 0);
+SetAtt([BackgroundColor], 8454143);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(326);
+SetLoc(19, -11, 1);
+SetSize(6, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Törtchen & Co.}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Törtchen & Co.], 1, false);
+SetTextAtt([Text], [Törtchen & Co.]);
+SetAtt([TextColor], 0);
+SetAtt([BackgroundColor], 8421631);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(327);
+SetLoc(16, 10, 1);
+SetSize(6, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Unter den Linden}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Unter den Linden], 1, false);
+SetTextAtt([Text], [Unter den Linden]);
+SetAtt([TextColor], 0);
+SetAtt([BackgroundColor], 8421631);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(328);
+SetLoc(47, -36, 1);
+SetSize(6, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Eis Cafe Annie Himmerlreich}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Eis Cafe Annie Himmerlreich], 1, false);
+SetTextAtt([Text], [Eis Cafe Annie Himmerlreich]);
+SetAtt([TextColor], 0);
+SetAtt([BackgroundColor], 8454143);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(329);
+SetLoc(-17, -57, 1);
+SetSize(6, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Churros}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Churros], 1, false);
+SetTextAtt([Text], [Churros]);
+SetAtt([TextColor], 0);
+SetAtt([BackgroundColor], 8421631);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(330);
+SetLoc(69, -83, 1);
+SetSize(6, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Hot Docs Mexico}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Hot Docs Mexico], 1, false);
+SetTextAtt([Text], [Hot Docs Mexico]);
+SetAtt([TextColor], 0);
+SetAtt([BackgroundColor], 8421631);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(331);
+SetLoc(74, -80, 1);
+SetSize(6, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Slush Mexico}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Slush Mexico], 1, false);
+SetTextAtt([Text], [Slush Mexico]);
+SetAtt([TextColor], 0);
+SetAtt([BackgroundColor], 8421631);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(332);
+SetLoc(73, -69, 1);
+SetSize(6, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Product301}
+
+sets;
+AtomByName([Product], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Product'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Product301], 1, false);
+SetAtt([Icon3D], 11);
+SetAtt([Hide2DIcon], 0);
+SetAtt([ShowColor], 0);
+SetAtomSettings([], 12615680, 73776);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([Png\products\product.png]), [product], 1, 1, 16777215, 255, 255, false, 0));
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-closed.wrl]), [box-closed.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-opened.wrl]), [box-opened.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([oildrum.wrl]), [oildrum.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Product.ico]));
+Set(DdbRec, [>drawxsize:1.>drawysize:1.]);
+SetLoadAtomID(333);
+SetLoc(25, -10, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Product301}
+
+sets;
+AtomByName([Product], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Product'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Product301], 1, false);
+SetAtt([Icon3D], 11);
+SetAtt([Hide2DIcon], 0);
+SetAtt([ShowColor], 0);
+SetAtomSettings([], 12615680, 73776);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([Png\products\product.png]), [product], 1, 1, 16777215, 255, 255, false, 0));
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-closed.wrl]), [box-closed.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-opened.wrl]), [box-opened.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([oildrum.wrl]), [oildrum.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Product.ico]));
+Set(DdbRec, [>drawxsize:1.>drawysize:1.]);
+SetLoadAtomID(334);
+SetLoc(26, 11, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Product301}
+
+sets;
+AtomByName([Product], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Product'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Product301], 1, false);
+SetAtt([Icon3D], 11);
+SetAtt([Hide2DIcon], 0);
+SetAtt([ShowColor], 0);
+SetAtomSettings([], 12615680, 73776);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([Png\products\product.png]), [product], 1, 1, 16777215, 255, 255, false, 0));
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-closed.wrl]), [box-closed.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-opened.wrl]), [box-opened.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([oildrum.wrl]), [oildrum.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Product.ico]));
+Set(DdbRec, [>drawxsize:1.>drawysize:1.]);
+SetLoadAtomID(335);
+SetLoc(45, -35, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Product301}
+
+sets;
+AtomByName([Product], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Product'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Product301], 1, false);
+SetAtt([Icon3D], 11);
+SetAtt([Hide2DIcon], 0);
+SetAtt([ShowColor], 0);
+SetAtomSettings([], 12615680, 73776);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([Png\products\product.png]), [product], 1, 1, 16777215, 255, 255, false, 0));
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-closed.wrl]), [box-closed.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-opened.wrl]), [box-opened.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([oildrum.wrl]), [oildrum.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Product.ico]));
+Set(DdbRec, [>drawxsize:1.>drawysize:1.]);
+SetLoadAtomID(336);
+SetLoc(1, -57, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Product301}
+
+sets;
+AtomByName([Product], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Product'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Product301], 1, false);
+SetAtt([Icon3D], 11);
+SetAtt([Hide2DIcon], 0);
+SetAtt([ShowColor], 0);
+SetAtomSettings([], 12615680, 73776);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([Png\products\product.png]), [product], 1, 1, 16777215, 255, 255, false, 0));
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-closed.wrl]), [box-closed.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-opened.wrl]), [box-opened.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([oildrum.wrl]), [oildrum.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Product.ico]));
+Set(DdbRec, [>drawxsize:1.>drawysize:1.]);
+SetLoadAtomID(337);
+SetLoc(68, -85, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Product301}
+
+sets;
+AtomByName([Product], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Product'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Product301], 1, false);
+SetAtt([Icon3D], 11);
+SetAtt([Hide2DIcon], 0);
+SetAtt([ShowColor], 0);
+SetAtomSettings([], 12615680, 73776);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([Png\products\product.png]), [product], 1, 1, 16777215, 255, 255, false, 0));
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-closed.wrl]), [box-closed.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-opened.wrl]), [box-opened.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([oildrum.wrl]), [oildrum.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Product.ico]));
+Set(DdbRec, [>drawxsize:1.>drawysize:1.]);
+SetLoadAtomID(338);
+SetLoc(83, -82, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Product301}
+
+sets;
+AtomByName([Product], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Product'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Product301], 1, false);
+SetAtt([Icon3D], 11);
+SetAtt([Hide2DIcon], 0);
+SetAtt([ShowColor], 0);
+SetAtomSettings([], 12615680, 73776);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([Png\products\product.png]), [product], 1, 1, 16777215, 255, 255, false, 0));
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-closed.wrl]), [box-closed.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([box-opened.wrl]), [box-opened.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-wood.wrl]), [pallet-wood.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([pallet-plastic.wrl]), [pallet-plastic.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([oildrum.wrl]), [oildrum.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+AddModel3D(
+	RegisterModel3D(Model3DDir([crate.wrl]), [crate.wrl], 0, 0, 0, 1, 1, -1, -90, 0, 0), a);
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Product.ico]));
+Set(DdbRec, [>drawxsize:1.>drawysize:1.]);
+SetLoadAtomID(339);
+SetLoc(82, -67, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(340);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(33, -7, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(341);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(32, -9, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(342);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(28, -11, 0);
+SetSize(2, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(343);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(30, -12, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(344);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(32, -17, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (8)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (8)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(345);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(33, -14, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (8)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (8)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(346);
+SetLoc(32, -14, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (11)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (11)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(347);
+SetLoc(30, -12, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (12)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (12)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(348);
+SetLoc(32.1310967318714, -9.94107624515891, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (13)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (13)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(349);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(32.1747956462204, -12.02847404778, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (13)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (13)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(350);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(26, 23, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (13)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (13)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(351);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(25, 20, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(352);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(25, 13, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (9)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (9)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(353);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(26, 15, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(354);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(29, 17, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(355);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(28, 18, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (10)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (10)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(356);
+SetLoc(27, 17, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (9)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (9)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(357);
+SetLoc(25, 15, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (13)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (13)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(358);
+SetLoc(25, 19, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (14)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (14)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(359);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(25, 17, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (14)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (14)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(360);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(26, 35, 0);
+SetSize(4, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (14)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (14)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(361);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(25, 31, 0);
+SetSize(5, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(362);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(22, 29, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(363);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(23, 28, 0);
+SetSize(1, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(364);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(25, 23, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (10)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (10)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(365);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(26, 26, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (10)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (10)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(366);
+SetLoc(25, 26, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (12)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (12)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(367);
+SetLoc(23, 28, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (14)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (14)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(368);
+SetLoc(25, 30, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (15)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (15)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(369);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(25, 28, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (15)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (15)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 6);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(370);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(45, -36, 0);
+SetSize(15, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (15)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (15)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 6);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(371);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(44, -51, 0);
+SetSize(15, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (13)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (13)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(372);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(38, -53, 0);
+SetSize(4, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (13)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (13)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(373);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(42, -54, 0);
+SetSize(4, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(374);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(44, -58, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(375);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(45, -56, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (11)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (11)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(376);
+SetLoc(44, -56, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (13)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (13)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(377);
+SetLoc(42, -54, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (15)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (15)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(378);
+SetLoc(44, -52, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (16)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (16)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(379);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(44, -54, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (16)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (16)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(380);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(2, -58, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (16)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (16)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(381);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(1, -60, 0);
+SetSize(2, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4In (14)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4In (14)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(382);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-4, -62, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection4Out (14)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection4Out (14)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8.99999999999932);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(383);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(-1, -63, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(384);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(7, -63, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (11)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (11)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(385);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(4, -62, 0);
+SetSize(3, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (11)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (11)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(386);
+SetLoc(3, -63, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (14)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (14)], 1, false);
+SetTextAtt([Text], [4]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(387);
+SetLoc(-1, -63, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (16)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (16)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(388);
+SetLoc(1, -61, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (17)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (17)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(389);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(1, -63, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3In (17)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3In (17)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 3);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(390);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(46, 37, 0);
+SetSize(6, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection3Out (17)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection3Out (17)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 9);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(391);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(45, 31, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1In (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1In (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 7);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(392);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(45, 23, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 90);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection1Out (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection1Out (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))|2. An open channel (First channel first): search, starting from the first channel, and send to the first open channel found..}Min(NrOC(c), NrOC(c) + 1 - IndexMatch(NrOC(c), 1, OCReady(NrOC(c) + 1 - Count, c)))]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(393);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(46, 26, 0);
+SetSize(3, 1, 1);
+Set(RotationAs, 270);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2In (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2In (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(394);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(52, 28, 0);
+SetSize(4, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection2Out (12)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection2Out (12)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 8);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 3);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 2);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(395);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(48, 29, 0);
+SetSize(4, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (12)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (2) (12)], 1, false);
+SetTextAtt([Text], [2]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(396);
+SetLoc(47, 28, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (12)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Textbox10 (1) (2) (1) (12)], 1, false);
+SetTextAtt([Text], [1]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(397);
+SetLoc(45, 26, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (17)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Copy of Textbox10 (1) (1) (17)], 1, false);
+SetTextAtt([Text], [3]);
+SetAtt([TextColor], 1);
+SetAtt([BackgroundColor], 16777215);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(398);
+SetLoc(45, 30, 1);
+SetSize(1, 1, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Intersection (18)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Intersection (18)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~search()~.}search()]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 1);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 1);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 1);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(4, 4);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(399);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(3, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(4, 0, true, false, 0, 0, [], []);
+SetLoc(45, 28, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Attraktion Text (1) (1)}
+
+sets;
+AtomByName([Textbox], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Textbox'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Attraktion Text (1) (1)], 1, false);
+SetTextAtt([Text], [Bolles Flugschule]);
+SetAtt([TextColor], 0);
+SetAtt([BackgroundColor], 8454143);
+SetAtt([FontSize], 1);
+SetExprAtt([Font], [4DS[[Arial]]4DS]);
+SetAtt([FontScale], 5);
+SetAtt([Italic], 0);
+SetAtt([Pitch], 0);
+SetAtt([xPitch], -45);
+SetAtt([zPitch], 0);
+SetAtt([3DEnabled], 0);
+SetAtt([3DFontSize], 1);
+SetAtt([2DEnabled], 1);
+SetAtt([TextScript], 0);
+SetAtomSettings([], 15, 8224);
+Set(Icon(a), 
+	RegisterIcon(pDir([media\images\default.jpg]), [default]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Textbox.ico]));
+SetChannels(1, 0);
+SetChannelRanges(1, 1, 0, 0);
+SetLoadAtomID(400);
+SetLoc(52, 31, 1);
+SetSize(6, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(0);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (1)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (1) (1)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 9);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(401);
+SetLoc(-28, -62, 0);
+SetSize(24, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (5)}
+
+sets;
+AtomByName([Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [Copy of Copy of Copy of Copy of Copy of Accumulating Conveyor30 (1) (5)], 1, false);
+SetExprAtt([Speed], [1]);
+SetExprAtt([TravelTimeC], [Length / Speed]);
+SetAtt([TempMaxLoc], 0);
+SetExprAtt([CurLoc], [Min(TempMaxLoc, Speed * (Time - EntryTime(cs)))]);
+SetAtt([ExitTime], 0);
+SetAtt([CurContent], 0);
+SetExprAtt([Length], [If(Elevation <> 0,   Hor_Length / Cos(Angle), Hor_Length)]);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([TimeOfEntry], 0);
+SetAtt([ExitLength], 0);
+SetExprAtt([CalcLocations], [If(Content(c) <> 0,   Do(   TempMaxLoc :=Min(Length, +((Length - ExitLength), (Speed * (Time - ExitTime)))),   ForAtomLayerUnder(c, Do(     Setcs,     SetLoc(-(*(Display_Factor, CurLoc), xSize(cs)), /(-(ySize(c), ySize(cs)), 2), +(zSize(c), *(/(CurLoc, /(If(Use_Physical, xSize(c), Input_Length), xSize(c))), Sin(Angle))), cs),     SetAtt(3, -(TempMaxLoc, ProductSpacing(SpacingRule, xSize(cs), Spacing)), c)    )   )  ) )]);
+SetExprAtt([EntryTrigger], [0]);
+SetAtt([Capacity], 10000);
+SetAtt([SpacingRule], 1);
+SetExprAtt([Spacing], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetAtt([Use_Physical], 1);
+SetAtt([Input_Length], 10);
+SetAtt([Display_Factor], 1);
+SetAtt([Leg_Supports], 9);
+SetExprAtt([Elevation], [0]);
+SetExprAtt([Angle], [ArcTan(Elevation / Hor_Length)]);
+SetExprAtt([Hor_Length], [If(Use_Physical, xSize(c),    Input_Length)]);
+SetAtt([IsConveyor], 5);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 11249415, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\AccumulatingConveyor.ico]));
+Set(DdbRec, [>legdist:3.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(402);
+SetLoc(-4, -63, 0);
+SetSize(24, 1, 1);
+Set(RotationAs, 180);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
 Up;
 ConnectLoadAtoms(1, 11, 3, 23, 0);
 ConnectLoadAtoms(3, 23, 1, 12, 0);
@@ -3710,6 +16553,124 @@ ConnectLoadAtoms(1, 15, 1, 23, 0);
 ConnectLoadAtoms(1, 23, 1, 16, 0);
 ConnectLoadAtoms(1, 17, 2, 23, 0);
 ConnectLoadAtoms(2, 23, 1, 18, 0);
+ConnectLoadAtoms(1, 129, 4, 138, 0);
+ConnectLoadAtoms(4, 138, 1, 130, 0);
+ConnectLoadAtoms(1, 131, 1, 138, 0);
+ConnectLoadAtoms(1, 138, 1, 132, 0);
+ConnectLoadAtoms(1, 133, 2, 138, 0);
+ConnectLoadAtoms(2, 138, 1, 134, 0);
+ConnectLoadAtoms(1, 139, 3, 148, 0);
+ConnectLoadAtoms(3, 148, 1, 140, 0);
+ConnectLoadAtoms(1, 141, 4, 148, 0);
+ConnectLoadAtoms(4, 148, 1, 142, 0);
+ConnectLoadAtoms(1, 143, 1, 148, 0);
+ConnectLoadAtoms(1, 148, 1, 144, 0);
+ConnectLoadAtoms(1, 151, 3, 160, 0);
+ConnectLoadAtoms(3, 160, 1, 152, 0);
+ConnectLoadAtoms(1, 153, 4, 160, 0);
+ConnectLoadAtoms(4, 160, 1, 154, 0);
+ConnectLoadAtoms(1, 155, 2, 160, 0);
+ConnectLoadAtoms(2, 160, 1, 156, 0);
+ConnectLoadAtoms(1, 171, 3, 180, 0);
+ConnectLoadAtoms(3, 180, 1, 172, 0);
+ConnectLoadAtoms(1, 173, 4, 180, 0);
+ConnectLoadAtoms(4, 180, 1, 174, 0);
+ConnectLoadAtoms(1, 175, 1, 180, 0);
+ConnectLoadAtoms(1, 180, 1, 176, 0);
+ConnectLoadAtoms(1, 181, 3, 190, 0);
+ConnectLoadAtoms(3, 190, 1, 182, 0);
+ConnectLoadAtoms(1, 183, 4, 190, 0);
+ConnectLoadAtoms(4, 190, 1, 184, 0);
+ConnectLoadAtoms(1, 185, 2, 190, 0);
+ConnectLoadAtoms(2, 190, 1, 186, 0);
+ConnectLoadAtoms(1, 191, 3, 200, 0);
+ConnectLoadAtoms(3, 200, 1, 192, 0);
+ConnectLoadAtoms(1, 193, 1, 200, 0);
+ConnectLoadAtoms(1, 200, 1, 194, 0);
+ConnectLoadAtoms(1, 195, 2, 200, 0);
+ConnectLoadAtoms(2, 200, 1, 196, 0);
+ConnectLoadAtoms(1, 203, 3, 212, 0);
+ConnectLoadAtoms(3, 212, 1, 204, 0);
+ConnectLoadAtoms(1, 205, 4, 212, 0);
+ConnectLoadAtoms(4, 212, 1, 206, 0);
+ConnectLoadAtoms(1, 207, 1, 212, 0);
+ConnectLoadAtoms(1, 212, 1, 208, 0);
+ConnectLoadAtoms(1, 213, 3, 222, 0);
+ConnectLoadAtoms(3, 222, 1, 214, 0);
+ConnectLoadAtoms(1, 215, 1, 222, 0);
+ConnectLoadAtoms(1, 222, 1, 216, 0);
+ConnectLoadAtoms(1, 217, 2, 222, 0);
+ConnectLoadAtoms(2, 222, 1, 218, 0);
+ConnectLoadAtoms(1, 225, 3, 237, 0);
+ConnectLoadAtoms(3, 237, 1, 226, 0);
+ConnectLoadAtoms(1, 227, 4, 237, 0);
+ConnectLoadAtoms(4, 237, 1, 228, 0);
+ConnectLoadAtoms(1, 229, 1, 237, 0);
+ConnectLoadAtoms(1, 237, 1, 230, 0);
+ConnectLoadAtoms(1, 231, 2, 237, 0);
+ConnectLoadAtoms(2, 237, 1, 232, 0);
+ConnectLoadAtoms(1, 246, 3, 255, 0);
+ConnectLoadAtoms(3, 255, 1, 247, 0);
+ConnectLoadAtoms(1, 248, 4, 255, 0);
+ConnectLoadAtoms(4, 255, 1, 249, 0);
+ConnectLoadAtoms(1, 250, 2, 255, 0);
+ConnectLoadAtoms(2, 255, 1, 251, 0);
+ConnectLoadAtoms(1, 260, 3, 269, 0);
+ConnectLoadAtoms(3, 269, 1, 261, 0);
+ConnectLoadAtoms(1, 262, 4, 269, 0);
+ConnectLoadAtoms(4, 269, 1, 263, 0);
+ConnectLoadAtoms(1, 264, 2, 269, 0);
+ConnectLoadAtoms(2, 269, 1, 265, 0);
+ConnectLoadAtoms(1, 288, 3, 300, 0);
+ConnectLoadAtoms(3, 300, 1, 289, 0);
+ConnectLoadAtoms(1, 290, 4, 300, 0);
+ConnectLoadAtoms(4, 300, 1, 291, 0);
+ConnectLoadAtoms(1, 292, 1, 300, 0);
+ConnectLoadAtoms(1, 300, 1, 293, 0);
+ConnectLoadAtoms(1, 294, 2, 300, 0);
+ConnectLoadAtoms(2, 300, 1, 295, 0);
+ConnectLoadAtoms(1, 314, 3, 323, 0);
+ConnectLoadAtoms(3, 323, 1, 315, 0);
+ConnectLoadAtoms(1, 316, 4, 323, 0);
+ConnectLoadAtoms(4, 323, 1, 317, 0);
+ConnectLoadAtoms(1, 318, 2, 323, 0);
+ConnectLoadAtoms(2, 323, 1, 319, 0);
+ConnectLoadAtoms(1, 340, 3, 349, 0);
+ConnectLoadAtoms(3, 349, 1, 341, 0);
+ConnectLoadAtoms(1, 342, 4, 349, 0);
+ConnectLoadAtoms(4, 349, 1, 343, 0);
+ConnectLoadAtoms(1, 344, 1, 349, 0);
+ConnectLoadAtoms(1, 349, 1, 345, 0);
+ConnectLoadAtoms(1, 350, 3, 359, 0);
+ConnectLoadAtoms(3, 359, 1, 351, 0);
+ConnectLoadAtoms(1, 352, 1, 359, 0);
+ConnectLoadAtoms(1, 359, 1, 353, 0);
+ConnectLoadAtoms(1, 354, 2, 359, 0);
+ConnectLoadAtoms(2, 359, 1, 355, 0);
+ConnectLoadAtoms(1, 360, 3, 369, 0);
+ConnectLoadAtoms(3, 369, 1, 361, 0);
+ConnectLoadAtoms(1, 362, 4, 369, 0);
+ConnectLoadAtoms(4, 369, 1, 363, 0);
+ConnectLoadAtoms(1, 364, 1, 369, 0);
+ConnectLoadAtoms(1, 369, 1, 365, 0);
+ConnectLoadAtoms(1, 370, 3, 379, 0);
+ConnectLoadAtoms(3, 379, 1, 371, 0);
+ConnectLoadAtoms(1, 372, 4, 379, 0);
+ConnectLoadAtoms(4, 379, 1, 373, 0);
+ConnectLoadAtoms(1, 374, 1, 379, 0);
+ConnectLoadAtoms(1, 379, 1, 375, 0);
+ConnectLoadAtoms(1, 380, 3, 389, 0);
+ConnectLoadAtoms(3, 389, 1, 381, 0);
+ConnectLoadAtoms(1, 382, 4, 389, 0);
+ConnectLoadAtoms(4, 389, 1, 383, 0);
+ConnectLoadAtoms(1, 384, 2, 389, 0);
+ConnectLoadAtoms(2, 389, 1, 385, 0);
+ConnectLoadAtoms(1, 390, 3, 399, 0);
+ConnectLoadAtoms(3, 399, 1, 391, 0);
+ConnectLoadAtoms(1, 392, 1, 399, 0);
+ConnectLoadAtoms(1, 399, 1, 393, 0);
+ConnectLoadAtoms(1, 394, 2, 399, 0);
+ConnectLoadAtoms(2, 399, 1, 395, 0);
 
 
 {Experiment settings}
