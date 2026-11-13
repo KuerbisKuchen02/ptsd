@@ -18,12 +18,13 @@ RestoreActiveAtom;
 
 PreregisterFunction([getExitTime], 0, 0);
 PreregisterFunction([indexPOI], 0, 0);
-PreregisterFunction([initilize], 0, 0);
 PreregisterFunction([getHeight], 1, 1);
 PreregisterFunction([getAge], 0, 0);
 PreregisterFunction([setEntryLabels2], 0, 0);
 PreregisterFunction([getAttractions], 0, 0);
 PreregisterFunction([connectSchedule], 0, 0);
+PreregisterFunction([setTrainCapacities], 0, 0);
+PreregisterFunction([initilize], 0, 0);
 PreregisterFunction([fastPass], 0, 0);
 PreregisterFunction([age2], 0, 0);
 Dim([schedule], vbString);
@@ -42,8 +43,8 @@ SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
 SetAtt([nrvariables], 0);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], 14.5);
-SetAtt([yCenter2D], -6);
+SetAtt([xCenter2D], -0.5);
+SetAtt([yCenter2D], -12);
 SetAtt([xRadius2D], 15.5);
 SetAtt([yRadius2D], 4);
 SetAtt([xCenter3D], 16.5);
@@ -58,7 +59,7 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\temp\ptsd\composition_containers\global\Global.cmp.]);
+Set(DdbRec, [>atmname:C:\Temp\ptsd\composition_containers\global\Global.atm.>cmpname:C:\Temp\ptsd\composition_containers\global\Global.cmp.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
@@ -78,9 +79,9 @@ Set(OnCreation, [4DS[
              do(
               if(
                not(comparetext(name(c),[])),
-               if(fileexists([C:\temp\ptsd\composition_containers\global\Global.cmp]),
-                execfile([C:\temp\ptsd\composition_containers\global\Global.cmp]),
-                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               if(fileexists([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
+                execfile([C:\Temp\ptsd\composition_containers\global\Global.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\Temp\ptsd\composition_containers\global\Global.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
                )
               ),
               set(oncreation(c),concat(sbo,[nothing],sbc))
@@ -125,7 +126,7 @@ sets;
 AtomByName([Function Editor], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Function Editor'. Inheriting from BaseClass.]));
 CreateAtom(a, Up(s), [Function Editor43], 1, false);
-CreateAttributes(8);
+CreateAttributes(9);
 SetAttributeName(r(1), [getExitTime_Att], a);
 SetAttributeName(r(2), [indexPOI_Att], a);
 SetAttributeName(r(3), [initilize_Att], a);
@@ -134,6 +135,7 @@ SetAttributeName(r(5), [connectSchedule_Att], a);
 SetAttributeName(r(6), [getAge_Att], a);
 SetAttributeName(r(7), [getAttractions_Att], a);
 SetAttributeName(r(8), [setEntryLabels2_Att], a);
+SetAttributeName(r(9), [setTrainCapacities_Att], a);
 SetAttribute(r(1), [getExitTime_Att], vbVariant, [4DS[Round(
   Time - Mod(Time, hr(24)) +
   hr(
@@ -183,7 +185,8 @@ SetAttribute(r(3), [initilize_Att], vbVariant, [4DS[Do(
   ReadTableFromFile(Model, [C:\Temp\ptsd\data\ptsd.csv], [;]),
   indexPOI,
   dim([schedule], vbString, [LongHour]),
-  connectSchedule
+  connectSchedule,
+  setTrainCapacities
 )]4DS], a, [public], [], false);
 SetAttribute(r(4), [getHeight_Att], vbVariant, [4DS[do(
   var([ageParam], vbValue, p(1)),
@@ -336,6 +339,20 @@ SetAttribute(r(8), [setEntryLabels2_Att], vbVariant, [4DS[Do(
   SetLabel([height], getHeight(Label([age], i)), i),
   getAttractions
 )]4DS], a, [public], [], false);
+SetAttribute(r(9), [setTrainCapacities_Att], vbVariant, [4DS[Do(
+  EnterDebugger,
+  Var([poiRef], vbValue, AtomDataContainer([pois], Model)),
+  Var([id], vbValue),
+  Var([attractionRef], vbAtom),
+  Var([entryRef], vbAtom),
+  Repeat(nRows(Model), Do(
+    id := CellAsValue(Count, 0, Model),
+    If(HashMapTryGetValue(poiRef, id, attractionRef), Do(
+      entryRef := AtomByName([Entry], attractionRef),
+      Cell(2, 1, entryRef) := CellAsValue(Count, 4, Model)
+    ))
+  ))
+)]4DS], a, [public], [], false);
 SetAtomSettings([], 33023, 1192);
 DefineFunction([getExitTime], [Various], 0, 0, [4DS[Round(
   Time - Mod(Time, hr(24)) +
@@ -382,12 +399,6 @@ DefineFunction([indexPOI], [Various], 0, 0, [4DS[Do(
 )
 
 ]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
-DefineFunction([initilize], [Various], 0, 0, [4DS[Do(
-  ReadTableFromFile(Model, [C:\Temp\ptsd\data\ptsd.csv], [;]),
-  indexPOI,
-  dim([schedule], vbString, [LongHour]),
-  connectSchedule
-)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 DefineFunction([getHeight], [Various], 1, 1, [4DS[do(
   var([ageParam], vbValue, p(1)),
   var([row], vbValue),
@@ -539,6 +550,27 @@ DefineFunction([connectSchedule], [Various], 0, 0, [4DS[Do(
   )
 )
 ]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([setTrainCapacities], [Various], 0, 0, [4DS[Do(
+  EnterDebugger,
+  Var([poiRef], vbValue, AtomDataContainer([pois], Model)),
+  Var([id], vbValue),
+  Var([attractionRef], vbAtom),
+  Var([entryRef], vbAtom),
+  Repeat(nRows(Model), Do(
+    id := CellAsValue(Count, 0, Model),
+    If(HashMapTryGetValue(poiRef, id, attractionRef), Do(
+      entryRef := AtomByName([Entry], attractionRef),
+      Cell(2, 1, entryRef) := CellAsValue(Count, 4, Model)
+    ))
+  ))
+)]4DS], [], [], [public], [Function Editor43], a, 0, vbVariant, []);
+DefineFunction([initilize], [Various], 0, 0, [4DS[Do(
+  ReadTableFromFile(Model, [C:\Temp\ptsd\data\ptsd.csv], [;]),
+  indexPOI,
+  dim([schedule], vbString, [LongHour]),
+  connectSchedule,
+  setTrainCapacities
+)]4DS], [0], [0], [public], [Function Editor43], a, 0, vbVariant, []);
 Set(Icon(a), 
 	RegisterIcon(pDir([media\images\default.jpg]), [default]));
 SetMaterial(
@@ -551,7 +583,7 @@ SetSize(8, 2, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(8, 8);
+SetTable(9, 8);
 CreateTableColumn(0, 64, [``
 1
 3
@@ -561,6 +593,7 @@ CreateTableColumn(0, 64, [``
 6
 7
 8
+9
 ]);
 CreateTableColumn(1, 64, [`Function`
 `getExitTime`
@@ -571,8 +604,10 @@ CreateTableColumn(1, 64, [`Function`
 `getAge`
 `getAttractions`
 `setEntryLabels2`
+`setTrainCapacities`
 ]);
 CreateTableColumn(2, 64, [`Category`
+`Various`
 `Various`
 `Various`
 `Various`
@@ -591,6 +626,7 @@ CreateTableColumn(3, 64, [`Minpar`
 0
 0
 0
+0
 ]);
 CreateTableColumn(4, 64, [`Maxpar`
 0
@@ -601,8 +637,10 @@ CreateTableColumn(4, 64, [`Maxpar`
 0
 0
 0
+0
 ]);
 CreateTableColumn(5, 64, [`Helptext`
+0
 0
 0
 0
@@ -621,6 +659,7 @@ CreateTableColumn(6, 64, [`Example`
 0
 0
 0
+0
 ]);
 CreateTableColumn(7, 64, [`Include`
 1
@@ -631,6 +670,7 @@ CreateTableColumn(7, 64, [`Include`
 0
 0
 1
+0
 ]);
 CreateTableColumn(8, 64, [`Sort order`
 1
@@ -641,6 +681,7 @@ CreateTableColumn(8, 64, [`Sort order`
 6
 7
 8
+9
 ]);
 SetStatus(0);
 ExecLateInit;
@@ -705,8 +746,8 @@ SetTextAtt([FileName], [ptsd\ptsd.xlsx]);
 SetTextAtt([SheetName], [Heights]);
 SetAtt([Visible], 0);
 SetAtt([NoTables], 0);
-SetAtt([RefWorkbook], 1065801864);
-SetTextAtt([RefWorkbookName], [oleExcelActiveX_Workbook1]);
+SetAtt([RefWorkbook], 0);
+SetTextAtt([RefWorkbookName], []);
 SetAtt([UseAtomName], 1);
 SetAtt([AliasesCreated], 0);
 SetAtt([CreateAlias], 0);
@@ -725,8 +766,11 @@ SetSize(8, 2, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(0, 11);
+SetTable(3, 11);
 CreateTableColumn(0, 64, [0
+1
+2
+3
 ]);
 CreateTableColumn(1, 88, [`Atom Name`
 ]);
@@ -1162,7 +1206,7 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\AvailabilityControl.ico]));
 Set(DdbRec, [>t-atomtype:t028.]);
-SetChannels(1, 1);
+SetChannels(1, 0);
 SetChannelRanges(1, 255, 1, 255);
 SetLoadAtomID(11);
 SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
@@ -1171,33 +1215,24 @@ SetSize(5, 3, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(1, 8);
+SetTable(0, 8);
 CreateTableColumn(0, 64, [``
-1
 ]);
 CreateTableColumn(1, 64, [`Oldstatus`
-2
 ]);
 CreateTableColumn(2, 64, [`Downtime`
-0
 ]);
 CreateTableColumn(3, 64, [`Down`
-0
 ]);
 CreateTableColumn(4, 64, [`xs`
-0
 ]);
 CreateTableColumn(5, 64, [`ys`
-0
 ]);
 CreateTableColumn(6, 64, [`zs`
-0
 ]);
 CreateTableColumn(7, 64, [`rot`
-0
 ]);
 CreateTableColumn(8, 64, [`color`
-255
 ]);
 SetStatus(11);
 ExecLateInit;
@@ -1206,5 +1241,4 @@ Up;
 {Saved Model3D settings.}
 
 ConnectLoadAtoms(1, 8, 1, 11, 0);
-ConnectLoadAtoms(1, 11, 0, 12, 0);
 ExecOnCreationOnLoad;
