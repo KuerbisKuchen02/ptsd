@@ -1,4 +1,4 @@
-﻿{10.5.0.3374}
+{10.5.0.3374}
 
 
 {Load required atoms}
@@ -25,16 +25,16 @@ if(not(AtomExists), Error([Cannot find mother atom 'Composition Container'. Inhe
 CreateAtom(a, s, [Attraction], 1, false);
 SetAtt([openatscale], 17);
 SetAtt([displaycontents], 1);
-SetAtt([nrvariables], 6);
+SetAtt([nrvariables], 1);
 SetAtt([CheckContentInView], 2);
-SetAtt([xCenter2D], 21.0031021758914);
-SetAtt([yCenter2D], 4.51934816688299);
-SetAtt([xRadius2D], 8.0031021758914);
-SetAtt([yRadius2D], 3.51934816688299);
-SetAtt([xCenter3D], 8.0031021758914);
-SetAtt([yCenter3D], 3.51934816688299);
+SetAtt([xCenter2D], 18);
+SetAtt([yCenter2D], 5.5);
+SetAtt([xRadius2D], 11);
+SetAtt([yRadius2D], 3.5);
+SetAtt([xCenter3D], 11);
+SetAtt([yCenter3D], 4.5);
 SetAtt([zCenter3D], 1);
-SetAtt([Radius3D], 8.7997418119795);
+SetAtt([Radius3D], 11.5866302262565);
 SetAtt([ShowName], 0);
 SetAtomSettings([], 8421504, 25650);
 Set(Icon(a), 
@@ -43,47 +43,32 @@ SetMaterial(
 	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\CompositionContainer.ico]));
-Set(DdbRec, [>atmname:C:\temp\ptsd\composition_containers\attraction\Attraction.atm.>cmpname:C:\temp\ptsd\composition_containers\attraction\Attraction.cmp.]);
+Set(DdbRec, [>atmname:C:\Temp\ptsd\composition_containers\attraction\Attraction.atm.>cmpname:C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp.]);
 SetChannels(1, 0);
 SetChannelRanges(1, 255, 0, 0);
 SetLoadAtomID(1);
-SetLoc(-2, -9, 0);
-SetSize(16, 7, 10);
+SetLoc(7, 1, 0);
+SetSize(22, 9, 10);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
-SetTable(6, 2);
+SetTable(1, 2);
 CreateTableColumn(0, 25, [``
 1
-2
-3
-4
-5
-6
 ]);
 CreateTableColumn(1, 100, [`VariableName`
-`trainCapacity`
-`rideTimeS`
-`numberOfTrains`
-`entryTimeS`
-`meanFailureRate`
 `id`
 ]);
-CreateTableColumn(2, 150, [4DS[`Expression`
-`TableFindValue(Model, TableFindValue(Up(c), [id], 1, 2), 0, 4)`
-`TableFindValue(Model, TableFindValue(Up(c), [id], 1, 2), 0, 2)`
-`TableFindValue(Model, TableFindValue(Up(c), [id], 1, 2), 0, 5)`
-`TableFindValue(Model, TableFindValue(Up(c), [id], 1, 2), 0, 3)`
-`1 - TableFindValue(Model, TableFindValue(Up(c), [id], 1, 2), 0, 6)`
+CreateTableColumn(2, 150, [`Expression`
 400
-]4DS]);
+]);
 Set(OnCreation, [4DS[
              do(
               if(
                not(comparetext(name(c),[])),
-               if(fileexists([C:\temp\ptsd\composition_containers\attraction\Attraction.cmp]),
-                execfile([C:\temp\ptsd\composition_containers\attraction\Attraction.cmp]),
-                msg(concat([Cannot locate:],lf,cr,[C:\temp\ptsd\composition_containers\attraction\Attraction.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
+               if(fileexists([C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp]),
+                execfile([C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp]),
+                msg(concat([Cannot locate:],lf,cr,[C:\Temp\ptsd\composition_containers\attraction\Attraction.cmp],lf,cr,[Make sure the *.CMP file is in the directory as stated above]))
                )
               ),
               set(oncreation(c),concat(sbo,[nothing],sbc))
@@ -93,19 +78,19 @@ SetStatus(0);
 ExecLateInit;
 
 
-{Atom: Entry}
+{Atom: EntryStation}
 
 sets;
 AtomByName([Assembler], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Assembler'. Inheriting from BaseClass.]));
-CreateAtom(a, s, [Entry], 1, false);
-SetExprAtt([cycletime], [4DS[lognormal(TableFindString(Up(c), [entryTimeS], 1, 2),10)]4DS]);
+CreateAtom(a, s, [EntryStation], 1, false);
+SetExprAtt([cycletime], [4DS[lognormal(TableFindValue(Model, TableFindString(Up(c), [id], 1, 2), 0, 3),10)]4DS]);
 SetExprAtt([entrytrigger], [0]);
 SetExprAtt([exittrigger], [0]);
 SetExprAtt([sendto], [{.~1|~1~.}1]);
-SetAtt([curcolref], 12);
-SetExprAtt([4Dscript], [4DS[TableFindString(Up(c), [trainCapacity], 1, 2)]4DS]);
-SetAtt([finishquant], 13);
+SetAtt([curcolref], 1);
+SetExprAtt([4Dscript], [1]);
+SetAtt([finishquant], 17);
 SetAtt([showcontents], 1);
 SetAtt([pack], 1);
 SetExprAtt([In2Trigger], [0]);
@@ -113,7 +98,7 @@ SetAtt([columns], 1);
 SetAtt([3DIcon], 2);
 SetAtt([CutOffMode], 1);
 SetExprAtt([CutOffTime], [120]);
-SetExprAtt([CutOff], [false]);
+SetAtt([CutOff], 1);
 SetAtomSettings([], 255, 1200);
 Set(Icon(a), 
 	RegisterIcon(IconsDir([bmp\machines\mach1001.bmp]), [mach1001]));
@@ -128,7 +113,7 @@ SetChannelRanges(2, 255, 1, 255);
 SetLoadAtomID(2);
 SetChannelRequestCount(1, 0, true, false, 5, 0, [container/order/main product], []);
 SetChannelRequestCount(2, 0, false, true, 0, 0, [], []);
-SetLoc(1, 2, 0);
+SetLoc(7, 3, 0);
 SetSize(5, 5, 1);
 LockPosition(false);
 LockSize(false);
@@ -140,7 +125,7 @@ CreateTableColumn(0, 64, [``
 ]);
 CreateTableColumn(1, 64, [`Product 1`
 1
-1
+16
 ]);
 CreateTableColumn(2, 64, [2
 1
@@ -222,12 +207,12 @@ SetStatus(1);
 ExecLateInit;
 
 
-{Atom: Exit}
+{Atom: ExitStation}
 
 sets;
 AtomByName([Unpack], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Unpack'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [Exit], 1, false);
+CreateAtom(a, Up(s), [ExitStation], 1, false);
 SetExprAtt([nr unpack products], [content(first(c))]);
 SetExprAtt([cycletime], [0]);
 SetAtt([curunpack], 0);
@@ -251,7 +236,7 @@ SetChannelRanges(1, 255, 2, 2);
 SetLoadAtomID(3);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [Contents], []);
 SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
-SetLoc(11, 2, 0);
+SetLoc(17, 3, 0);
 SetSize(4, 2, 1);
 LockPosition(false);
 LockSize(false);
@@ -286,6 +271,7 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\Container.ico]));
 SetLoadAtomID(4);
+SetLoc(6, 1, 0);
 SetSize(1.1, 1.1, 0.15);
 LockPosition(false);
 LockSize(false);
@@ -301,11 +287,11 @@ AtomByName([Source], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Source'. Inheriting from BaseClass.]));
 CreateAtom(a, Up(s), [TrainGenerator], 1, false);
 SetExprAtt([SendTo], [{.~1|~1~.}1]);
-SetExprAtt([CycleTime], [10]);
+SetExprAtt([CycleTime], [1]);
 SetExprAtt([CreationTrigger], [{.0|10. Do Nothing.}0]);
 SetExprAtt([ExitTrigger], [0]);
-SetExprAtt([FirstProduct], [10]);
-SetExprAtt([MaxProducts], [4DS[{.~1|~Value(TableFindString(Up(c), [numberOfTrains], 1, 2))~.}Value(TableFindString(Up(c), [numberOfTrains], 1, 2))]4DS]);
+SetExprAtt([FirstProduct], [0]);
+SetExprAtt([MaxProducts], [4DS[{.~1|~TableFindValue(Model, TableFindString(Up(c), [id], 1, 2), 0, 5)~.}TableFindValue(Model, TableFindString(Up(c), [id], 1, 2), 0, 5)]4DS]);
 SetAtt([Icon3D], 4);
 SetAtomSettings([], 7168771, 176);
 Set(Icon(a), 
@@ -322,7 +308,7 @@ SetChannels(1, 1);
 SetChannelRanges(1, 1, 1, 255);
 SetLoadAtomID(5);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
-SetLoc(1, 0, 0);
+SetLoc(7, 1, 0);
 SetSize(5, 2, 2);
 LockPosition(false);
 LockSize(false);
@@ -366,7 +352,7 @@ SetChannels(1, 1);
 SetChannelRanges(1, 255, 1, 255);
 SetLoadAtomID(6);
 SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
-SetLoc(11, 4, 0);
+SetLoc(17, 5, 0);
 SetSize(5, 2, 1);
 LockPosition(false);
 LockSize(false);
@@ -376,7 +362,7 @@ CreateTableColumn(0, 64, [``
 1
 ]);
 CreateTableColumn(1, 64, [`Oldstatus`
-1
+0
 ]);
 CreateTableColumn(2, 64, [`Downtime`
 0
@@ -403,21 +389,21 @@ SetStatus(11);
 ExecLateInit;
 
 
-{Atom: Copy of Fast Non Accumulating Conveyor7}
+{Atom: Exit}
 
 sets;
 AtomByName([Fast Non Accumulating Conveyor], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Fast Non Accumulating Conveyor'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [Copy of Fast Non Accumulating Conveyor7], 1, false);
+CreateAtom(a, Up(s), [Exit], 1, false);
 SetAtt([length], 1);
 SetAtt([capacity], 10000);
 SetExprAtt([speed], [1]);
 SetExprAtt([calculate], [4DS[ do(  setatt(12,+(att(5,c),if(>(att(8,c),0),-(time,att(8,c)),0)),c),  foratomlayerunder(c,   do(    setcs,    setloc(        -(*(xsize(c),/(*(att(3,c),-(-(time,entrytime(cs)),-(att(12,c),ddb([t-blck],cs)))),att(1,c))),xsize(cs)),    /(-(ysize(c),ysize(cs)),2),zsize(c),cs)    )  ) )]4DS]);
 SetAtt([totblocked], 0);
-SetAtt([entrytrigger], 0);
-SetAtt([exittrigger], 0);
+SetExprAtt([entrytrigger], [0]);
+SetExprAtt([exittrigger], [0]);
 SetAtt([blocked], 0);
-SetExprAtt([sendto], [1]);
+SetExprAtt([sendto], [{.~1|~1~.}1]);
 SetAtt([disp cont], 1);
 SetAtt([curcap], 10000);
 SetAtt([tmp], 0);
@@ -438,7 +424,7 @@ SetChannelRanges(1, 255, 1, 255);
 SetLoadAtomID(7);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
 SetChannelRequestCount(2, 0, true, true, 0, 0, [], []);
-SetLoc(15, 2, 0);
+SetLoc(21, 3, 0);
 SetSize(1, 1, 1);
 LockPosition(false);
 LockSize(false);
@@ -447,12 +433,12 @@ SetStatus(13);
 ExecLateInit;
 
 
-{Atom: Fast Non Accumulating Conveyor7}
+{Atom: AttractionEntry}
 
 sets;
 AtomByName([Fast Non Accumulating Conveyor], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'Fast Non Accumulating Conveyor'. Inheriting from BaseClass.]));
-CreateAtom(a, Up(s), [Fast Non Accumulating Conveyor7], 1, false);
+CreateAtom(a, Up(s), [AttractionEntry], 1, false);
 SetAtt([length], 1);
 SetAtt([capacity], 10000);
 SetExprAtt([speed], [1]);
@@ -477,12 +463,12 @@ SetMaterial(
 Set(Version(a), 0);
 SetTreeIcon(pDir([Media\Icons\FastNonConveyor.ico]));
 Set(DdbRec, [>updatetoed10:1.]);
-SetChannels(1, 2);
+SetChannels(2, 2);
 SetChannelRanges(1, 255, 1, 255);
 SetLoadAtomID(8);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
 SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
-SetLoc(0, 2, 0);
+SetLoc(6, 3, 0);
 SetSize(1, 1, 1);
 LockPosition(false);
 LockSize(false);
@@ -521,7 +507,7 @@ SetChannelRanges(1, 255, 1, 255);
 SetLoadAtomID(9);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
 SetChannelRequestCount(2, 0, true, true, 0, 0, [], []);
-SetLoc(6, 0, 0);
+SetLoc(12, 1, 0);
 SetSize(5, 2, 0);
 LockPosition(false);
 LockSize(false);
@@ -537,7 +523,7 @@ AtomByName([MultiService], Main);
 if(not(AtomExists), Error([Cannot find mother atom 'MultiService'. Inheriting from BaseClass.]));
 CreateAtom(a, Up(s), [RollerCoaster], 1, false);
 SetAtt([capacity], 10);
-SetExprAtt([cycletime], [4DS[Value(TableFindString(Up(c), [rideTimeS], 1, 2))]4DS]);
+SetExprAtt([cycletime], [4DS[TableFindValue(Model, TableFindString(Up(c), [id], 1, 2), 0, 2)]4DS]);
 SetAtt([curcycle], 0);
 SetAtt([nblocked], 0);
 SetExprAtt([sendto], [{.~1|~1~.}1]);
@@ -560,7 +546,7 @@ SetChannels(1, 1);
 SetChannelRanges(1, 255, 1, 255);
 SetLoadAtomID(10);
 SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
-SetLoc(6.0062043517828, 2.03869633376598, 0);
+SetLoc(12, 3, 0);
 SetSize(5, 4, 1);
 LockPosition(false);
 LockSize(false);
@@ -597,15 +583,15 @@ CreateAtom(a, Up(s), [AttractionFailureMtbfMttr], 1, false);
 SetExprAtt([mtbf], [4DS[do(
   var([failureRate], 
     vbValue, 
-    Value(TableFindString(Up(c), [meanFailureRate], 1, 2))
+    1 - TableFindValue(Model, TableFindString(Up(c), [id], 1, 2), 0, 6)
   ),
   negexp(hr(3)*(1-failureRate)/failureRate)
 )]4DS]);
-SetTextAtt([mttr], [negexp(meanAttractionDownTime_s)]);
+SetExprAtt([mttr], [negexp(meanAttractionDownTime_s)]);
 SetExprAtt([firstdown], [4DS[do(
   var([failureRate], 
     vbValue, 
-    Value(TableFindString(Up(c), [meanFailureRate], 1, 2))
+    1 - TableFindValue(Model, TableFindString(Up(c), [id], 1, 2), 0, 6)
   ),
   negexp(hr(3)*(1-failureRate)/failureRate)
 )]4DS]);
@@ -628,12 +614,132 @@ SetChannels(0, 1);
 SetChannelRanges(0, 0, 1, 255);
 SetLoadAtomID(11);
 SetChannelRequestCount(1, 0, true, true, 0, 0, [], []);
-SetLoc(11.0062043517828, 6.03869633376598, 0);
+SetLoc(17, 7, 0);
 SetSize(5, 1, 1);
 LockPosition(false);
 LockSize(false);
 DisableIconRotation(false);
 SetStatus(10);
+ExecLateInit;
+
+
+{Atom: FastTrack}
+
+sets;
+AtomByName([Queue], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [FastTrack], 1, false);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([Capacity], 10);
+SetExprAtt([EntryTrigger], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out).}content(c)]);
+SetAtt([DrawLoc], 1);
+SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([ShowContents], 1);
+SetAtt([FittingContentCount], 0);
+SetAtt([NameLength3D], 9);
+SetAtomSettings([], 12615680, 4272);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Queue.ico]));
+Set(DdbRec, [>updateversion:10.5.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(12);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(1, 2, 0);
+SetSize(5, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: NormalQueue}
+
+sets;
+AtomByName([Queue], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Queue'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [NormalQueue], 1, false);
+SetExprAtt([SendTo], [{.~1|~1~.}1]);
+SetAtt([Capacity], 10);
+SetExprAtt([EntryTrigger], [0]);
+SetExprAtt([ExitTrigger], [0]);
+SetExprAtt([QueueDiscipline], [{.content(c)|Fifo (First In First Out).}content(c)]);
+SetAtt([DrawLoc], 1);
+SetExprAtt([InStrategy], [{.openallic(c)|Any inputchannel.}openallic(c)]);
+SetAtt([3DIcon], 2);
+SetAtt([ShowContents], 1);
+SetAtt([FittingContentCount], 0);
+SetAtt([NameLength3D], 11);
+SetAtomSettings([], 12615680, 4272);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\queue.bmp]), [queue]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\Queue.ico]));
+Set(DdbRec, [>updateversion:10.5.]);
+SetChannels(1, 1);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(13);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetLoc(1, 4, 0);
+SetSize(5, 2, 0);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
+ExecLateInit;
+
+
+{Atom: QueueEntry}
+
+sets;
+AtomByName([Fast Non Accumulating Conveyor], Main);
+if(not(AtomExists), Error([Cannot find mother atom 'Fast Non Accumulating Conveyor'. Inheriting from BaseClass.]));
+CreateAtom(a, Up(s), [QueueEntry], 1, false);
+SetAtt([length], 1);
+SetAtt([capacity], 10000);
+SetExprAtt([speed], [1]);
+SetExprAtt([calculate], [4DS[ do(  setatt(12,+(att(5,c),if(>(att(8,c),0),-(time,att(8,c)),0)),c),  foratomlayerunder(c,   do(    setcs,    setloc(        -(*(xsize(c),/(*(att(3,c),-(-(time,entrytime(cs)),-(att(12,c),ddb([t-blck],cs)))),att(1,c))),xsize(cs)),    /(-(ysize(c),ysize(cs)),2),zsize(c),cs)    )  ) )]4DS]);
+SetAtt([totblocked], 0);
+SetExprAtt([entrytrigger], [0]);
+SetExprAtt([exittrigger], [0]);
+SetAtt([blocked], 0);
+SetExprAtt([sendto], [4DS[{.~1|~If(Label([hasFastPass], first(c)) = 1, 1, 2)~.}If(Label([hasFastPass], first(c)) = 1, 1, 2)]4DS]);
+SetAtt([disp cont], 1);
+SetAtt([curcap], 10000);
+SetAtt([tmp], 0);
+SetAtt([inputopen], 0);
+SetAtt([Use_Physical], 1);
+SetAtt([IsConveyor], 14);
+SetAtt([Transparency], 0);
+SetAtomSettings([], 10012804, 1072);
+Set(Icon(a), 
+	RegisterIcon(IconsDir([bmp\atoms\conveyor.bmp]), [conveyor]));
+SetMaterial(
+	RegisterMaterial([Default], 8421504, 8421504, 3289650, 0, 0.100000001490116, 0, false, false, 1, 0), 1, a);
+Set(Version(a), 0);
+SetTreeIcon(pDir([Media\Icons\FastNonConveyor.ico]));
+Set(DdbRec, [>updatetoed10:1.]);
+SetChannels(1, 2);
+SetChannelRanges(1, 255, 1, 255);
+SetLoadAtomID(14);
+SetChannelRequestCount(1, 0, true, false, 0, 0, [], []);
+SetChannelRequestCount(2, 0, true, false, 0, 0, [], []);
+SetLoc(0, 3, 0);
+SetSize(1, 1, 1);
+LockPosition(false);
+LockSize(false);
+DisableIconRotation(false);
+SetStatus(13);
 ExecLateInit;
 Up;
 
@@ -649,5 +755,11 @@ ConnectLoadAtoms(1, 5, 1, 9, 0);
 ConnectLoadAtoms(0, 4, 1, 5, 0);
 ConnectLoadAtoms(1, 6, 0, 2, 0);
 ConnectLoadAtoms(1, 11, 1, 6, 0);
+ConnectLoadAtoms(1, 7, 1, 15, 0);
 ConnectLoadAtoms(2, 8, 2, 7, 0);
+ConnectLoadAtoms(1, 12, 1, 8, 0);
+ConnectLoadAtoms(1, 13, 2, 8, 0);
+ConnectLoadAtoms(2, 14, 1, 12, 0);
+ConnectLoadAtoms(1, 14, 1, 13, 0);
+ConnectLoadAtoms(1, 16, 1, 14, 0);
 ExecOnCreationOnLoad;
